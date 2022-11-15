@@ -35,7 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: qQe6YhWQiQ/component
-import { SupabaseFetcher } from "../../code-components/Supabase"; // plasmic-import: tL8giM5hYy/codeComponent
+import { SupabaseFetcher } from "../../supabase"; // plasmic-import: tL8giM5hYy/codeComponent
 import { TableWrapper } from "@plasmicpkgs/antd/skinny/registerTable"; // plasmic-import: kWbJIG4IgB/codeComponent
 import { TableColumn } from "@plasmicpkgs/antd/skinny/registerTable"; // plasmic-import: Mj3elNqVoI/codeComponent
 import { TableValue } from "@plasmicpkgs/antd/skinny/registerTable"; // plasmic-import: l40Ox6HDSg/codeComponent
@@ -323,6 +323,26 @@ function PlasmicRanking__RenderFunc(props: {
               </SupabaseFetcher>
             </div>
           ) : null}
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__yKhRe
+            )}
+          >
+            {"Enter some text"}
+          </div>
+
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text___7G8X5
+            )}
+          >
+            {"Enter some text"}
+          </div>
         </p.Stack>
       </div>
     </React.Fragment>

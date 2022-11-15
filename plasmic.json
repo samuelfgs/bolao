@@ -193,19 +193,6 @@
           "componentType": "page"
         },
         {
-          "id": "u2MWSbFe2Y",
-          "name": "Ranking",
-          "type": "managed",
-          "projectId": "r6sSLbmSTeVjqGUVythgwH",
-          "renderModuleFilePath": "plasmic/bolao/PlasmicRanking.tsx",
-          "importSpec": {
-            "modulePath": "../pages/ranking.tsx"
-          },
-          "cssFilePath": "plasmic/bolao/PlasmicRanking.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "VbEzpHHmnC",
           "name": "Regulamento",
           "type": "managed",
@@ -215,6 +202,19 @@
             "modulePath": "../pages/regulamento.tsx"
           },
           "cssFilePath": "plasmic/bolao/PlasmicRegulamento.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "u2MWSbFe2Y",
+          "name": "Ranking",
+          "type": "managed",
+          "projectId": "r6sSLbmSTeVjqGUVythgwH",
+          "renderModuleFilePath": "plasmic/bolao/PlasmicRanking.tsx",
+          "importSpec": {
+            "modulePath": "../pages/ranking.tsx"
+          },
+          "cssFilePath": "plasmic/bolao/PlasmicRanking.module.css",
           "scheme": "blackbox",
           "componentType": "page"
         }
@@ -284,7 +284,7 @@
         {
           "id": "tL8giM5hYy",
           "name": "SupabaseFetcher",
-          "componentImportPath": "./components/code-components/Supabase"
+          "componentImportPath": "./components/supabase"
         },
         {
           "id": "kWbJIG4IgB",

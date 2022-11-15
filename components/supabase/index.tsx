@@ -99,7 +99,7 @@ export const registerAll = () => {
       children: "slot",
     },
     providesData: true,
-    importPath: "./components/code-components/Supabase"
+    importPath: "./components/supabase"
   });
 }
 
