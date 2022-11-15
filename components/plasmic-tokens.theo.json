@@ -1,0 +1,19 @@
+{
+  "props": [
+    {
+      "name": "flag_size",
+      "type": "spacing",
+      "value": "25px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "r6sSLbmSTeVjqGUVythgwH",
+        "id": "mLJEZEqO4"
+      }
+    }
+  ],
+  "global": {
+    "meta": {
+      "source": "plasmic.app"
+    }
+  }
+}

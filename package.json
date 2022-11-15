@@ -9,14 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@plasmicapp/cli": "^0.1.187",
+    "@plasmicapp/host": "^1.0.82",
+    "@plasmicapp/query": "^0.1.55",
+    "@plasmicapp/react-web": "^0.2.121",
+    "@plasmicpkgs/antd": "^0.0.100",
+    "@plasmicpkgs/plasmic-embed-css": "^0.1.66",
+    "@plasmicpkgs/plasmic-nav": "0.0.52",
+    "@plasmicpkgs/plasmic-query": "0.0.96",
+    "@supabase/supabase-js": "^2.1.0",
+    "@types/luxon": "^3.1.0",
     "@types/node": "18.11.9",
+    "@types/qs": "^6.9.7",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
+    "antd": "^4.24.2",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
+    "luxon": "^3.1.0",
     "next": "13.0.3",
+    "qs": "^6.11.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.8.4"
+    "react-toastify": "^9.1.1",
+    "typescript": "4.8.4",
+    "valtio": "^1.7.5"
   }
 }
