@@ -323,26 +323,6 @@ function PlasmicRanking__RenderFunc(props: {
               </SupabaseFetcher>
             </div>
           ) : null}
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__yKhRe
-            )}
-          >
-            {"Enter some text"}
-          </div>
-
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text___7G8X5
-            )}
-          >
-            {"Enter some text"}
-          </div>
         </p.Stack>
       </div>
     </React.Fragment>

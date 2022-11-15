@@ -54,6 +54,7 @@
   width: auto;
   height: auto;
   max-width: 800px;
+  color: #ffffff;
 }
 .link__cb744 {
   position: relative;
@@ -61,12 +62,14 @@
   height: auto;
   max-width: 800px;
   padding-bottom: 0px;
+  color: #ffffff;
 }
 .link__d1CPu {
   position: relative;
   width: auto;
   height: auto;
   max-width: 800px;
+  color: #ffffff;
 }
 .sair {
   position: relative;
@@ -74,4 +77,5 @@
   height: auto;
   max-width: 800px;
   cursor: pointer;
+  color: #ffffff;
 }
