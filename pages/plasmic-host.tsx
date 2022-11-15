@@ -40,12 +40,11 @@ import { registerAll } from '../components/supabase';
 
 export const DateText = (props: any) => {
   if (typeof props.date === "undefined") return <span className={props.className}>date invalid</span>;
-
-  const d = DateTime.fromFormat(props.date, "MM/dd/yyyy HH:mm", {
-    zone: "UTC+3"
-  });
+  let d = DateTime.fromFormat(props.date, "MM/dd/yyyy HH:mm", { zone: "UTC+3" });
+  if (d.invalidReason) {
+    d = DateTime.fromFormat(props.date, "MM/d/yyyy HH:mm", { zone: "UTC+3" });
+  }
   const userTimeZone = -new Date().getTimezoneOffset() / 60;
-
   return <span className={props.className}>{
     d.setZone(`UTC${userTimeZone}`).toFormat("dd/MM/yyyy HH:mm")
   }</span>
