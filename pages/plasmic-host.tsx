@@ -44,10 +44,11 @@ export const DateText = (props: any) => {
   const d = DateTime.fromFormat(props.date, "MM/dd/yyyy HH:mm", {
     zone: "UTC+3"
   });
-  const d2 = new Date(d.toString());
-  console.log("dale3", d, d.toString(), d2);
+  const userTimeZone = -new Date().getTimezoneOffset() / 60;
 
-  return <span className={props.className}>{d2.toLocaleDateString()} {d2.getHours().toString().padStart(2, '0')}:{d2.getMinutes().toString().padStart(2, '0')}</span>
+  return <span className={props.className}>{
+    d.setZone(`UTC${userTimeZone}`).toFormat("dd/MM/yyyy HH:mm")
+  }</span>
 }
 
 registerComponent(DateText, {
