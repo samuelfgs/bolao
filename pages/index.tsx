@@ -10,6 +10,7 @@ import { state } from "../state-management/app";
 import { Supabase } from "../components/supabase";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import GlobalContextsProvider from "../components/plasmic/bolao/PlasmicGlobalContextsProvider";
 
 function Partidas() {
   const router = useRouter();
@@ -57,17 +58,19 @@ function Partidas() {
   }
 
   return (
-    <ph.PageParamsProvider
-      params={useRouter()?.query}
-      query={useRouter()?.query}
-    >
-      <ToastContainer />
-      <PlasmicPartidas 
-        save={{
-          onClick: onSave
-        }}
-      />
-    </ph.PageParamsProvider>
+    <GlobalContextsProvider>
+      <ph.PageParamsProvider
+        params={useRouter()?.query}
+        query={useRouter()?.query}
+      >
+        <ToastContainer />
+        <PlasmicPartidas 
+          save={{
+            onClick: onSave
+          }}
+        />
+      </ph.PageParamsProvider>
+    </GlobalContextsProvider>
   );
 }
 
