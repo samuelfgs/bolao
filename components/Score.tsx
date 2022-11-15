@@ -10,7 +10,7 @@ export interface ScoreProps extends DefaultScoreProps {}
 function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
   const matches = useSnapshot(state.matches);
   console.log("dale", "score", matches);
-  if (!matches.find(match => match.match_id === props.matchId)) {
+  if (!state.matches.find(match => match.match_id === props.matchId)) {
     state.matches.push({ match_id: props.matchId! });
   }
   const match = state.matches.find(match => match.match_id === props.matchId)!;
