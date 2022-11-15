@@ -45,7 +45,7 @@ export const DateText = (props: any) => {
     zone: "UTC+3"
   });
   const d2 = new Date(d.toString());
-  console.log("dale3", d, d2);
+  console.log("dale3", d, d.toString(), d2);
 
   return <span className={props.className}>{d2.toLocaleDateString()} {d2.getHours().toString().padStart(2, '0')}:{d2.getMinutes().toString().padStart(2, '0')}</span>
 }
