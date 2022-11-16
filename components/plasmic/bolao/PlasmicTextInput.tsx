@@ -137,7 +137,31 @@ function PlasmicTextInput__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const stateSpecs = React.useMemo(() => [], [$props]);
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "Show Start Icon",
+        type: "private"
+      },
+
+      {
+        path: "Show End Icon",
+        type: "private"
+      },
+
+      {
+        path: "Is Disabled",
+        type: "private"
+      },
+
+      {
+        path: "Color",
+        type: "private"
+      }
+    ],
+
+    [$props]
+  );
   const $state = p.useDollarState(stateSpecs, $props);
 
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =

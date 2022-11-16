@@ -143,6 +143,7 @@ function PlasmicRanking__RenderFunc(props: {
                 data-plasmic-name={"supabaseFetcher"}
                 data-plasmic-override={overrides.supabaseFetcher}
                 className={classNames("__wab_instance", sty.supabaseFetcher)}
+                filter={[{ column: "paid", operator: "eq", value: true }]}
                 queryName={"users" as const}
                 table={"users" as const}
               >

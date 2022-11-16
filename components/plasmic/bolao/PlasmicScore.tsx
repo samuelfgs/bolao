@@ -114,7 +114,16 @@ function PlasmicScore__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const stateSpecs = React.useMemo(() => [], [$props]);
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "notFinished",
+        type: "private"
+      }
+    ],
+
+    [$props]
+  );
   const $state = p.useDollarState(stateSpecs, $props);
 
   return (

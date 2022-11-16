@@ -22,7 +22,7 @@ export class Supabase {
     const key = JSON.stringify({ table, ...(params ? params : {}) });
     return usePlasmicQueryData(key, async () => {
       console.log("dale", "oi")
-      const data = await this.select(table, { filter: { column: "id", operator: "neq", value: 1}});
+      const data = await this.select(table, params);
       console.log("dale", data);
       return data;
     });
@@ -35,7 +35,7 @@ export class Supabase {
       ...(order ? { order } : {}),
       ...(filter ? { filter } : {})
     }
-    console.log("dale", table, params);
+    console.log("dale2", table, params);
     const data = await fetch(`/api/supabase/${table}/?${qs.stringify(params2)}`);
     console.log("dale", data);
     return await data.json();
@@ -97,6 +97,7 @@ export const registerAll = () => {
       select: "string",
       order: "string",
       children: "slot",
+      filter: "object"
     },
     providesData: true,
     importPath: "./components/supabase"
