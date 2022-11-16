@@ -136,7 +136,7 @@ function PlasmicHeader__RenderFunc(props: {
           src={"https://static1.plasmic.app/close.svg" as const}
         />
       }
-      forceOpenMenu={false}
+      forceOpenMenu={true}
       itemsGap={8 as const}
       menuItems={
         <React.Fragment>
@@ -180,6 +180,20 @@ function PlasmicHeader__RenderFunc(props: {
             platform={"nextjs"}
           >
             {"Classificacao"}
+          </p.PlasmicLink>
+
+          <p.PlasmicLink
+            className={classNames(
+              projectcss.all,
+              projectcss.a,
+              projectcss.__wab_text,
+              sty.link___7YIen
+            )}
+            component={Link}
+            href={`/regulamento`}
+            platform={"nextjs"}
+          >
+            {"Regulamento"}
           </p.PlasmicLink>
 
           {(() => {
