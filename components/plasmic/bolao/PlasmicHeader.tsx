@@ -151,7 +151,7 @@ function PlasmicHeader__RenderFunc(props: {
             href={`/`}
             platform={"nextjs"}
           >
-            {"Partidas"}
+            {"Palpites"}
           </p.PlasmicLink>
 
           <p.PlasmicLink
