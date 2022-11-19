@@ -99,9 +99,6 @@ function PlasmicPartidas__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const stateSpecs = React.useMemo(() => [], [$props]);
-  const $state = p.useDollarState(stateSpecs, $props);
-
   return (
     <React.Fragment>
       <Head></Head>
@@ -127,12 +124,15 @@ function PlasmicPartidas__RenderFunc(props: {
             sty.root
           )}
         >
-          <Header
-            data-plasmic-name={"header"}
-            data-plasmic-override={overrides.header}
-            className={classNames("__wab_instance", sty.header)}
-          />
-
+          {true ? (
+            <div className={classNames(projectcss.all, sty.freeBox__wtp0Y)}>
+              <Header
+                data-plasmic-name={"header"}
+                data-plasmic-override={overrides.header}
+                className={classNames("__wab_instance", sty.header)}
+              />
+            </div>
+          ) : null}
           {true ? (
             <p.Stack
               as={"div"}

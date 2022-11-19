@@ -38,6 +38,8 @@ import Header from "../../Header"; // plasmic-import: qQe6YhWQiQ/component
 import TextInput from "../../TextInput"; // plasmic-import: m1Xqf2MW_yA/component
 import Button from "../../Button"; // plasmic-import: M9Ku_AMa4YF/component
 
+import { useScreenVariants as useScreenVariantsmE8VsUsoIpq2E } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: mE8VSUsoIpq2e/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_bolao.module.css"; // plasmic-import: r6sSLbmSTeVjqGUVythgwH/projectcss
@@ -63,12 +65,12 @@ export const PlasmicLogin__ArgProps = new Array<ArgPropType>("failed");
 export type PlasmicLogin__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  img?: p.Flex<typeof p.PlasmicImg>;
   textInput?: p.Flex<typeof TextInput>;
   username?: p.Flex<typeof TextInput>;
   password?: p.Flex<typeof TextInput>;
   signin?: p.Flex<typeof Button>;
   link?: p.Flex<"a"> & Partial<LinkProps>;
+  img?: p.Flex<typeof p.PlasmicImg>;
   textbox?: p.Flex<typeof TextInput>;
 };
 
@@ -102,8 +104,9 @@ function PlasmicLogin__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const stateSpecs = React.useMemo(() => [], [$props]);
-  const $state = p.useDollarState(stateSpecs, $props);
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsmE8VsUsoIpq2E()
+  });
 
   return (
     <React.Fragment>
@@ -130,27 +133,17 @@ function PlasmicLogin__RenderFunc(props: {
             sty.root
           )}
         >
-          <Header
-            data-plasmic-name={"header"}
-            data-plasmic-override={overrides.header}
-            className={classNames("__wab_instance", sty.header)}
-          />
+          {true ? (
+            <div className={classNames(projectcss.all, sty.freeBox__iz2I)}>
+              <Header
+                data-plasmic-name={"header"}
+                data-plasmic-override={overrides.header}
+                className={classNames("__wab_instance", sty.header)}
+              />
+            </div>
+          ) : null}
 
           <div className={classNames(projectcss.all, sty.freeBox__lXhgn)}>
-            <p.PlasmicImg
-              data-plasmic-name={"img"}
-              data-plasmic-override={overrides.img}
-              alt={""}
-              className={classNames(sty.img)}
-              displayHeight={"auto" as const}
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"100%" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"200px" as const}
-              loading={"lazy" as const}
-            />
-
             {true ? (
               <p.Stack
                 as={"div"}
@@ -271,6 +264,30 @@ function PlasmicLogin__RenderFunc(props: {
                 </p.PlasmicLink>
               </p.Stack>
             ) : null}
+
+            <p.PlasmicImg
+              data-plasmic-name={"img"}
+              data-plasmic-override={overrides.img}
+              alt={""}
+              className={classNames(sty.img)}
+              displayHeight={"auto" as const}
+              displayMaxHeight={"none" as const}
+              displayMaxWidth={"100%" as const}
+              displayMinHeight={"0" as const}
+              displayMinWidth={"0" as const}
+              displayWidth={
+                hasVariant(globalVariants, "screen", "desktop")
+                  ? ("100%" as const)
+                  : ("auto" as const)
+              }
+              loading={"lazy" as const}
+              src={{
+                src: "/plasmic/bolao/images/whatsAppImage20221117At50432Pm1Jpeg.jpeg",
+                fullWidth: 400,
+                fullHeight: 900,
+                aspectRatio: undefined
+              }}
+            />
           </div>
         </div>
       </div>
@@ -282,21 +299,21 @@ const PlasmicDescendants = {
   root: [
     "root",
     "header",
-    "img",
     "textInput",
     "textbox",
     "username",
     "password",
     "signin",
-    "link"
+    "link",
+    "img"
   ],
   header: ["header"],
-  img: ["img"],
   textInput: ["textInput", "textbox"],
   username: ["username"],
   password: ["password"],
   signin: ["signin"],
-  link: ["link"]
+  link: ["link"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -304,12 +321,12 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  img: typeof p.PlasmicImg;
   textInput: typeof TextInput;
   username: typeof TextInput;
   password: typeof TextInput;
   signin: typeof Button;
   link: "a";
+  img: typeof p.PlasmicImg;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -374,12 +391,12 @@ export const PlasmicLogin = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    img: makeNodeComponent("img"),
     textInput: makeNodeComponent("textInput"),
     username: makeNodeComponent("username"),
     password: makeNodeComponent("password"),
     signin: makeNodeComponent("signin"),
     link: makeNodeComponent("link"),
+    img: makeNodeComponent("img"),
 
     // Metadata about props expected for PlasmicLogin
     internalVariantProps: PlasmicLogin__VariantProps,

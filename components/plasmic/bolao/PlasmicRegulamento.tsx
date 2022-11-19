@@ -54,7 +54,6 @@ export const PlasmicRegulamento__ArgProps = new Array<ArgPropType>();
 export type PlasmicRegulamento__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  freeBox?: p.Flex<"div">;
 };
 
 export interface DefaultRegulamentoProps {}
@@ -86,9 +85,6 @@ function PlasmicRegulamento__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const stateSpecs = React.useMemo(() => [], [$props]);
-  const $state = p.useDollarState(stateSpecs, $props);
-
   return (
     <React.Fragment>
       <Head></Head>
@@ -114,18 +110,20 @@ function PlasmicRegulamento__RenderFunc(props: {
             sty.root
           )}
         >
-          <Header
-            data-plasmic-name={"header"}
-            data-plasmic-override={overrides.header}
-            className={classNames("__wab_instance", sty.header)}
-          />
+          {true ? (
+            <div className={classNames(projectcss.all, sty.freeBox__mSrYr)}>
+              <Header
+                data-plasmic-name={"header"}
+                data-plasmic-override={overrides.header}
+                className={classNames("__wab_instance", sty.header)}
+              />
+            </div>
+          ) : null}
 
           <p.Stack
             as={"div"}
-            data-plasmic-name={"freeBox"}
-            data-plasmic-override={overrides.freeBox}
             hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox)}
+            className={classNames(projectcss.all, sty.freeBox__vRwBl)}
           >
             <div
               className={classNames(
@@ -173,9 +171,8 @@ function PlasmicRegulamento__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "freeBox"],
-  header: ["header"],
-  freeBox: ["freeBox"]
+  root: ["root", "header"],
+  header: ["header"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -183,7 +180,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  freeBox: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -248,7 +244,6 @@ export const PlasmicRegulamento = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    freeBox: makeNodeComponent("freeBox"),
 
     // Metadata about props expected for PlasmicRegulamento
     internalVariantProps: PlasmicRegulamento__VariantProps,

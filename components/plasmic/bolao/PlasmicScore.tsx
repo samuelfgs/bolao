@@ -118,7 +118,8 @@ function PlasmicScore__RenderFunc(props: {
     () => [
       {
         path: "notFinished",
-        type: "private"
+        type: "private",
+        initFunc: ($props, $state) => $props["notFinished"]
       }
     ],
 
@@ -142,7 +143,7 @@ function PlasmicScore__RenderFunc(props: {
           sty.root,
           {
             [sty.rootnotFinished]: hasVariant(
-              variants,
+              $state,
               "notFinished",
               "notFinished"
             )
@@ -156,15 +157,13 @@ function PlasmicScore__RenderFunc(props: {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox, {
             [sty.freeBoxnotFinished]: hasVariant(
-              variants,
+              $state,
               "notFinished",
               "notFinished"
             )
           })}
         >
-          {(
-            hasVariant(variants, "notFinished", "notFinished") ? true : true
-          ) ? (
+          {(hasVariant($state, "notFinished", "notFinished") ? true : true) ? (
             <div
               className={classNames(
                 projectcss.all,
@@ -172,7 +171,7 @@ function PlasmicScore__RenderFunc(props: {
                 sty.text__r3TqT,
                 {
                   [sty.textnotFinished__r3TqTcdxsy]: hasVariant(
-                    variants,
+                    $state,
                     "notFinished",
                     "notFinished"
                   )
@@ -191,15 +190,13 @@ function PlasmicScore__RenderFunc(props: {
               })()}
             </div>
           ) : null}
-          {(
-            hasVariant(variants, "notFinished", "notFinished") ? true : true
-          ) ? (
+          {(hasVariant($state, "notFinished", "notFinished") ? true : true) ? (
             <TextInput
               data-plasmic-name={"homeScoreInput"}
               data-plasmic-override={overrides.homeScoreInput}
               className={classNames("__wab_instance", sty.homeScoreInput, {
                 [sty.homeScoreInputnotFinished]: hasVariant(
-                  variants,
+                  $state,
                   "notFinished",
                   "notFinished"
                 )
@@ -218,9 +215,7 @@ function PlasmicScore__RenderFunc(props: {
             {"X"}
           </div>
 
-          {(
-            hasVariant(variants, "notFinished", "notFinished") ? true : true
-          ) ? (
+          {(hasVariant($state, "notFinished", "notFinished") ? true : true) ? (
             <div
               className={classNames(
                 projectcss.all,
@@ -228,7 +223,7 @@ function PlasmicScore__RenderFunc(props: {
                 sty.text__mijSf,
                 {
                   [sty.textnotFinished__mijSfCdxsy]: hasVariant(
-                    variants,
+                    $state,
                     "notFinished",
                     "notFinished"
                   )
@@ -247,15 +242,13 @@ function PlasmicScore__RenderFunc(props: {
               })()}
             </div>
           ) : null}
-          {(
-            hasVariant(variants, "notFinished", "notFinished") ? true : true
-          ) ? (
+          {(hasVariant($state, "notFinished", "notFinished") ? true : true) ? (
             <TextInput
               data-plasmic-name={"awayScoreInput"}
               data-plasmic-override={overrides.awayScoreInput}
               className={classNames("__wab_instance", sty.awayScoreInput, {
                 [sty.awayScoreInputnotFinished]: hasVariant(
-                  variants,
+                  $state,
                   "notFinished",
                   "notFinished"
                 )

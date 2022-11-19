@@ -93,9 +93,6 @@ function PlasmicHeader__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const stateSpecs = React.useMemo(() => [], [$props]);
-  const $state = p.useDollarState(stateSpecs, $props);
-
   return (
     <NavigationBar
       data-plasmic-name={"root"}
@@ -136,7 +133,7 @@ function PlasmicHeader__RenderFunc(props: {
           src={"https://static1.plasmic.app/close.svg" as const}
         />
       }
-      forceOpenMenu={true}
+      forceOpenMenu={false}
       itemsGap={8 as const}
       menuItems={
         <React.Fragment>
@@ -151,7 +148,7 @@ function PlasmicHeader__RenderFunc(props: {
             href={`/`}
             platform={"nextjs"}
           >
-            {"Palpites"}
+            {"Partidas"}
           </p.PlasmicLink>
 
           <p.PlasmicLink

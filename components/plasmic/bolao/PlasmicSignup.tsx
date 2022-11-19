@@ -38,6 +38,8 @@ import Header from "../../Header"; // plasmic-import: qQe6YhWQiQ/component
 import TextInput from "../../TextInput"; // plasmic-import: m1Xqf2MW_yA/component
 import Button from "../../Button"; // plasmic-import: M9Ku_AMa4YF/component
 
+import { useScreenVariants as useScreenVariantsmE8VsUsoIpq2E } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: mE8VSUsoIpq2e/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_bolao.module.css"; // plasmic-import: r6sSLbmSTeVjqGUVythgwH/projectcss
@@ -63,6 +65,7 @@ export const PlasmicSignup__ArgProps = new Array<ArgPropType>("error");
 export type PlasmicSignup__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
+  img?: p.Flex<typeof p.PlasmicImg>;
   name?: p.Flex<typeof TextInput>;
   username?: p.Flex<typeof TextInput>;
   password?: p.Flex<typeof TextInput>;
@@ -99,8 +102,9 @@ function PlasmicSignup__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const stateSpecs = React.useMemo(() => [], [$props]);
-  const $state = p.useDollarState(stateSpecs, $props);
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariantsmE8VsUsoIpq2E()
+  });
 
   return (
     <React.Fragment>
@@ -127,14 +131,41 @@ function PlasmicSignup__RenderFunc(props: {
             sty.root
           )}
         >
-          <Header
-            data-plasmic-name={"header"}
-            data-plasmic-override={overrides.header}
-            className={classNames("__wab_instance", sty.header)}
-          />
-
+          {true ? (
+            <div className={classNames(projectcss.all, sty.freeBox___7M3MT)}>
+              <Header
+                data-plasmic-name={"header"}
+                data-plasmic-override={overrides.header}
+                className={classNames("__wab_instance", sty.header)}
+              />
+            </div>
+          ) : null}
           {true ? (
             <div className={classNames(projectcss.all, sty.freeBox__aCgap)}>
+              <p.PlasmicImg
+                data-plasmic-name={"img"}
+                data-plasmic-override={overrides.img}
+                alt={""}
+                className={classNames(sty.img)}
+                displayHeight={"auto" as const}
+                displayMaxHeight={"none" as const}
+                displayMaxWidth={"100%" as const}
+                displayMinHeight={"0" as const}
+                displayMinWidth={"0" as const}
+                displayWidth={
+                  hasVariant(globalVariants, "screen", "desktop")
+                    ? ("100%" as const)
+                    : ("auto" as const)
+                }
+                loading={"lazy" as const}
+                src={{
+                  src: "/plasmic/bolao/images/whatsAppImage20221117At50432Pm2Jpeg.jpeg",
+                  fullWidth: 400,
+                  fullHeight: 900,
+                  aspectRatio: undefined
+                }}
+              />
+
               {true ? (
                 <p.Stack
                   as={"div"}
@@ -257,8 +288,18 @@ function PlasmicSignup__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "name", "username", "password", "signup", "link"],
+  root: [
+    "root",
+    "header",
+    "img",
+    "name",
+    "username",
+    "password",
+    "signup",
+    "link"
+  ],
   header: ["header"],
+  img: ["img"],
   name: ["name"],
   username: ["username"],
   password: ["password"],
@@ -271,6 +312,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
+  img: typeof p.PlasmicImg;
   name: typeof TextInput;
   username: typeof TextInput;
   password: typeof TextInput;
@@ -340,6 +382,7 @@ export const PlasmicSignup = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    img: makeNodeComponent("img"),
     _name: makeNodeComponent("name"),
     username: makeNodeComponent("username"),
     password: makeNodeComponent("password"),
