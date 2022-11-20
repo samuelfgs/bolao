@@ -3,12 +3,25 @@
 import * as React from "react";
 import { PlasmicScore, DefaultScoreProps } from "./plasmic/bolao/PlasmicScore";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
-import { state } from "../state-management/app";
+import { state, ViewResults } from "../state-management/app";
 import { useSnapshot } from "valtio";
 export interface ScoreProps extends DefaultScoreProps {}
 
 function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
+  const viewCtx = React.useContext(ViewResults);
   const matches = useSnapshot(state.matches);
+  if (viewCtx) {
+    const match = viewCtx.find(match => match.match_id === props.matchId)!;
+    return <PlasmicScore 
+      root={{ ref }}
+      {...props}
+      homeScore={`${match?.home_score ?? ""}`}
+      awayScore={`${match?.away_score ?? ""}`}
+      notFinished={false}
+    />
+  }
+
+
   if (!state.matches.find(match => match.match_id === props.matchId)) {
     state.matches.push({ match_id: props.matchId! });
   }

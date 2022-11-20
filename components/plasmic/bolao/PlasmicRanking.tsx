@@ -60,6 +60,8 @@ export type PlasmicRanking__OverridesType = {
   header?: p.Flex<typeof Header>;
   supabaseFetcher?: p.Flex<typeof SupabaseFetcher>;
   antdTable?: p.Flex<typeof TableWrapper>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
+  antdTableValue2?: p.Flex<typeof TableValue>;
 };
 
 export interface DefaultRankingProps {}
@@ -204,19 +206,38 @@ function PlasmicRanking__RenderFunc(props: {
                             columnTemplate={
                               <ph.DataCtxReader>
                                 {$ctx => (
-                                  <div
+                                  <p.PlasmicLink
+                                    data-plasmic-name={"link"}
+                                    data-plasmic-override={overrides.link}
                                     className={classNames(
                                       projectcss.all,
-                                      sty.freeBox___87Ll
+                                      projectcss.a,
+                                      sty.link
                                     )}
+                                    component={Link}
+                                    href={(() => {
+                                      try {
+                                        return `/visualizar/${$ctx.currentRow.id}`;
+                                      } catch (e) {
+                                        if (e instanceof TypeError) {
+                                          return undefined;
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                    platform={"nextjs"}
                                   >
                                     <TableValue
+                                      data-plasmic-name={"antdTableValue2"}
+                                      data-plasmic-override={
+                                        overrides.antdTableValue2
+                                      }
                                       className={classNames(
                                         "__wab_instance",
-                                        sty.antdTableValue2__vejto
+                                        sty.antdTableValue2
                                       )}
                                     />
-                                  </div>
+                                  </p.PlasmicLink>
                                 )}
                               </ph.DataCtxReader>
                             }
@@ -314,7 +335,8 @@ function PlasmicRanking__RenderFunc(props: {
                           user: user.name,
                           pts: 0,
                           cravadas: 0,
-                          vencedor: 0
+                          vencedor: 0,
+                          id: user.id
                         }))
                         .sort((a, b) => a.pts - b.pts)}
                       pagination={false}
@@ -332,10 +354,19 @@ function PlasmicRanking__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "supabaseFetcher", "antdTable"],
+  root: [
+    "root",
+    "header",
+    "supabaseFetcher",
+    "antdTable",
+    "link",
+    "antdTableValue2"
+  ],
   header: ["header"],
-  supabaseFetcher: ["supabaseFetcher", "antdTable"],
-  antdTable: ["antdTable"]
+  supabaseFetcher: ["supabaseFetcher", "antdTable", "link", "antdTableValue2"],
+  antdTable: ["antdTable", "link", "antdTableValue2"],
+  link: ["link", "antdTableValue2"],
+  antdTableValue2: ["antdTableValue2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -345,6 +376,8 @@ type NodeDefaultElementType = {
   header: typeof Header;
   supabaseFetcher: typeof SupabaseFetcher;
   antdTable: typeof TableWrapper;
+  link: "a";
+  antdTableValue2: typeof TableValue;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -411,6 +444,8 @@ export const PlasmicRanking = Object.assign(
     header: makeNodeComponent("header"),
     supabaseFetcher: makeNodeComponent("supabaseFetcher"),
     antdTable: makeNodeComponent("antdTable"),
+    link: makeNodeComponent("link"),
+    antdTableValue2: makeNodeComponent("antdTableValue2"),
 
     // Metadata about props expected for PlasmicRanking
     internalVariantProps: PlasmicRanking__VariantProps,

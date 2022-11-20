@@ -4,6 +4,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   min-width: 0;
   min-height: 0;
 }
@@ -98,7 +99,7 @@
   max-width: 100%;
   object-fit: cover;
 }
-.freeBox___87Ll {
+.link {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -106,11 +107,11 @@
   height: auto;
   max-width: 100%;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   min-width: 0;
   padding: 0;
 }
-.antdTableValue2__vejto:global(.__wab_instance) {
+.antdTableValue2:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }

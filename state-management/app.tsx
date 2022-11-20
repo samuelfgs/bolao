@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import React from "react";
 import { proxy, subscribe } from "valtio";
 import { Supabase } from "../components/supabase";
 
@@ -46,3 +47,5 @@ export const state = proxy(initializePersistentData());
 subscribe(state, () => {
   localStorage.setItem(globalStateKey, JSON.stringify(state));
 });
+
+export const ViewResults = React.createContext<Match[] | undefined>(undefined)

@@ -57,15 +57,20 @@ export const PlasmicPartidas__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicPartidas__ArgsType = {
   needsSave?: boolean;
+  isView?: boolean;
+  player?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicPartidas__ArgsType;
-export const PlasmicPartidas__ArgProps = new Array<ArgPropType>("needsSave");
+export const PlasmicPartidas__ArgProps = new Array<ArgPropType>(
+  "needsSave",
+  "isView",
+  "player"
+);
 
 export type PlasmicPartidas__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  text?: p.Flex<"div">;
   artilheiro?: p.Flex<typeof TextInput>;
   fetcher?: p.Flex<typeof Fetcher>;
   grupoRodadas?: p.Flex<typeof GrupoRodadas>;
@@ -89,7 +94,8 @@ function PlasmicPartidas__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          needsSave: true
+          needsSave: true,
+          isView: false
         },
         props.args
       ),
@@ -137,15 +143,43 @@ function PlasmicPartidas__RenderFunc(props: {
               />
             </div>
           ) : null}
+          {(() => {
+            try {
+              return $props.isView;
+            } catch (e) {
+              if (e instanceof TypeError) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox__bhWi7)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__xVcJ
+                )}
+              >
+                {"Palpites: "}
+              </div>
+
+              <div className={classNames(projectcss.all, sty.freeBox__so7Zu)}>
+                {p.renderPlasmicSlot({
+                  defaultContents: "Enter some text",
+                  value: args.player,
+                  className: classNames(sty.slotTargetPlayer)
+                })}
+              </div>
+            </div>
+          ) : null}
 
           <div className={classNames(projectcss.all, sty.freeBox__zJoe)}>
             <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text
+                sty.text__b9H
               )}
             >
               {"Artilheiro da Copa"}
@@ -247,7 +281,6 @@ const PlasmicDescendants = {
   root: [
     "root",
     "header",
-    "text",
     "artilheiro",
     "fetcher",
     "grupoRodadas",
@@ -255,7 +288,6 @@ const PlasmicDescendants = {
     "svg"
   ],
   header: ["header"],
-  text: ["text"],
   artilheiro: ["artilheiro"],
   fetcher: ["fetcher", "grupoRodadas"],
   grupoRodadas: ["grupoRodadas"],
@@ -268,7 +300,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  text: "div";
   artilheiro: typeof TextInput;
   fetcher: typeof Fetcher;
   grupoRodadas: typeof GrupoRodadas;
@@ -338,7 +369,6 @@ export const PlasmicPartidas = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    text: makeNodeComponent("text"),
     artilheiro: makeNodeComponent("artilheiro"),
     fetcher: makeNodeComponent("fetcher"),
     grupoRodadas: makeNodeComponent("grupoRodadas"),
