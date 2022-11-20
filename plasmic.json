@@ -217,6 +217,19 @@
           "cssFilePath": "plasmic/bolao/PlasmicRanking.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "b5zZcZO5NB",
+          "name": "Outcome",
+          "type": "managed",
+          "projectId": "r6sSLbmSTeVjqGUVythgwH",
+          "renderModuleFilePath": "plasmic/bolao/PlasmicOutcome.tsx",
+          "importSpec": {
+            "modulePath": "Outcome.tsx"
+          },
+          "cssFilePath": "plasmic/bolao/PlasmicOutcome.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

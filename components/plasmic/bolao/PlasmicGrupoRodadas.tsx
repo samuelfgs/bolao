@@ -36,6 +36,7 @@ import {
 } from "@plasmicapp/react-web";
 import { Fetcher } from "../../../pages/plasmic-host"; // plasmic-import: 7dFnQyHCpn/codeComponent
 import { DateText } from "../../../pages/plasmic-host"; // plasmic-import: HbwW1C7Fpl/codeComponent
+import Outcome from "../../Outcome"; // plasmic-import: b5zZcZO5NB/component
 import Score from "../../Score"; // plasmic-import: IMj4TUj-w8/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -46,11 +47,18 @@ import sty from "./PlasmicGrupoRodadas.module.css"; // plasmic-import: 5XZgnc_Vj
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: _4_GqcBrJ/icon
 import Icon2Icon from "./icons/PlasmicIcon__Icon2"; // plasmic-import: A1GodbM3-/icon
 
-export type PlasmicGrupoRodadas__VariantMembers = {};
+export type PlasmicGrupoRodadas__VariantMembers = {
+  isFinished: "isFinished";
+};
 
-export type PlasmicGrupoRodadas__VariantsArgs = {};
+export type PlasmicGrupoRodadas__VariantsArgs = {
+  isFinished?: SingleBooleanChoiceArg<"isFinished">;
+};
+
 type VariantPropType = keyof PlasmicGrupoRodadas__VariantsArgs;
-export const PlasmicGrupoRodadas__VariantProps = new Array<VariantPropType>();
+export const PlasmicGrupoRodadas__VariantProps = new Array<VariantPropType>(
+  "isFinished"
+);
 
 export type PlasmicGrupoRodadas__ArgsType = {
   currentGroup?: any;
@@ -65,11 +73,13 @@ export type PlasmicGrupoRodadas__OverridesType = {
   root?: p.Flex<"div">;
   fetcher?: p.Flex<typeof Fetcher>;
   dateText?: p.Flex<typeof DateText>;
+  outcome?: p.Flex<typeof Outcome>;
   score?: p.Flex<typeof Score>;
 };
 
 export interface DefaultGrupoRodadasProps {
   currentGroup?: any;
+  isFinished?: SingleBooleanChoiceArg<"isFinished">;
   className?: string;
 }
 
@@ -107,6 +117,12 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
         path: "rodada",
         type: "private",
         initFunc: ($props, $state) => 0
+      },
+
+      {
+        path: "isFinished",
+        type: "private",
+        initFunc: ($props, $state) => $props["isFinished"]
       }
     ],
 
@@ -128,7 +144,8 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
-        sty.root
+        sty.root,
+        { [sty.rootisFinished]: hasVariant($state, "isFinished", "isFinished") }
       )}
     >
       <div
@@ -275,7 +292,9 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                     key={currentIndex}
                   >
                     {true ? (
-                      <div
+                      <p.Stack
+                        as={"div"}
+                        hasGap={true}
                         className={classNames(
                           projectcss.all,
                           sty.freeBox___1V91W
@@ -305,6 +324,14 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                               throw e;
                             }
                           })()}
+                        />
+
+                        <Outcome
+                          data-plasmic-name={"outcome"}
+                          data-plasmic-override={overrides.outcome}
+                          awayScore={"1" as const}
+                          className={classNames("__wab_instance", sty.outcome)}
+                          homeScore={"3" as const}
                         />
 
                         <div
@@ -440,7 +467,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                             })()}
                           />
                         </div>
-                      </div>
+                      </p.Stack>
                     ) : null}
                   </div>
                 ))
@@ -453,9 +480,10 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "fetcher", "dateText", "score"],
-  fetcher: ["fetcher", "dateText", "score"],
+  root: ["root", "fetcher", "dateText", "outcome", "score"],
+  fetcher: ["fetcher", "dateText", "outcome", "score"],
   dateText: ["dateText"],
+  outcome: ["outcome"],
   score: ["score"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -465,6 +493,7 @@ type NodeDefaultElementType = {
   root: "div";
   fetcher: typeof Fetcher;
   dateText: typeof DateText;
+  outcome: typeof Outcome;
   score: typeof Score;
 };
 
@@ -531,6 +560,7 @@ export const PlasmicGrupoRodadas = Object.assign(
     // Helper components rendering sub-elements
     fetcher: makeNodeComponent("fetcher"),
     dateText: makeNodeComponent("dateText"),
+    outcome: makeNodeComponent("outcome"),
     score: makeNodeComponent("score"),
 
     // Metadata about props expected for PlasmicGrupoRodadas

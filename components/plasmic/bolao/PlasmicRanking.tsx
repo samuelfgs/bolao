@@ -215,16 +215,6 @@ function PlasmicRanking__RenderFunc(props: {
                                       sty.link
                                     )}
                                     component={Link}
-                                    href={(() => {
-                                      try {
-                                        return `/visualizar/${$ctx.currentRow.id}`;
-                                      } catch (e) {
-                                        if (e instanceof TypeError) {
-                                          return undefined;
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
                                     platform={"nextjs"}
                                   >
                                     <TableValue
