@@ -415,27 +415,9 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                           <Score
                             data-plasmic-name={"score"}
                             data-plasmic-override={overrides.score}
-                            awayScore={(() => {
-                              try {
-                                return currentMatch.away_score ?? 0;
-                              } catch (e) {
-                                if (e instanceof TypeError) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()}
+                            awayScore={"-1" as const}
                             className={classNames("__wab_instance", sty.score)}
-                            homeScore={(() => {
-                              try {
-                                return currentMatch.home_score ?? 0;
-                              } catch (e) {
-                                if (e instanceof TypeError) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()}
+                            homeScore={"-1" as const}
                             isOpen={(() => {
                               const date2 = new Date(
                                 `${currentMatch.local_date} +3`
