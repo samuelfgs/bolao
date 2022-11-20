@@ -4,7 +4,6 @@ import * as React from "react";
 import * as ph from "@plasmicapp/host";
 
 import { ScreenVariantProvider } from "../components/plasmic/bolao/PlasmicGlobalVariant__Screen";
-import { PlasmicPartidas } from "../components/plasmic/bolao/PlasmicPartidas";
 import { useRouter } from "next/router";
 import { state } from "../state-management/app";
 import { Supabase } from "../components/supabase";
@@ -12,6 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GlobalContextsProvider from "../components/plasmic/bolao/PlasmicGlobalContextsProvider";
 import { useSnapshot } from "valtio";
+import PlasmicPalpites from "../components/plasmic/bolao/PlasmicPalpites";
 function Partidas() {
   const router = useRouter();
   React.useEffect(() => {
@@ -88,7 +88,7 @@ function Partidas() {
         query={useRouter()?.query}
       >
         <ToastContainer />
-        <PlasmicPartidas 
+        <PlasmicPalpites
           save={{
             onClick: onSave
           }}

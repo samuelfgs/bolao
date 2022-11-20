@@ -4,7 +4,7 @@ import * as React from "react";
 import * as ph from "@plasmicapp/host";
 
 import { ScreenVariantProvider } from "../../components/plasmic/bolao/PlasmicGlobalVariant__Screen";
-import { PlasmicPartidas } from "../../components/plasmic/bolao/PlasmicPartidas";
+import { PlasmicPalpites } from "../../components/plasmic/bolao/PlasmicPalpites";
 import { useRouter } from "next/router";
 import { usePlasmicQueryData } from "@plasmicapp/query";
 
@@ -46,6 +46,9 @@ function Classificacao() {
   });
 
   console.log("dale5", top_scorer?.[0]?.player);
+  console.log("dale5",
+  top_scorer?.length === 1 && top_scorer[0].player != null ? top_scorer[0].player  : "Nao escolheu"
+  )
 
   return (
     <ph.PageParamsProvider
@@ -53,13 +56,10 @@ function Classificacao() {
       query={useRouter()?.query}
     >
       <ViewResults.Provider value={matches}>
-        <PlasmicPartidas 
+        <PlasmicPalpites
           isView={true} 
           player={user?.[0]?.name} 
-          artilheiro={{
-            value: top_scorer?.length === 1 ? top_scorer[0].player  : "",
-            disabled: true
-          }}
+          artilheiro2={top_scorer?.length === 1 && top_scorer[0].player != "" ? top_scorer[0].player : "Nao escolheu"}
           save={{
             render: () => <></>
           }}

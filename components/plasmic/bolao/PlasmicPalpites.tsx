@@ -59,13 +59,15 @@ export type PlasmicPalpites__ArgsType = {
   needsSave?: boolean;
   isView?: boolean;
   player?: React.ReactNode;
+  artilheiro2?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicPalpites__ArgsType;
 export const PlasmicPalpites__ArgProps = new Array<ArgPropType>(
   "needsSave",
   "isView",
-  "player"
+  "player",
+  "artilheiro2"
 );
 
 export type PlasmicPalpites__OverridesType = {
@@ -173,25 +175,67 @@ function PlasmicPalpites__RenderFunc(props: {
               </div>
             </div>
           ) : null}
+          {(() => {
+            try {
+              return !$props.isView;
+            } catch (e) {
+              if (e instanceof TypeError) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <div className={classNames(projectcss.all, sty.freeBox__zJoe)}>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__b9H
+                )}
+              >
+                {"Artilheiro da Copa"}
+              </div>
 
-          <div className={classNames(projectcss.all, sty.freeBox__zJoe)}>
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__b9H
-              )}
-            >
-              {"Artilheiro da Copa"}
+              <TextInput
+                data-plasmic-name={"artilheiro"}
+                data-plasmic-override={overrides.artilheiro}
+                className={classNames("__wab_instance", sty.artilheiro)}
+              />
             </div>
+          ) : null}
+          {(() => {
+            try {
+              return $props.isView;
+            } catch (e) {
+              if (e instanceof TypeError) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__t3K9)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__qQbqn
+                )}
+              >
+                {"Artilheiro da Copa:"}
+              </div>
 
-            <TextInput
-              data-plasmic-name={"artilheiro"}
-              data-plasmic-override={overrides.artilheiro}
-              className={classNames("__wab_instance", sty.artilheiro)}
-            />
-          </div>
-
+              <div className={classNames(projectcss.all, sty.freeBox__reIn)}>
+                {p.renderPlasmicSlot({
+                  defaultContents: "Enter some text",
+                  value: args.artilheiro2
+                })}
+              </div>
+            </p.Stack>
+          ) : null}
           {true ? (
             <p.Stack
               as={"div"}
