@@ -419,7 +419,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                                 throw e;
                               }
                             })()}
-                            notFinished={currentMatch.finished === "FALSE"}
+                            notFinished={false}
                           />
 
                           <div

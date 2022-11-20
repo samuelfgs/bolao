@@ -206,33 +206,54 @@ function PlasmicPartidas__RenderFunc(props: {
                 name={"matches" as const}
               >
                 <ph.DataCtxReader>
-                  {$ctx =>
-                    (
-                      (() => {
-                        try {
-                          return [...Array(8).keys()].map(k =>
-                            String.fromCharCode("A".charCodeAt(0) + k)
-                          );
-                        } catch (e) {
-                          if (e instanceof TypeError) {
-                            return [];
+                  {$ctx => (
+                    <React.Fragment>
+                      {(
+                        (() => {
+                          try {
+                            return [...Array(8).keys()].map(k =>
+                              String.fromCharCode("A".charCodeAt(0) + k)
+                            );
+                          } catch (e) {
+                            if (e instanceof TypeError) {
+                              return [];
+                            }
+                            throw e;
                           }
-                          throw e;
-                        }
-                      })() ?? []
-                    ).map((currentGroup, currentIndex) => (
-                      <GrupoRodadas
-                        data-plasmic-name={"grupoRodadas"}
-                        data-plasmic-override={overrides.grupoRodadas}
+                        })() ?? []
+                      ).map((currentGroup, currentIndex) => (
+                        <GrupoRodadas
+                          data-plasmic-name={"grupoRodadas"}
+                          data-plasmic-override={overrides.grupoRodadas}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.grupoRodadas
+                          )}
+                          currentGroup={currentGroup}
+                          key={currentIndex}
+                        />
+                      ))}
+
+                      <div
                         className={classNames(
-                          "__wab_instance",
-                          sty.grupoRodadas
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__xEqnn
                         )}
-                        currentGroup={currentGroup}
-                        key={currentIndex}
-                      />
-                    ))
-                  }
+                      >
+                        {(() => {
+                          try {
+                            return undefined;
+                          } catch (e) {
+                            if (e instanceof TypeError) {
+                              return "Enter some text";
+                            }
+                            throw e;
+                          }
+                        })()}
+                      </div>
+                    </React.Fragment>
+                  )}
                 </ph.DataCtxReader>
               </Fetcher>
             </p.Stack>

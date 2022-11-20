@@ -125,6 +125,13 @@
 .grupoRodadas:global(.__wab_instance) {
   position: relative;
 }
+.text__xEqnn {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  min-width: 0;
+}
 .freeBox___2UmF {
   display: flex;
   position: relative;
