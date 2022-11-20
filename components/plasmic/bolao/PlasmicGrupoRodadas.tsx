@@ -417,7 +417,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                             data-plasmic-override={overrides.score}
                             awayScore={(() => {
                               try {
-                                return currentMatch.away_score;
+                                return currentMatch.away_score ?? 0;
                               } catch (e) {
                                 if (e instanceof TypeError) {
                                   return undefined;
@@ -428,7 +428,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                             className={classNames("__wab_instance", sty.score)}
                             homeScore={(() => {
                               try {
-                                return currentMatch.home_score;
+                                return currentMatch.home_score ?? 0;
                               } catch (e) {
                                 if (e instanceof TypeError) {
                                   return undefined;
