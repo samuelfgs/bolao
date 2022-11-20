@@ -45,11 +45,6 @@ function Classificacao() {
     })
   });
 
-  console.log("dale5", top_scorer?.[0]?.player);
-  console.log("dale5",
-  top_scorer?.length === 1 && top_scorer[0].player != null ? top_scorer[0].player  : "Nao escolheu"
-  )
-
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
