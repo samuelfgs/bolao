@@ -35,14 +35,32 @@ function Classificacao() {
     })
   });
 
-  console.log("dale", user)
+  const { data: top_scorer } = usePlasmicQueryData(id && `top_scorer/${id}`, async() => {
+    return await Supabase.select("top_scorer", {
+      filter: {
+        column: "user_id",
+        operator: "eq",
+        value: id
+      }
+    })
+  });
+
+  console.log("dale5", top_scorer?.[0]?.player);
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
       query={useRouter()?.query}
     >
       <ViewResults.Provider value={matches}>
-        <PlasmicPartidas isView={true} player={user?.[0]?.name} />
+        <PlasmicPartidas 
+          isView={true} 
+          player={user?.[0]?.name} 
+          artilheiro={{
+            value: top_scorer?.length === 1 ? top_scorer[0].player  : "",
+            disabled: true
+          }}
+        />
       </ViewResults.Provider>
     </ph.PageParamsProvider>
   );

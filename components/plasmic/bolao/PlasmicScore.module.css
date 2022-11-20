@@ -9,7 +9,22 @@
   max-width: 100%;
   padding: 0px;
 }
-.freeBox {
+.freeBox___3JrcT {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0px;
+}
+.freeBoxhide___3JrcTleAEk {
+  display: flex;
+}
+.freeBox__sTl2K {
   flex-direction: row;
   display: flex;
   width: auto;
@@ -17,22 +32,25 @@
   max-width: 100%;
   padding: 8px;
 }
-.freeBox > :global(.__wab_flex-container) {
+.freeBox__sTl2K > :global(.__wab_flex-container) {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   margin-left: calc(0px - 20px);
   width: calc(100% + 20px);
 }
-.freeBox > :global(.__wab_flex-container) > *,
-.freeBox > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox > :global(.__wab_flex-container) > picture > img,
-.freeBox
+.freeBox__sTl2K > :global(.__wab_flex-container) > *,
+.freeBox__sTl2K > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__sTl2K > :global(.__wab_flex-container) > picture > img,
+.freeBox__sTl2K
   > :global(.__wab_flex-container)
   > :global(.__wab_slot)
   > picture
   > img {
   margin-left: 20px;
+}
+.freeBoxhide__sTl2KleAEk {
+  display: none;
 }
 .text__r3TqT {
   position: relative;
@@ -41,7 +59,7 @@
   max-width: 800px;
   min-width: 0;
 }
-.textnotFinished__r3TqTcdxsy {
+.textisOpen__r3TqTcdxsy {
   display: none;
 }
 .homeScoreInput:global(.__wab_instance) {
@@ -51,16 +69,16 @@
   flex-shrink: 0;
   display: none;
 }
-.homeScoreInputnotFinished:global(.__wab_instance) {
+.homeScoreInputisOpen:global(.__wab_instance) {
   display: flex;
 }
-.svg__att8L {
+.svg__djdtl {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.svg__epTu {
+.svg__du7AW {
   position: relative;
   object-fit: cover;
   width: 1em;
@@ -80,7 +98,7 @@
   align-self: flex-start;
   min-width: 0;
 }
-.textnotFinished__mijSfCdxsy {
+.textisOpen__mijSfCdxsy {
   display: none;
 }
 .awayScoreInput:global(.__wab_instance) {
@@ -90,16 +108,16 @@
   flex-shrink: 0;
   display: none;
 }
-.awayScoreInputnotFinished:global(.__wab_instance) {
+.awayScoreInputisOpen:global(.__wab_instance) {
   display: flex;
 }
-.svg__imPj {
+.svg__isKo3 {
   position: relative;
   object-fit: cover;
   width: 1em;
   height: 1em;
 }
-.svg__skpT1 {
+.svg__gtx34 {
   position: relative;
   object-fit: cover;
   width: 1em;

@@ -61,7 +61,17 @@
   min-width: 0;
   padding: 8px;
 }
-.supabaseFetcher:global(.__wab_instance) {
+.fetcher:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.supabaseFetcher__a4Kfh:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.supabaseFetcher__uUa8U:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -69,8 +79,7 @@
   max-width: 100%;
   object-fit: cover;
   position: relative;
-  width: 100%;
-  min-width: 0;
+  width: 390px;
 }
 .antdTableColumn2__o2SpI:global(.__wab_instance) {
   max-width: 100%;

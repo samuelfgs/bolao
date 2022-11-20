@@ -47,18 +47,11 @@ import sty from "./PlasmicGrupoRodadas.module.css"; // plasmic-import: 5XZgnc_Vj
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: _4_GqcBrJ/icon
 import Icon2Icon from "./icons/PlasmicIcon__Icon2"; // plasmic-import: A1GodbM3-/icon
 
-export type PlasmicGrupoRodadas__VariantMembers = {
-  isFinished: "isFinished";
-};
+export type PlasmicGrupoRodadas__VariantMembers = {};
 
-export type PlasmicGrupoRodadas__VariantsArgs = {
-  isFinished?: SingleBooleanChoiceArg<"isFinished">;
-};
-
+export type PlasmicGrupoRodadas__VariantsArgs = {};
 type VariantPropType = keyof PlasmicGrupoRodadas__VariantsArgs;
-export const PlasmicGrupoRodadas__VariantProps = new Array<VariantPropType>(
-  "isFinished"
-);
+export const PlasmicGrupoRodadas__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicGrupoRodadas__ArgsType = {
   currentGroup?: any;
@@ -79,7 +72,6 @@ export type PlasmicGrupoRodadas__OverridesType = {
 
 export interface DefaultGrupoRodadasProps {
   currentGroup?: any;
-  isFinished?: SingleBooleanChoiceArg<"isFinished">;
   className?: string;
 }
 
@@ -117,12 +109,6 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
         path: "rodada",
         type: "private",
         initFunc: ($props, $state) => 0
-      },
-
-      {
-        path: "isFinished",
-        type: "private",
-        initFunc: ($props, $state) => $props["isFinished"]
       }
     ],
 
@@ -144,8 +130,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
-        sty.root,
-        { [sty.rootisFinished]: hasVariant($state, "isFinished", "isFinished") }
+        sty.root
       )}
     >
       <div
@@ -326,13 +311,55 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                           })()}
                         />
 
-                        <Outcome
-                          data-plasmic-name={"outcome"}
-                          data-plasmic-override={overrides.outcome}
-                          awayScore={"1" as const}
-                          className={classNames("__wab_instance", sty.outcome)}
-                          homeScore={"3" as const}
-                        />
+                        {(() => {
+                          try {
+                            return currentMatch.finished === "TRUE";
+                          } catch (e) {
+                            if (e instanceof TypeError) {
+                              return true;
+                            }
+                            throw e;
+                          }
+                        })() ? (
+                          <Outcome
+                            data-plasmic-name={"outcome"}
+                            data-plasmic-override={overrides.outcome}
+                            awayScore={(() => {
+                              try {
+                                return currentMatch.away_score;
+                              } catch (e) {
+                                if (e instanceof TypeError) {
+                                  return "1";
+                                }
+                                throw e;
+                              }
+                            })()}
+                            className={classNames(
+                              "__wab_instance",
+                              sty.outcome
+                            )}
+                            homeScore={(() => {
+                              try {
+                                return currentMatch.home_score;
+                              } catch (e) {
+                                if (e instanceof TypeError) {
+                                  return "3";
+                                }
+                                throw e;
+                              }
+                            })()}
+                            matchId={(() => {
+                              try {
+                                return currentMatch._id;
+                              } catch (e) {
+                                if (e instanceof TypeError) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
+                          />
+                        ) : null}
 
                         <div
                           className={classNames(
@@ -409,6 +436,13 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                                 throw e;
                               }
                             })()}
+                            isOpen={(() => {
+                              const date2 = new Date(
+                                `${currentMatch.local_date} +3`
+                              );
+                              const date = new Date(Date.now());
+                              return date < date2;
+                            })()}
                             matchId={(() => {
                               try {
                                 return currentMatch._id;
@@ -419,7 +453,6 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                                 throw e;
                               }
                             })()}
-                            notFinished={false}
                           />
 
                           <div

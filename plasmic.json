@@ -74,19 +74,6 @@
       "cssFilePath": "plasmic/bolao/plasmic_bolao.module.css",
       "components": [
         {
-          "id": "Kqr_HwzDFT",
-          "name": "Partidas",
-          "type": "managed",
-          "projectId": "r6sSLbmSTeVjqGUVythgwH",
-          "renderModuleFilePath": "plasmic/bolao/PlasmicPartidas.tsx",
-          "importSpec": {
-            "modulePath": "../pages/index.tsx"
-          },
-          "cssFilePath": "plasmic/bolao/PlasmicPartidas.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "qQe6YhWQiQ",
           "name": "Header",
           "type": "managed",
@@ -230,6 +217,19 @@
           "cssFilePath": "plasmic/bolao/PlasmicOutcome.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "Kqr_HwzDFT",
+          "name": "Palpites",
+          "type": "managed",
+          "projectId": "r6sSLbmSTeVjqGUVythgwH",
+          "renderModuleFilePath": "plasmic/bolao/PlasmicPalpites.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/bolao/PlasmicPalpites.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [

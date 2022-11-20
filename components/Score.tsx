@@ -17,7 +17,7 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
       {...props}
       homeScore={`${match?.home_score ?? ""}`}
       awayScore={`${match?.away_score ?? ""}`}
-      notFinished={false}
+      hide={props.isOpen ? true : false}
     />
   }
 

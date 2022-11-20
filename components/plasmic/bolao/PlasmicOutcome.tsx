@@ -56,12 +56,14 @@ export const PlasmicOutcome__VariantProps = new Array<VariantPropType>(
 export type PlasmicOutcome__ArgsType = {
   homeScore?: string;
   awayScore?: string;
+  matchId?: string;
 };
 
 type ArgPropType = keyof PlasmicOutcome__ArgsType;
 export const PlasmicOutcome__ArgProps = new Array<ArgPropType>(
   "homeScore",
-  "awayScore"
+  "awayScore",
+  "matchId"
 );
 
 export type PlasmicOutcome__OverridesType = {
@@ -71,6 +73,7 @@ export type PlasmicOutcome__OverridesType = {
 export interface DefaultOutcomeProps {
   homeScore?: string;
   awayScore?: string;
+  matchId?: string;
   result?: SingleChoiceArg<"three" | "one" | "zero">;
   className?: string;
 }

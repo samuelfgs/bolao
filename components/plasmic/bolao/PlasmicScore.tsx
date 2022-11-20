@@ -45,16 +45,19 @@ import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: X
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: m7errmFAKi2/icon
 
 export type PlasmicScore__VariantMembers = {
-  notFinished: "notFinished";
+  isOpen: "isOpen";
+  hide: "hide";
 };
 
 export type PlasmicScore__VariantsArgs = {
-  notFinished?: SingleBooleanChoiceArg<"notFinished">;
+  isOpen?: SingleBooleanChoiceArg<"isOpen">;
+  hide?: SingleBooleanChoiceArg<"hide">;
 };
 
 type VariantPropType = keyof PlasmicScore__VariantsArgs;
 export const PlasmicScore__VariantProps = new Array<VariantPropType>(
-  "notFinished"
+  "isOpen",
+  "hide"
 );
 
 export type PlasmicScore__ArgsType = {
@@ -72,7 +75,6 @@ export const PlasmicScore__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicScore__OverridesType = {
   root?: p.Flex<"div">;
-  freeBox?: p.Flex<"div">;
   homeScoreInput?: p.Flex<typeof TextInput>;
   awayScoreInput?: p.Flex<typeof TextInput>;
 };
@@ -81,7 +83,8 @@ export interface DefaultScoreProps {
   homeScore?: string;
   awayScore?: string;
   matchId?: string;
-  notFinished?: SingleBooleanChoiceArg<"notFinished">;
+  isOpen?: SingleBooleanChoiceArg<"isOpen">;
+  hide?: SingleBooleanChoiceArg<"hide">;
   className?: string;
 }
 
@@ -117,9 +120,15 @@ function PlasmicScore__RenderFunc(props: {
   const stateSpecs = React.useMemo(
     () => [
       {
-        path: "notFinished",
+        path: "isOpen",
         type: "private",
-        initFunc: ($props, $state) => $props["notFinished"]
+        initFunc: ($props, $state) => $props["isOpen"]
+      },
+
+      {
+        path: "hide",
+        type: "private",
+        initFunc: ($props, $state) => $props["hide"]
       }
     ],
 
@@ -141,129 +150,143 @@ function PlasmicScore__RenderFunc(props: {
           projectcss.plasmic_mixins,
           projectcss.plasmic_tokens,
           sty.root,
-          {
-            [sty.rootnotFinished]: hasVariant(
-              $state,
-              "notFinished",
-              "notFinished"
-            )
-          }
+          { [sty.rootisOpen]: hasVariant($state, "isOpen", "isOpen") }
         )}
       >
-        <p.Stack
-          as={"div"}
-          data-plasmic-name={"freeBox"}
-          data-plasmic-override={overrides.freeBox}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox, {
-            [sty.freeBoxnotFinished]: hasVariant(
-              $state,
-              "notFinished",
-              "notFinished"
-            )
-          })}
-        >
-          {(hasVariant($state, "notFinished", "notFinished") ? true : true) ? (
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__r3TqT,
-                {
-                  [sty.textnotFinished__r3TqTcdxsy]: hasVariant(
-                    $state,
-                    "notFinished",
-                    "notFinished"
-                  )
-                }
-              )}
-            >
-              {(() => {
-                try {
-                  return $props.homeScore;
-                } catch (e) {
-                  if (e instanceof TypeError) {
-                    return "0";
-                  }
-                  throw e;
-                }
-              })()}
-            </div>
-          ) : null}
-          {(hasVariant($state, "notFinished", "notFinished") ? true : true) ? (
-            <TextInput
-              data-plasmic-name={"homeScoreInput"}
-              data-plasmic-override={overrides.homeScoreInput}
-              className={classNames("__wab_instance", sty.homeScoreInput, {
-                [sty.homeScoreInputnotFinished]: hasVariant(
-                  $state,
-                  "notFinished",
-                  "notFinished"
-                )
-              })}
-              type={"number" as const}
-            />
-          ) : null}
-
+        {(hasVariant($state, "hide", "hide") ? true : true) ? (
           <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__c9Sw9
-            )}
+            className={classNames(projectcss.all, sty.freeBox___3JrcT, {
+              [sty.freeBoxhide___3JrcTleAEk]: hasVariant($state, "hide", "hide")
+            })}
           >
-            {"X"}
-          </div>
-
-          {(hasVariant($state, "notFinished", "notFinished") ? true : true) ? (
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__mijSf,
-                {
-                  [sty.textnotFinished__mijSfCdxsy]: hasVariant(
+            {(hasVariant($state, "hide", "hide") ? true : true) ? (
+              <p.Stack
+                as={"div"}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.freeBox__sTl2K, {
+                  [sty.freeBoxhide__sTl2KleAEk]: hasVariant(
                     $state,
-                    "notFinished",
-                    "notFinished"
+                    "hide",
+                    "hide"
+                  ),
+                  [sty.freeBoxisOpen__sTl2KCdxsy]: hasVariant(
+                    $state,
+                    "isOpen",
+                    "isOpen"
                   )
-                }
-              )}
-            >
-              {(() => {
-                try {
-                  return $props.awayScore;
-                } catch (e) {
-                  if (e instanceof TypeError) {
-                    return "0";
-                  }
-                  throw e;
-                }
-              })()}
-            </div>
-          ) : null}
-          {(hasVariant($state, "notFinished", "notFinished") ? true : true) ? (
-            <TextInput
-              data-plasmic-name={"awayScoreInput"}
-              data-plasmic-override={overrides.awayScoreInput}
-              className={classNames("__wab_instance", sty.awayScoreInput, {
-                [sty.awayScoreInputnotFinished]: hasVariant(
-                  $state,
-                  "notFinished",
-                  "notFinished"
-                )
-              })}
-            />
-          ) : null}
-        </p.Stack>
+                })}
+              >
+                {(hasVariant($state, "isOpen", "isOpen") ? true : true) ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__r3TqT,
+                      {
+                        [sty.textisOpen__r3TqTcdxsy]: hasVariant(
+                          $state,
+                          "isOpen",
+                          "isOpen"
+                        )
+                      }
+                    )}
+                  >
+                    {(() => {
+                      try {
+                        return $props.homeScore;
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return "0";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </div>
+                ) : null}
+                {(hasVariant($state, "isOpen", "isOpen") ? true : true) ? (
+                  <TextInput
+                    data-plasmic-name={"homeScoreInput"}
+                    data-plasmic-override={overrides.homeScoreInput}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.homeScoreInput,
+                      {
+                        [sty.homeScoreInputisOpen]: hasVariant(
+                          $state,
+                          "isOpen",
+                          "isOpen"
+                        )
+                      }
+                    )}
+                    type={"number" as const}
+                  />
+                ) : null}
+
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__c9Sw9
+                  )}
+                >
+                  {"X"}
+                </div>
+
+                {(hasVariant($state, "isOpen", "isOpen") ? true : true) ? (
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__mijSf,
+                      {
+                        [sty.textisOpen__mijSfCdxsy]: hasVariant(
+                          $state,
+                          "isOpen",
+                          "isOpen"
+                        )
+                      }
+                    )}
+                  >
+                    {(() => {
+                      try {
+                        return $props.awayScore;
+                      } catch (e) {
+                        if (e instanceof TypeError) {
+                          return "0";
+                        }
+                        throw e;
+                      }
+                    })()}
+                  </div>
+                ) : null}
+                {(hasVariant($state, "isOpen", "isOpen") ? true : true) ? (
+                  <TextInput
+                    data-plasmic-name={"awayScoreInput"}
+                    data-plasmic-override={overrides.awayScoreInput}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.awayScoreInput,
+                      {
+                        [sty.awayScoreInputisOpen]: hasVariant(
+                          $state,
+                          "isOpen",
+                          "isOpen"
+                        )
+                      }
+                    )}
+                  />
+                ) : null}
+              </p.Stack>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     ) : null
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "homeScoreInput", "awayScoreInput"],
-  freeBox: ["freeBox", "homeScoreInput", "awayScoreInput"],
+  root: ["root", "homeScoreInput", "awayScoreInput"],
   homeScoreInput: ["homeScoreInput"],
   awayScoreInput: ["awayScoreInput"]
 } as const;
@@ -272,7 +295,6 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
   homeScoreInput: typeof TextInput;
   awayScoreInput: typeof TextInput;
 };
@@ -338,7 +360,6 @@ export const PlasmicScore = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
     homeScoreInput: makeNodeComponent("homeScoreInput"),
     awayScoreInput: makeNodeComponent("awayScoreInput"),
 

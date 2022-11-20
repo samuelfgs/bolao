@@ -35,6 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: qQe6YhWQiQ/component
+import { Fetcher } from "../../../pages/plasmic-host"; // plasmic-import: 7dFnQyHCpn/codeComponent
 import { SupabaseFetcher } from "../../supabase"; // plasmic-import: tL8giM5hYy/codeComponent
 import { TableWrapper } from "@plasmicpkgs/antd/skinny/registerTable"; // plasmic-import: kWbJIG4IgB/codeComponent
 import { TableColumn } from "@plasmicpkgs/antd/skinny/registerTable"; // plasmic-import: Mj3elNqVoI/codeComponent
@@ -58,7 +59,7 @@ export const PlasmicRanking__ArgProps = new Array<ArgPropType>();
 export type PlasmicRanking__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
-  supabaseFetcher?: p.Flex<typeof SupabaseFetcher>;
+  fetcher?: p.Flex<typeof Fetcher>;
   antdTable?: p.Flex<typeof TableWrapper>;
   link?: p.Flex<"a"> & Partial<LinkProps>;
   antdTableValue2?: p.Flex<typeof TableValue>;
@@ -142,199 +143,284 @@ function PlasmicRanking__RenderFunc(props: {
 
           {true ? (
             <div className={classNames(projectcss.all, sty.freeBox__nFas6)}>
-              <SupabaseFetcher
-                data-plasmic-name={"supabaseFetcher"}
-                data-plasmic-override={overrides.supabaseFetcher}
-                className={classNames("__wab_instance", sty.supabaseFetcher)}
-                filter={[{ column: "paid", operator: "eq", value: true }]}
-                queryName={"users" as const}
-                table={"users" as const}
+              <Fetcher
+                data-plasmic-name={"fetcher"}
+                data-plasmic-override={overrides.fetcher}
+                className={classNames("__wab_instance", sty.fetcher)}
+                endpoint={"match" as const}
+                name={"match" as const}
               >
                 <ph.DataCtxReader>
                   {$ctx => (
-                    <TableWrapper
-                      data-plasmic-name={"antdTable"}
-                      data-plasmic-override={overrides.antdTable}
-                      className={classNames("__wab_instance", sty.antdTable)}
-                      columns={
-                        <React.Fragment>
-                          <TableColumn
+                    <SupabaseFetcher
+                      className={classNames(
+                        "__wab_instance",
+                        sty.supabaseFetcher__a4Kfh
+                      )}
+                      queryName={"bets" as const}
+                      table={"bets" as const}
+                    >
+                      <ph.DataCtxReader>
+                        {$ctx => (
+                          <SupabaseFetcher
                             className={classNames(
                               "__wab_instance",
-                              sty.antdTableColumn2__o2SpI
+                              sty.supabaseFetcher__uUa8U
                             )}
-                            columnTemplate={
-                              <ph.DataCtxReader>
-                                {$ctx => (
-                                  <div
-                                    className={classNames(
-                                      projectcss.all,
-                                      sty.freeBox__hOWj
-                                    )}
-                                  >
-                                    <div
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.__wab_text,
-                                        sty.text__iBdWh
-                                      )}
-                                    >
-                                      {(() => {
-                                        try {
-                                          return $ctx.currentRowIndex + 1;
-                                        } catch (e) {
-                                          if (e instanceof TypeError) {
-                                            return "Enter some text";
-                                          }
-                                          throw e;
+                            filter={[
+                              { column: "paid", operator: "eq", value: true }
+                            ]}
+                            queryName={"users" as const}
+                            table={"users" as const}
+                          >
+                            <ph.DataCtxReader>
+                              {$ctx => (
+                                <TableWrapper
+                                  data-plasmic-name={"antdTable"}
+                                  data-plasmic-override={overrides.antdTable}
+                                  className={classNames(
+                                    "__wab_instance",
+                                    sty.antdTable
+                                  )}
+                                  columns={
+                                    <React.Fragment>
+                                      <TableColumn
+                                        className={classNames(
+                                          "__wab_instance",
+                                          sty.antdTableColumn2__o2SpI
+                                        )}
+                                        columnTemplate={
+                                          <ph.DataCtxReader>
+                                            {$ctx => (
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  sty.freeBox__hOWj
+                                                )}
+                                              >
+                                                <div
+                                                  className={classNames(
+                                                    projectcss.all,
+                                                    projectcss.__wab_text,
+                                                    sty.text__iBdWh
+                                                  )}
+                                                >
+                                                  {(() => {
+                                                    try {
+                                                      return (
+                                                        $ctx.currentRowIndex + 1
+                                                      );
+                                                    } catch (e) {
+                                                      if (
+                                                        e instanceof TypeError
+                                                      ) {
+                                                        return "Enter some text";
+                                                      }
+                                                      throw e;
+                                                    }
+                                                  })()}
+                                                </div>
+                                              </div>
+                                            )}
+                                          </ph.DataCtxReader>
                                         }
-                                      })()}
-                                    </div>
-                                  </div>
-                                )}
-                              </ph.DataCtxReader>
-                            }
-                            dataIndex={"" as const}
-                            title={"#" as const}
-                          />
+                                        dataIndex={"" as const}
+                                        title={"#" as const}
+                                      />
 
-                          <TableColumn
-                            className={classNames(
-                              "__wab_instance",
-                              sty.antdTableColumn2__mdHnK
-                            )}
-                            columnTemplate={
-                              <ph.DataCtxReader>
-                                {$ctx => (
-                                  <p.PlasmicLink
-                                    data-plasmic-name={"link"}
-                                    data-plasmic-override={overrides.link}
-                                    className={classNames(
-                                      projectcss.all,
-                                      projectcss.a,
-                                      sty.link
-                                    )}
-                                    component={Link}
-                                    platform={"nextjs"}
-                                  >
-                                    <TableValue
-                                      data-plasmic-name={"antdTableValue2"}
-                                      data-plasmic-override={
-                                        overrides.antdTableValue2
-                                      }
-                                      className={classNames(
-                                        "__wab_instance",
-                                        sty.antdTableValue2
-                                      )}
-                                    />
-                                  </p.PlasmicLink>
-                                )}
-                              </ph.DataCtxReader>
-                            }
-                            dataIndex={"user" as const}
-                            title={"Nome" as const}
-                          />
+                                      <TableColumn
+                                        className={classNames(
+                                          "__wab_instance",
+                                          sty.antdTableColumn2__mdHnK
+                                        )}
+                                        columnTemplate={
+                                          <ph.DataCtxReader>
+                                            {$ctx => (
+                                              <p.PlasmicLink
+                                                data-plasmic-name={"link"}
+                                                data-plasmic-override={
+                                                  overrides.link
+                                                }
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  projectcss.a,
+                                                  sty.link
+                                                )}
+                                                component={Link}
+                                                href={(() => {
+                                                  try {
+                                                    return `visualizar/${$ctx.currentRow.id}`;
+                                                  } catch (e) {
+                                                    if (
+                                                      e instanceof TypeError
+                                                    ) {
+                                                      return undefined;
+                                                    }
+                                                    throw e;
+                                                  }
+                                                })()}
+                                                platform={"nextjs"}
+                                              >
+                                                <TableValue
+                                                  data-plasmic-name={
+                                                    "antdTableValue2"
+                                                  }
+                                                  data-plasmic-override={
+                                                    overrides.antdTableValue2
+                                                  }
+                                                  className={classNames(
+                                                    "__wab_instance",
+                                                    sty.antdTableValue2
+                                                  )}
+                                                />
+                                              </p.PlasmicLink>
+                                            )}
+                                          </ph.DataCtxReader>
+                                        }
+                                        dataIndex={"user" as const}
+                                        title={"Nome" as const}
+                                      />
 
-                          <TableColumn
-                            className={classNames(
-                              "__wab_instance",
-                              sty.antdTableColumn2__ax8P7
-                            )}
-                            columnTemplate={
-                              <ph.DataCtxReader>
-                                {$ctx => (
-                                  <div
-                                    className={classNames(
-                                      projectcss.all,
-                                      sty.freeBox__hSs9
-                                    )}
-                                  >
-                                    <TableValue
-                                      className={classNames(
-                                        "__wab_instance",
-                                        sty.antdTableValue2__rc9H4
-                                      )}
-                                    />
-                                  </div>
-                                )}
-                              </ph.DataCtxReader>
-                            }
-                            dataIndex={"pts" as const}
-                            title={"Pontos" as const}
-                          />
+                                      <TableColumn
+                                        className={classNames(
+                                          "__wab_instance",
+                                          sty.antdTableColumn2__ax8P7
+                                        )}
+                                        columnTemplate={
+                                          <ph.DataCtxReader>
+                                            {$ctx => (
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  sty.freeBox__hSs9
+                                                )}
+                                              >
+                                                <TableValue
+                                                  className={classNames(
+                                                    "__wab_instance",
+                                                    sty.antdTableValue2__rc9H4
+                                                  )}
+                                                />
+                                              </div>
+                                            )}
+                                          </ph.DataCtxReader>
+                                        }
+                                        dataIndex={"pts" as const}
+                                        title={"Pontos" as const}
+                                      />
 
-                          <TableColumn
-                            className={classNames(
-                              "__wab_instance",
-                              sty.antdTableColumn2__ppbEu
-                            )}
-                            columnTemplate={
-                              <ph.DataCtxReader>
-                                {$ctx => (
-                                  <div
-                                    className={classNames(
-                                      projectcss.all,
-                                      sty.freeBox__ibAOn
-                                    )}
-                                  >
-                                    <TableValue
-                                      className={classNames(
-                                        "__wab_instance",
-                                        sty.antdTableValue2__rIhgG
-                                      )}
-                                    />
-                                  </div>
-                                )}
-                              </ph.DataCtxReader>
-                            }
-                            dataIndex={"cravadas" as const}
-                            title={"Cravadas" as const}
-                          />
+                                      <TableColumn
+                                        className={classNames(
+                                          "__wab_instance",
+                                          sty.antdTableColumn2__ppbEu
+                                        )}
+                                        columnTemplate={
+                                          <ph.DataCtxReader>
+                                            {$ctx => (
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  sty.freeBox__ibAOn
+                                                )}
+                                              >
+                                                <TableValue
+                                                  className={classNames(
+                                                    "__wab_instance",
+                                                    sty.antdTableValue2__rIhgG
+                                                  )}
+                                                />
+                                              </div>
+                                            )}
+                                          </ph.DataCtxReader>
+                                        }
+                                        dataIndex={"cravadas" as const}
+                                        title={"Cravadas" as const}
+                                      />
 
-                          <TableColumn
-                            className={classNames(
-                              "__wab_instance",
-                              sty.antdTableColumn2__lz3W2
-                            )}
-                            columnTemplate={
-                              <ph.DataCtxReader>
-                                {$ctx => (
-                                  <div
-                                    className={classNames(
-                                      projectcss.all,
-                                      sty.freeBox___5Idpj
-                                    )}
-                                  >
-                                    <TableValue
-                                      className={classNames(
-                                        "__wab_instance",
-                                        sty.antdTableValue2___01Khk
-                                      )}
-                                    />
-                                  </div>
-                                )}
-                              </ph.DataCtxReader>
-                            }
-                            dataIndex={"vencedor" as const}
-                            title={"Vencedor" as const}
-                          />
-                        </React.Fragment>
-                      }
-                      items={$ctx.users
-                        .map(user => ({
-                          user: user.name,
-                          pts: 0,
-                          cravadas: 0,
-                          vencedor: 0,
-                          id: user.id
-                        }))
-                        .sort((a, b) => a.pts - b.pts)}
-                      pagination={false}
-                      scroll={{ x: true }}
-                    />
+                                      <TableColumn
+                                        className={classNames(
+                                          "__wab_instance",
+                                          sty.antdTableColumn2__lz3W2
+                                        )}
+                                        columnTemplate={
+                                          <ph.DataCtxReader>
+                                            {$ctx => (
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  sty.freeBox___5Idpj
+                                                )}
+                                              >
+                                                <TableValue
+                                                  className={classNames(
+                                                    "__wab_instance",
+                                                    sty.antdTableValue2___01Khk
+                                                  )}
+                                                />
+                                              </div>
+                                            )}
+                                          </ph.DataCtxReader>
+                                        }
+                                        dataIndex={"vencedor" as const}
+                                        title={"Vencedor" as const}
+                                      />
+                                    </React.Fragment>
+                                  }
+                                  items={$ctx.users
+                                    .map(user => {
+                                      let three = 0;
+                                      let one = 0;
+                                      $ctx.match?.data
+                                        ?.filter(
+                                          match => match.finished === "TRUE"
+                                        )
+                                        .forEach(match => {
+                                          const bet = $ctx.bets?.find(
+                                            bet =>
+                                              bet.match_id === match._id &&
+                                              bet.user_id === user.id
+                                          );
+                                          if (bet) {
+                                            const diffReal =
+                                              match.away_score -
+                                              match.home_score;
+                                            const myDiff =
+                                              bet.away_score - bet.home_score;
+                                            if (
+                                              match.away_score ===
+                                                bet.away_score &&
+                                              diffReal === myDiff
+                                            ) {
+                                              three++;
+                                            } else if (
+                                              myDiff * diffReal > 0 ||
+                                              (myDiff === 0 && diffReal === 0)
+                                            ) {
+                                              one++;
+                                            }
+                                          }
+                                        });
+                                      return {
+                                        user: user.name,
+                                        pts: three * 3 + one,
+                                        cravadas: three,
+                                        vencedor: one,
+                                        id: user.id
+                                      };
+                                    })
+                                    .sort((a, b) => b.pts - a.pts)}
+                                  pagination={false}
+                                  scroll={{ x: true }}
+                                />
+                              )}
+                            </ph.DataCtxReader>
+                          </SupabaseFetcher>
+                        )}
+                      </ph.DataCtxReader>
+                    </SupabaseFetcher>
                   )}
                 </ph.DataCtxReader>
-              </SupabaseFetcher>
+              </Fetcher>
             </div>
           ) : null}
         </p.Stack>
@@ -344,16 +430,9 @@ function PlasmicRanking__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "header",
-    "supabaseFetcher",
-    "antdTable",
-    "link",
-    "antdTableValue2"
-  ],
+  root: ["root", "header", "fetcher", "antdTable", "link", "antdTableValue2"],
   header: ["header"],
-  supabaseFetcher: ["supabaseFetcher", "antdTable", "link", "antdTableValue2"],
+  fetcher: ["fetcher", "antdTable", "link", "antdTableValue2"],
   antdTable: ["antdTable", "link", "antdTableValue2"],
   link: ["link", "antdTableValue2"],
   antdTableValue2: ["antdTableValue2"]
@@ -364,7 +443,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
-  supabaseFetcher: typeof SupabaseFetcher;
+  fetcher: typeof Fetcher;
   antdTable: typeof TableWrapper;
   link: "a";
   antdTableValue2: typeof TableValue;
@@ -432,7 +511,7 @@ export const PlasmicRanking = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
-    supabaseFetcher: makeNodeComponent("supabaseFetcher"),
+    fetcher: makeNodeComponent("fetcher"),
     antdTable: makeNodeComponent("antdTable"),
     link: makeNodeComponent("link"),
     antdTableValue2: makeNodeComponent("antdTableValue2"),

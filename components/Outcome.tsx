@@ -6,6 +6,8 @@ import {
   DefaultOutcomeProps
 } from "./plasmic/bolao/PlasmicOutcome";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import { state, ViewResults } from "../state-management/app";
+import { useSnapshot } from "valtio";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -23,22 +25,25 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 export interface OutcomeProps extends DefaultOutcomeProps {}
 
 function Outcome_(props: OutcomeProps, ref: HTMLElementRefOf<"div">) {
-  // Use PlasmicOutcome to render this component as it was
-  // designed in Plasmic, by activating the appropriate variants,
-  // attaching the appropriate event handlers, etc.  You
-  // can also install whatever React hooks you need here to manage state or
-  // fetch data.
-  //
-  // Props you can pass into PlasmicOutcome are:
-  // 1. Variants you want to activate,
-  // 2. Contents for slots you want to fill,
-  // 3. Overrides for any named node in the component to attach behavior and data,
-  // 4. Props to set on the root node.
-  //
-  // By default, we are just piping all OutcomeProps here, but feel free
-  // to do whatever works for you.
-
-  return <PlasmicOutcome root={{ ref }} {...props} />;
+  const viewCtx = React.useContext(ViewResults);
+  const snap = useSnapshot(state);
+  const match = viewCtx
+    ? viewCtx.find(match => match.match_id === props.matchId)
+    : state.matches.find(match => match.match_id === props.matchId);
+  let result: "zero" | "one" | "three" = "zero";
+  if (match) {
+    const betDiff = (match.away_score ?? 0) - (match.home_score ?? 0);
+    const betAway = match.away_score ?? 0;
+    const matchDiff = +(props.awayScore ?? 0) - +(props.homeScore ?? 0);
+    const matchAway = +(props.awayScore ?? 0);
+    console.log("dale", betDiff, betAway, matchDiff, matchAway);
+    if (betDiff === matchDiff && betAway === matchAway) {
+      result = "three";
+    } else if (betDiff * matchDiff > 0 || (betDiff === 0 && matchDiff === 0)) {
+      result = "one";
+    }
+  }
+  return <PlasmicOutcome root={{ ref }} {...props} result={result} />;
 }
 
 const Outcome = React.forwardRef(Outcome_);
