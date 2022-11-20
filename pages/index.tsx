@@ -11,7 +11,7 @@ import { Supabase } from "../components/supabase";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GlobalContextsProvider from "../components/plasmic/bolao/PlasmicGlobalContextsProvider";
-
+import { useSnapshot } from "valtio";
 function Partidas() {
   const router = useRouter();
   React.useEffect(() => {
@@ -19,7 +19,7 @@ function Partidas() {
       router.push("/login");
     }
   }, []);
-
+  const snap = useSnapshot(state);
   React.useEffect(() => {
     (async () => {
       state.matches = await Supabase.select("bets", {
@@ -29,6 +29,23 @@ function Partidas() {
           value: state.logged_user_id
         }]
       });
+      const top_scorer = await Supabase.select("top_scorer", {
+        filter: [{
+          column: "user_id",
+          operator: "eq",
+          value: state.logged_user_id
+        }]
+      }) as any[];
+      if (top_scorer.length === 1) {
+        state.top_scorer = {
+          id: top_scorer[0].id,
+          player: top_scorer[0].player
+        }
+      } else {
+        state.top_scorer = {
+          player: ""
+        }
+      }
     })();
   }, []);
   const onSave = async () => {
@@ -44,7 +61,12 @@ function Partidas() {
     const rowsToUpsert = formattedRows.filter(match => match.id !== undefined);
     const data = await Supabase.upsert("bets", rowsToUpsert);
     const data2 = await Supabase.insert("bets", rowsToInsert);
-    if (Array.isArray(data) && Array.isArray(data2)) {
+    const data3 = await Supabase.upsert("top_scorer", {
+      user_id: state.logged_user_id,
+      player: state.top_scorer!.player,
+      ...(state.top_scorer!.id ? { id: state.top_scorer!.id } : {})
+    })
+    if (Array.isArray(data) && Array.isArray(data2) && Array.isArray(data3)) {
       toast.success("Resultados salvos com sucesso!", {
         position: "top-right",
         autoClose: 2000
@@ -55,6 +77,8 @@ function Partidas() {
         autoClose: 2000
       });
     }
+
+    
   }
 
   return (
@@ -67,6 +91,10 @@ function Partidas() {
         <PlasmicPartidas 
           save={{
             onClick: onSave
+          }}
+          artilheiro={{
+            value: snap.top_scorer?.player,
+            onChange: (e) => state.top_scorer!.player = e.target.value
           }}
         />
       </ph.PageParamsProvider>

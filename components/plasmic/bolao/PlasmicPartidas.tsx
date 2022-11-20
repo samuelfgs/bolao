@@ -35,6 +35,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: qQe6YhWQiQ/component
+import TextInput from "../../TextInput"; // plasmic-import: m1Xqf2MW_yA/component
 import { Fetcher } from "../../../pages/plasmic-host"; // plasmic-import: 7dFnQyHCpn/codeComponent
 import GrupoRodadas from "../../GrupoRodadas"; // plasmic-import: 5XZgnc_Vja6/component
 import Button from "../../Button"; // plasmic-import: M9Ku_AMa4YF/component
@@ -44,6 +45,7 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_bolao.module.css"; // plasmic-import: r6sSLbmSTeVjqGUVythgwH/projectcss
 import sty from "./PlasmicPartidas.module.css"; // plasmic-import: Kqr_HwzDFT/css
 
+import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: XT8KYqZLvm1/icon
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: m7errmFAKi2/icon
 import SaveIconsvgIcon from "./icons/PlasmicIcon__SaveIconsvg"; // plasmic-import: -d2BCB21Y/icon
 
@@ -63,6 +65,8 @@ export const PlasmicPartidas__ArgProps = new Array<ArgPropType>("needsSave");
 export type PlasmicPartidas__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
+  text?: p.Flex<"div">;
+  artilheiro?: p.Flex<typeof TextInput>;
   fetcher?: p.Flex<typeof Fetcher>;
   grupoRodadas?: p.Flex<typeof GrupoRodadas>;
   save?: p.Flex<typeof Button>;
@@ -133,6 +137,27 @@ function PlasmicPartidas__RenderFunc(props: {
               />
             </div>
           ) : null}
+
+          <div className={classNames(projectcss.all, sty.freeBox__zJoe)}>
+            <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text
+              )}
+            >
+              {"Artilheiro da Copa"}
+            </div>
+
+            <TextInput
+              data-plasmic-name={"artilheiro"}
+              data-plasmic-override={overrides.artilheiro}
+              className={classNames("__wab_instance", sty.artilheiro)}
+            />
+          </div>
+
           {true ? (
             <p.Stack
               as={"div"}
@@ -181,32 +206,36 @@ function PlasmicPartidas__RenderFunc(props: {
 
           <div className={classNames(projectcss.all, sty.freeBox___2UmF)} />
 
-          {(() => {
-            try {
-              return $props.needsSave;
-            } catch (e) {
-              if (e instanceof TypeError) {
-                return true;
-              }
-              throw e;
-            }
-          })() ? (
-            <Button
-              data-plasmic-name={"save"}
-              data-plasmic-override={overrides.save}
-              className={classNames("__wab_instance", sty.save)}
-              endIcon={
-                <SaveIconsvgIcon
-                  data-plasmic-name={"svg"}
-                  data-plasmic-override={overrides.svg}
-                  className={classNames(projectcss.all, sty.svg)}
-                  role={"img"}
-                />
-              }
-              showEndIcon={true}
-            >
-              {"Salvar"}
-            </Button>
+          {true ? (
+            <div className={classNames(projectcss.all, sty.freeBox__cb4Qb)}>
+              {(() => {
+                try {
+                  return $props.needsSave;
+                } catch (e) {
+                  if (e instanceof TypeError) {
+                    return true;
+                  }
+                  throw e;
+                }
+              })() ? (
+                <Button
+                  data-plasmic-name={"save"}
+                  data-plasmic-override={overrides.save}
+                  className={classNames("__wab_instance", sty.save)}
+                  endIcon={
+                    <SaveIconsvgIcon
+                      data-plasmic-name={"svg"}
+                      data-plasmic-override={overrides.svg}
+                      className={classNames(projectcss.all, sty.svg)}
+                      role={"img"}
+                    />
+                  }
+                  showEndIcon={true}
+                >
+                  {"Salvar"}
+                </Button>
+              ) : null}
+            </div>
           ) : null}
         </div>
       </div>
@@ -215,8 +244,19 @@ function PlasmicPartidas__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "fetcher", "grupoRodadas", "save", "svg"],
+  root: [
+    "root",
+    "header",
+    "text",
+    "artilheiro",
+    "fetcher",
+    "grupoRodadas",
+    "save",
+    "svg"
+  ],
   header: ["header"],
+  text: ["text"],
+  artilheiro: ["artilheiro"],
   fetcher: ["fetcher", "grupoRodadas"],
   grupoRodadas: ["grupoRodadas"],
   save: ["save", "svg"],
@@ -228,6 +268,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
+  text: "div";
+  artilheiro: typeof TextInput;
   fetcher: typeof Fetcher;
   grupoRodadas: typeof GrupoRodadas;
   save: typeof Button;
@@ -296,6 +338,8 @@ export const PlasmicPartidas = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    text: makeNodeComponent("text"),
+    artilheiro: makeNodeComponent("artilheiro"),
     fetcher: makeNodeComponent("fetcher"),
     grupoRodadas: makeNodeComponent("grupoRodadas"),
     save: makeNodeComponent("save"),

@@ -9,9 +9,14 @@ export interface Match {
   id?: string;
 }
 
+export interface TopScorer {
+  id?: string;
+  player?: string;
+}
 export interface AppState {
   logged_user_id?: number;
-  matches: Match[]
+  matches: Match[];
+  top_scorer?: TopScorer;
 }
 
 export const mkInitialState = () => ({
@@ -25,11 +30,13 @@ export const initializePersistentData = (): AppState => {
   if (persistentData) {
     const state = JSON.parse(persistentData) as AppState;
     state.matches = [];
+    state.top_scorer = undefined;
     return state;
   } else {
     return {
       logged_user_id: undefined,
-      matches: []
+      matches: [],
+      top_scorer: undefined
     }
   }
 }
