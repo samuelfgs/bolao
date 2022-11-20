@@ -15,8 +15,8 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
     return <PlasmicScore 
       root={{ ref }}
       {...props}
-      homeScore={`${match?.home_score ?? ""}`}
-      awayScore={`${match?.away_score ?? ""}`}
+      homeScore={`${match ? (match?.home_score ?? 0) : ""}`}
+      awayScore={`${match ? (match?.away_score ?? 0) : ""}`}
       hide={props.isOpen ? true : false}
     />
   }
