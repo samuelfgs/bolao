@@ -60,6 +60,9 @@ function Classificacao() {
             value: top_scorer?.length === 1 ? top_scorer[0].player  : "",
             disabled: true
           }}
+          save={{
+            render: () => <></>
+          }}
         />
       </ViewResults.Provider>
     </ph.PageParamsProvider>
