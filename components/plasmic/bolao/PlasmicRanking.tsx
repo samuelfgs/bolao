@@ -305,7 +305,35 @@ function PlasmicRanking__RenderFunc(props: {
                                           </ph.DataCtxReader>
                                         }
                                         dataIndex={"pts" as const}
-                                        title={"Pontos" as const}
+                                        title={"P" as const}
+                                      />
+
+                                      <TableColumn
+                                        className={classNames(
+                                          "__wab_instance",
+                                          sty.antdTableColumn2___4Pe7X
+                                        )}
+                                        columnTemplate={
+                                          <ph.DataCtxReader>
+                                            {$ctx => (
+                                              <div
+                                                className={classNames(
+                                                  projectcss.all,
+                                                  sty.freeBox__cDfI0
+                                                )}
+                                              >
+                                                <TableValue
+                                                  className={classNames(
+                                                    "__wab_instance",
+                                                    sty.antdTableValue2__cJkaa
+                                                  )}
+                                                />
+                                              </div>
+                                            )}
+                                          </ph.DataCtxReader>
+                                        }
+                                        dataIndex={"j" as const}
+                                        title={"J" as const}
                                       />
 
                                       <TableColumn
@@ -333,7 +361,7 @@ function PlasmicRanking__RenderFunc(props: {
                                           </ph.DataCtxReader>
                                         }
                                         dataIndex={"cravadas" as const}
-                                        title={"Cravadas" as const}
+                                        title={"C" as const}
                                       />
 
                                       <TableColumn
@@ -361,7 +389,7 @@ function PlasmicRanking__RenderFunc(props: {
                                           </ph.DataCtxReader>
                                         }
                                         dataIndex={"vencedor" as const}
-                                        title={"Vencedor" as const}
+                                        title={"V" as const}
                                       />
                                     </React.Fragment>
                                   }
@@ -369,12 +397,14 @@ function PlasmicRanking__RenderFunc(props: {
                                     .map(user => {
                                       let three = 0;
                                       let one = 0;
+                                      let jogos = 0;
                                       $ctx.match?.data
                                         ?.filter(
                                           match =>
                                             match.time_elapsed !== "notstarted"
                                         )
                                         .forEach(match => {
+                                          jogos++;
                                           const bet = $ctx.bets?.find(
                                             bet =>
                                               bet.match_id === match._id &&
@@ -405,7 +435,8 @@ function PlasmicRanking__RenderFunc(props: {
                                         pts: three * 3 + one,
                                         cravadas: three,
                                         vencedor: one,
-                                        id: user.id
+                                        id: user.id,
+                                        j: jogos
                                       };
                                     })
                                     .sort((a, b) => b.pts - a.pts)
