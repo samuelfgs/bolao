@@ -313,7 +313,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
 
                         {(() => {
                           try {
-                            return currentMatch.finished === "TRUE";
+                            return currentMatch.time_elapsed !== "notstarted";
                           } catch (e) {
                             if (e instanceof TypeError) {
                               return true;

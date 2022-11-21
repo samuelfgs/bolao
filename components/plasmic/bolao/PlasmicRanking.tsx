@@ -371,7 +371,8 @@ function PlasmicRanking__RenderFunc(props: {
                                       let one = 0;
                                       $ctx.match?.data
                                         ?.filter(
-                                          match => match.finished === "TRUE"
+                                          match =>
+                                            match.time_elapsed !== "notstarted"
                                         )
                                         .forEach(match => {
                                           const bet = $ctx.bets?.find(
