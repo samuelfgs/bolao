@@ -6,6 +6,7 @@ type Data = {
 }
 
 import match from "../../data.json";
+import standings from "../../standings.json";
 
 export default async function handler(
   req: NextApiRequest,
@@ -14,6 +15,10 @@ export default async function handler(
   const body = JSON.parse(req.body);
   if (body.endpoint === "match") {
     res.status(200).json(match);
+    return ;
+  } else if (body.endpoint === "standings") {
+    res.status(200).json(standings);
+    return ;
   }
   const data = await (await fetch("http://api.cup2022.ir/api/v1/" + body.endpoint, {
     headers: {
