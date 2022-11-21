@@ -12,13 +12,13 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
   const matches = useSnapshot(state.matches);
   if (viewCtx) {
     const match = viewCtx.find(match => match.match_id === props.matchId)!;
-    console.log("dale7", match)
     return <PlasmicScore 
       root={{ ref }}
       {...props}
       homeScore={`${match ? (match.home_score ?? "") : ""}`}
       awayScore={`${match ? (match.away_score ?? "") : ""}`}
-      hide={props.isOpen ? true : false}
+      hide={props.isOpen && state.logged_user_id !== 8 ? true : false}
+      isOpen={false}
     />
   }
 
