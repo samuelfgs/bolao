@@ -45,6 +45,8 @@ function Classificacao() {
     })
   });
 
+  console.log("dale22", top_scorer);
+
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
@@ -54,7 +56,7 @@ function Classificacao() {
         <PlasmicPalpites
           isView={true} 
           player={user?.[0]?.name} 
-          artilheiro2={top_scorer?.length === 1 && top_scorer[0].player != "" ? top_scorer[0].player : "Nao escolheu"}
+          artilheiro2={top_scorer?.length > 0 && top_scorer.slice(-1)[0].player != "" ? top_scorer.slice(-1)[0].player : "Nao escolheu"}
           save={{
             render: () => <></>
           }}

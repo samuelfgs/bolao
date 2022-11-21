@@ -36,10 +36,10 @@ function Partidas() {
           value: state.logged_user_id
         }]
       }) as any[];
-      if (top_scorer.length === 1) {
+      if (top_scorer.length > 0) {
         state.top_scorer = {
-          id: top_scorer[0].id,
-          player: top_scorer[0].player
+          id: top_scorer.slice(-1)[0].id,
+          player: top_scorer.slice(-1)[0].player
         }
       } else {
         state.top_scorer = {
