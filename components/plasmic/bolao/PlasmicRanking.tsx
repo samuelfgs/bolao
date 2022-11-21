@@ -410,8 +410,6 @@ function PlasmicRanking__RenderFunc(props: {
                                               bet.match_id === match._id &&
                                               bet.user_id === user.id
                                           );
-                                          if (user.name === "Clayton Castro ")
-                                            console.log("dale23", bet);
                                           if (
                                             bet &&
                                             bet.away_score !== null &&

@@ -525,7 +525,8 @@ function PlasmicClassificacao__RenderFunc(props: {
                                               const matches =
                                                 $ctx.match.data.filter(
                                                   match =>
-                                                    match.finished === "TRUE" &&
+                                                    match.time_elapsed !==
+                                                      "notstarted" &&
                                                     [
                                                       match.home_team_id,
                                                       match.away_team_id
