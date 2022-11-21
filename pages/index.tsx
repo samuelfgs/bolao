@@ -94,7 +94,8 @@ function Partidas() {
           }}
           artilheiro={{
             value: snap.top_scorer?.player,
-            onChange: (e) => state.top_scorer!.player = e.target.value
+            onChange: (e) => state.top_scorer!.player = e.target.value,
+            isDisabled: true
           }}
         />
       </ph.PageParamsProvider>
