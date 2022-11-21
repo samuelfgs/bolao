@@ -439,7 +439,11 @@ function PlasmicRanking__RenderFunc(props: {
                                         j: jogos
                                       };
                                     })
-                                    .sort((a, b) => b.pts - a.pts)
+                                    .sort((a, b) =>
+                                      a.pts !== b.pts
+                                        ? b.pts - a.pts
+                                        : a.user?.localeCompare(b.user)
+                                    )
                                     .map((row, i, arr) => {
                                       if (i === 0) {
                                         return {
