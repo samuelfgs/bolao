@@ -410,7 +410,13 @@ function PlasmicRanking__RenderFunc(props: {
                                               bet.match_id === match._id &&
                                               bet.user_id === user.id
                                           );
-                                          if (bet) {
+                                          if (user.name === "Clayton Castro ")
+                                            console.log("dale23", bet);
+                                          if (
+                                            bet &&
+                                            bet.away_score !== null &&
+                                            bet.home_score !== null
+                                          ) {
                                             const diffReal =
                                               match.away_score -
                                               match.home_score;

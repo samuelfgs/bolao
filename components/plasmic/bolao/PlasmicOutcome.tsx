@@ -112,7 +112,7 @@ function PlasmicOutcome__RenderFunc(props: {
       {
         path: "result",
         type: "private",
-        initFunc: ($props, $state) => $props["result"]
+        initFunc: ($props, $state) => $props.result
       }
     ],
 

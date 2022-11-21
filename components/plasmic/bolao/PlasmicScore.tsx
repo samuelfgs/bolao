@@ -122,13 +122,13 @@ function PlasmicScore__RenderFunc(props: {
       {
         path: "isOpen",
         type: "private",
-        initFunc: ($props, $state) => $props["isOpen"]
+        initFunc: ($props, $state) => $props.isOpen
       },
 
       {
         path: "hide",
         type: "private",
-        initFunc: ($props, $state) => $props["hide"]
+        initFunc: ($props, $state) => $props.hide
       }
     ],
 
