@@ -207,9 +207,8 @@ function PlasmicRanking__RenderFunc(props: {
                                                 >
                                                   {(() => {
                                                     try {
-                                                      return (
-                                                        $ctx.currentRowIndex + 1
-                                                      );
+                                                      return $ctx.currentRow
+                                                        .pos;
                                                     } catch (e) {
                                                       if (
                                                         e instanceof TypeError
@@ -408,7 +407,25 @@ function PlasmicRanking__RenderFunc(props: {
                                         id: user.id
                                       };
                                     })
-                                    .sort((a, b) => b.pts - a.pts)}
+                                    .sort((a, b) => b.pts - a.pts)
+                                    .map((row, i, arr) => {
+                                      if (i === 0) {
+                                        return {
+                                          ...row,
+                                          pos: i + 1
+                                        };
+                                      } else if (arr[i - 1].pts === row.pts) {
+                                        return {
+                                          ...row,
+                                          pos: arr[i - 1].pos
+                                        };
+                                      } else {
+                                        return {
+                                          ...row,
+                                          pos: i + 1
+                                        };
+                                      }
+                                    })}
                                   pagination={false}
                                   scroll={{ x: true }}
                                 />

@@ -53,7 +53,12 @@
   > img {
   margin-top: 20px;
 }
-.fetcher:global(.__wab_instance) {
+.fetcher__uoJxZ:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.fetcher__jjUu:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -90,7 +95,7 @@
   min-width: 0;
   padding: 0px;
 }
-.antdTable__hkNV:global(.__wab_instance) {
+.antdTable:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   position: relative;
@@ -147,7 +152,7 @@
   > img {
   margin-left: 5px;
 }
-.img__sXkHh {
+.img {
   position: relative;
   object-fit: cover;
   max-width: 100%;
@@ -155,13 +160,13 @@
   height: 25px;
   flex-shrink: 0;
 }
-.img__sXkHh > picture > img {
+.img > picture > img {
   object-fit: cover;
 }
-.img__sXkHh > :global(.__wab_img-spacer) > img {
+.img > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.antdTableValue__p5Rrl:global(.__wab_instance) {
+.antdTableValue:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
@@ -302,241 +307,6 @@
   padding: 0;
 }
 .antdTableValue___21DZm:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.antdTableColumn__abDa7:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.freeBox__ph4Fx {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 0;
-}
-.antdTableValue__s2DZt:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.antdTable__uojX:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  display: none;
-}
-.antdTableColumn__cjtq8:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.freeBox__rxrY8 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 0;
-}
-.antdTableValue__rg5Yr:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.antdTableColumn__wdCem:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.freeBox__kP6It {
-  flex-direction: row;
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-  padding: 0;
-}
-.freeBox__kP6It > :global(.__wab_flex-container) {
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  margin-left: calc(0px - 5px);
-  width: calc(100% + 5px);
-}
-.freeBox__kP6It > :global(.__wab_flex-container) > *,
-.freeBox__kP6It > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.freeBox__kP6It > :global(.__wab_flex-container) > picture > img,
-.freeBox__kP6It
-  > :global(.__wab_flex-container)
-  > :global(.__wab_slot)
-  > picture
-  > img {
-  margin-left: 5px;
-}
-.img__lu28P {
-  position: relative;
-  object-fit: cover;
-  max-width: 100%;
-  width: 25px;
-  height: 25px;
-  flex-shrink: 0;
-}
-.img__lu28P > picture > img {
-  object-fit: cover;
-}
-.img__lu28P > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
-.antdTableValue__o1S8G:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.antdTableColumn___4K9HN:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.freeBox__iWpCw {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 0;
-}
-.antdTableValue__mylFv:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.antdTableColumn___54Vx5:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.freeBox__vuR8U {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 0;
-}
-.antdTableValue___6B9I9:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.antdTableColumn__yXB:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.freeBox__wV1Qy {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 0;
-}
-.antdTableValue___3DGht:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.antdTableColumn__s8E1D:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.freeBox__vJEgI {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 0;
-}
-.antdTableValue__mBzlY:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.antdTableColumn__tKkLn:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.freeBox__yVfcR {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 0;
-}
-.antdTableValue__qfGHx:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.antdTableColumn__r3Lur:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.freeBox__npRPb {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 0;
-}
-.antdTableValue__mlflG:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.antdTableColumn__h1UV:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-}
-.freeBox__nVg2K {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  min-width: 0;
-  padding: 0;
-}
-.antdTableValue__bLnv:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
 }
