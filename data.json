@@ -92,7 +92,7 @@
                 "null"
             ],
             "away_team_id": "8",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "B",
             "home_score": 1,
             "home_scorers": [
