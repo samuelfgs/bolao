@@ -120,7 +120,7 @@
                 "null"
             ],
             "away_team_id": "10",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "C",
             "home_score": 1,
             "home_scorers": [
