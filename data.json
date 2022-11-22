@@ -199,12 +199,12 @@
         },
         {
             "_id": "629c9c8a5749c4077500eadb",
-            "away_score": 0,
+            "away_score": 1,
             "away_scorers": [
                 "null"
             ],
             "away_team_id": "16",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "D",
             "home_score": 0,
             "home_scorers": [
@@ -216,7 +216,7 @@
             "matchday": "3",
             "persian_date": "1400-09-01 22:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "h1",
             "type": "group",
             "home_team_fa": "فرانسه",
             "away_team_fa": "استرالیا",
