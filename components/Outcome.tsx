@@ -31,7 +31,7 @@ function Outcome_(props: OutcomeProps, ref: HTMLElementRefOf<"div">) {
     ? viewCtx.find(match => match.match_id === props.matchId)
     : state.matches.find(match => match.match_id === props.matchId);
   let result: "zero" | "one" | "three" = "zero";
-  if (match) {
+  if (match && match.away_score !== null && match.home_score !== null) {
     const betDiff = (match.away_score ?? 0) - (match.home_score ?? 0);
     const betAway = match.away_score ?? 0;
     const matchDiff = +(props.awayScore ?? 0) - +(props.homeScore ?? 0);
