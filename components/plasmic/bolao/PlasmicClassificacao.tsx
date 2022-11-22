@@ -344,6 +344,34 @@ function PlasmicClassificacao__RenderFunc(props: {
                                         <TableColumn
                                           className={classNames(
                                             "__wab_instance",
+                                            sty.antdTableColumn__oDik4
+                                          )}
+                                          columnTemplate={
+                                            <ph.DataCtxReader>
+                                              {$ctx => (
+                                                <div
+                                                  className={classNames(
+                                                    projectcss.all,
+                                                    sty.freeBox__sk8Kk
+                                                  )}
+                                                >
+                                                  <TableValue
+                                                    className={classNames(
+                                                      "__wab_instance",
+                                                      sty.antdTableValue__frEe
+                                                    )}
+                                                  />
+                                                </div>
+                                              )}
+                                            </ph.DataCtxReader>
+                                          }
+                                          dataIndex={"pts" as const}
+                                          title={"P" as const}
+                                        />
+
+                                        <TableColumn
+                                          className={classNames(
+                                            "__wab_instance",
                                             sty.antdTableColumn__zZoNq
                                           )}
                                           columnTemplate={
