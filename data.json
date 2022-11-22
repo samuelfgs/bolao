@@ -206,7 +206,7 @@
             "away_team_id": "16",
             "finished": "TRUE",
             "group": "D",
-            "home_score": 0,
+            "home_score": 1,
             "home_scorers": [
                 "null"
             ],
