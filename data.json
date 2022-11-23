@@ -318,7 +318,7 @@
             "away_team_id": "24",
             "finished": "TRUE",
             "group": "F",
-            "home_score": 0,
+            "home_score": 1,
             "home_scorers": [
                 "null"
             ],
