@@ -316,7 +316,7 @@
                 "null"
             ],
             "away_team_id": "24",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "F",
             "home_score": 0,
             "home_scorers": [
@@ -328,7 +328,7 @@
             "matchday": "4",
             "persian_date": "1400-09-02 22:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "h1",
             "type": "group",
             "home_team_fa": "بلژیک",
             "away_team_fa": "کانادا",
