@@ -12,7 +12,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import GlobalContextsProvider from "../components/plasmic/bolao/PlasmicGlobalContextsProvider";
 import { useSnapshot } from "valtio";
 import PlasmicPalpites from "../components/plasmic/bolao/PlasmicPalpites";
+import { usePlasmicQueryData } from "@plasmicapp/query"
+
 function Partidas() {
+  const { data: matchs, error } = usePlasmicQueryData("match", async (): Promise<any> => {
+    return await (await fetch("/api/hello/", {
+      method: "POST",
+      body: JSON.stringify({
+        endpoint: "match"
+      }),
+    })).json();
+  });
+  console.log("dale24", matchs, error);
+  
   const router = useRouter();
   React.useEffect(() => {
     if (!state.logged_user_id) {
@@ -56,9 +68,16 @@ function Partidas() {
       home_score: match.home_score,
       away_score: match.away_score
     }));
+    const canSaveRow = formattedRows.filter(_match => {
+      console.log("dale23", matchs, error);
+      const match = matchs?.data.find((match: any) => match._id === _match.match_id) 
+      const matchDate = new Date(`${match.local_date} +3`)
+      const currDate = new Date(Date.now());
+      return currDate <= matchDate;
+    });
 
-    const rowsToInsert = formattedRows.filter(match => match.id === undefined);
-    const rowsToUpsert = formattedRows.filter(match => match.id !== undefined);
+    const rowsToInsert = canSaveRow.filter(match => match.id === undefined);
+    const rowsToUpsert = canSaveRow.filter(match => match.id !== undefined);
     const data = await Supabase.upsert("bets", rowsToUpsert);
     const data2 = await Supabase.insert("bets", rowsToInsert);
     const data3 = await Supabase.upsert("top_scorer", {

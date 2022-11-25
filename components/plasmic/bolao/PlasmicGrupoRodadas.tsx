@@ -201,16 +201,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
             sty.text__wWh3E
           )}
         >
-          {(() => {
-            try {
-              return `Rodada ${$state.rodada + 1}`;
-            } catch (e) {
-              if (e instanceof TypeError) {
-                return "Rodada 1";
-              }
-              throw e;
-            }
-          })()}
+          {`Rodada ${$state.rodada + 1}`}
         </div>
 
         {true ? (
