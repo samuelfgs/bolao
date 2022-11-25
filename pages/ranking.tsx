@@ -88,7 +88,7 @@ function Ranking() {
       }
       setItems(items);
     }
-  }, [users, betsByUser])
+  }, [users, betsByUser, matchs])
 
   return (
     <GlobalContextsProvider>
