@@ -23,7 +23,6 @@ function Partidas() {
       }),
     })).json();
   });
-  console.log("dale24", matchs, error);
   
   const router = useRouter();
   React.useEffect(() => {

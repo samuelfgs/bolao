@@ -7,15 +7,99 @@ import { ScreenVariantProvider } from "../components/plasmic/bolao/PlasmicGlobal
 import { PlasmicRanking } from "../components/plasmic/bolao/PlasmicRanking";
 import { useRouter } from "next/router";
 import "@plasmicpkgs/antd/dist/antd.css"
+import { Supabase } from "../components/supabase";
+import { usePlasmicQueryData } from "@plasmicapp/query"
 
 function Ranking() {
+  const { data: users } = Supabase.useSelect("users", {
+    filter: {
+      column: "paid",
+      operator: "eq",
+      value: true
+    }
+  });
+  
+  const { data: matchs, error } = usePlasmicQueryData("match", async (): Promise<any> => {
+    return await (await fetch("/api/hello/", {
+      method: "POST",
+      body: JSON.stringify({
+        endpoint: "match"
+      }),
+    })).json();
+  });
+
+  const [ betsByUser, setBetsByUser ] = React.useState<Record<string, any> | undefined>(undefined)
+  
+  const [ items, setItems ] = React.useState<any[]>([]);
+
+  React.useEffect(() => {
+    (async () => {
+      const bets: Record<string, any> = {};
+      if (Array.isArray(users)) {
+        for (const user of users) {
+          bets[user.id] = await Supabase.select("bets", {
+            filter: {
+              column: "user_id",
+              operator: "eq",
+              value: user.id
+            }
+          });
+        }
+      }
+      setBetsByUser(bets);
+    })();
+  }, [users]);
+  
+  React.useEffect(() => {
+    if (Array.isArray(users) && Array.isArray(matchs?.data) && betsByUser) {
+      const items = users.map((user) => {
+        let three = 0, one = 0, jogos = 0;
+        matchs.data.filter((match: any) => match.time_elapsed !== "notstarted").forEach((match: any) => {
+            jogos++;
+            const bet = betsByUser[user.id]?.find(
+                (bet: any) => ( bet.match_id === match._id && bet.user_id === user.id && bet.away_score !== null && bet.home_score !== null)
+            );
+            if (bet && bet.away_score !== null && bet.home_score !== null) {
+                const diffReal = match.away_score - match.home_score;
+                const myDiff = bet.away_score - bet.home_score;
+                if (match.away_score === bet.away_score && diffReal === myDiff) {
+                    three++;
+                } else if (myDiff * diffReal > 0 || (myDiff === 0 && diffReal === 0)) {
+                    one++;
+                }
+            }
+        });
+        return {
+            user: user.name,
+            pts: three * 3 + one,
+            cravadas: three,
+            vencedor: one,
+            id: user.id,
+            j: jogos,
+            pos: 1
+        }
+      }).sort((a, b) => ( a.pts !== b.pts ? b.pts - a.pts : a.user?.localeCompare(b.user)));
+      for (let i = 1; i < items.length; i++) {
+        if (items[i-1].pts === items[i].pts) {
+          items[i].pos = items[i-1].pos;
+        } else {
+          items[i].pos = i+1;
+        }
+      }
+      setItems(items);
+    }
+  }, [users, betsByUser])
+
   return (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
         params={useRouter()?.query}
         query={useRouter()?.query}
       >
-        <PlasmicRanking />
+        <PlasmicRanking 
+          antdTable={{ items }}
+          isLoading={items.length === 0}
+        />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>
   );
