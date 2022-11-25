@@ -5,10 +5,10 @@
             "_id": "629c9c8a5749c4077500ead4",
             "away_score": 2,
             "away_scorers": [
-                "null"
+                "Cody Gakpo,Davy Klaassen\n"
             ],
             "away_team_id": "4",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "A",
             "home_score": 0,
             "home_scorers": [
@@ -20,12 +20,12 @@
             "matchday": "2",
             "persian_date": "1400-08-30 19:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "سنگال",
             "away_team_fa": "هلند",
             "home_team_en": "Senegal",
-            "away_team_en": "Nederlands",
+            "away_team_en": "Netherlands",
             "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/125px-Flag_of_Senegal.svg.png",
             "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/125px-Flag_of_the_Netherlands.svg.png"
         },
@@ -33,14 +33,14 @@
             "_id": "629c9c8a5749c4077500ead5",
             "away_score": 2,
             "away_scorers": [
-                "null"
+                "Mehdi Taremi,Mehdi Taremi"
             ],
             "away_team_id": "6",
             "finished": "TRUE",
             "group": "B",
             "home_score": 6,
             "home_scorers": [
-                "null"
+                "Jude Bellingham,Bukayo Saka,Raheem Sterling,Bukayo Saka,Marcus Rashford,Jack Grealish"
             ],
             "home_team_id": "5",
             "id": "2",
@@ -48,7 +48,7 @@
             "matchday": "2",
             "persian_date": "1400-08-01 16:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "انگلستان",
             "away_team_fa": "ایران",
@@ -89,14 +89,14 @@
             "_id": "629c9c8a5749c4077500ead7",
             "away_score": 1,
             "away_scorers": [
-                "null"
+                "Gareth Bale"
             ],
             "away_team_id": "8",
             "finished": "TRUE",
             "group": "B",
             "home_score": 1,
             "home_scorers": [
-                "null"
+                "Timothy Weah"
             ],
             "home_team_id": "7",
             "id": "4",
@@ -104,7 +104,7 @@
             "matchday": "2",
             "persian_date": "1400-08-30 22:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "آمریکا",
             "away_team_fa": "ولز",
@@ -117,14 +117,14 @@
             "_id": "629c9c8a5749c4077500ead8",
             "away_score": 2,
             "away_scorers": [
-                "null"
+                "Saleh Al Shehri, Salem Al Dawsari"
             ],
             "away_team_id": "10",
             "finished": "TRUE",
             "group": "C",
             "home_score": 1,
             "home_scorers": [
-                "null"
+                "Lionel Messi"
             ],
             "home_team_id": "9",
             "id": "5",
@@ -132,7 +132,7 @@
             "matchday": "3",
             "persian_date": "1400-09-01 13:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "آرژانتین",
             "away_team_fa": "عربستان",
@@ -160,7 +160,7 @@
             "matchday": "3",
             "persian_date": "1400-09-01 16:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "دانمارک",
             "away_team_fa": "تونس",
@@ -188,7 +188,7 @@
             "matchday": "3",
             "persian_date": "1400-09-01 19:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "مکزیک",
             "away_team_fa": "لهستان",
@@ -201,14 +201,14 @@
             "_id": "629c9c8a5749c4077500eadb",
             "away_score": 1,
             "away_scorers": [
-                "null"
+                "Craig Goodwin"
             ],
             "away_team_id": "16",
             "finished": "TRUE",
             "group": "D",
             "home_score": 4,
             "home_scorers": [
-                "null"
+                "Adrien Rabiot,Olivier Giroud,Kylian Mbappé"
             ],
             "home_team_id": "15",
             "id": "8",
@@ -216,7 +216,7 @@
             "matchday": "3",
             "persian_date": "1400-09-01 22:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "فرانسه",
             "away_team_fa": "استرالیا",
@@ -244,7 +244,7 @@
             "matchday": "4",
             "persian_date": "1400-09-02 13:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "مراکش",
             "away_team_fa": "کرواسی",
@@ -257,14 +257,14 @@
             "_id": "629c9c8a5749c4077500eadd",
             "away_score": 2,
             "away_scorers": [
-                "null"
+                "Ritsu Doan,Takuma Asano"
             ],
             "away_team_id": "20",
             "finished": "TRUE",
             "group": "E",
             "home_score": 1,
             "home_scorers": [
-                "null"
+                "İlkay Gündoğan"
             ],
             "home_team_id": "19",
             "id": "10",
@@ -272,7 +272,7 @@
             "matchday": "4",
             "persian_date": "1400-09-02 16:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "آلمان",
             "away_team_fa": "ژاپن",
@@ -292,7 +292,7 @@
             "group": "E",
             "home_score": 7,
             "home_scorers": [
-                "null"
+                "Dani Olmo,Marco Asensio,Ferran Torres,Ferran Torres,Gavi,Carlos Soler,Álvaro Morata"
             ],
             "home_team_id": "21",
             "id": "11",
@@ -300,7 +300,7 @@
             "matchday": "4",
             "persian_date": "1400-09-02 19:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "اسپانیا",
             "away_team_fa": "کاستاریکا",
@@ -320,7 +320,7 @@
             "group": "F",
             "home_score": 1,
             "home_scorers": [
-                "null"
+                "Michy Batshuayi"
             ],
             "home_team_id": "23",
             "id": "12",
@@ -328,7 +328,7 @@
             "matchday": "4",
             "persian_date": "1400-09-02 22:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "بلژیک",
             "away_team_fa": "کانادا",
@@ -348,7 +348,7 @@
             "group": "G",
             "home_score": 2,
             "home_scorers": [
-                "null"
+                "Richarlison,Richarlison"
             ],
             "home_team_id": "25",
             "id": "13",
@@ -356,7 +356,7 @@
             "matchday": "5",
             "persian_date": "1400-09-03 22:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "برزیل",
             "away_team_fa": "صربستان",
@@ -369,14 +369,14 @@
             "_id": "629c9c8a5749c4077500eae1",
             "away_score": 2,
             "away_scorers": [
-                "null"
+                "André Ayew,Osman Bukari"
             ],
             "away_team_id": "28",
             "finished": "TRUE",
             "group": "H",
             "home_score": 3,
             "home_scorers": [
-                "null"
+                "Cristiano Ronaldo,João Félix,Rafael Leão"
             ],
             "home_team_id": "27",
             "id": "14",
@@ -384,7 +384,7 @@
             "matchday": "5",
             "persian_date": "1400-09-03 19:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "پرتغال",
             "away_team_fa": "غنا",
@@ -412,7 +412,7 @@
             "matchday": "5",
             "persian_date": "1400-09-03 16:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "اروگوئه",
             "away_team_fa": "کره جنوبی",
@@ -432,7 +432,7 @@
             "group": "G",
             "home_score": 1,
             "home_scorers": [
-                "null"
+                "Michy Batshuayi"
             ],
             "home_team_id": "31",
             "id": "16",
@@ -440,7 +440,7 @@
             "matchday": "5",
             "persian_date": "1400-09-03 13:30",
             "stadium_id": "1",
-            "time_elapsed": "h1",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "سوئیس",
             "away_team_fa": "کامرون",
@@ -456,11 +456,11 @@
                 "null"
             ],
             "away_team_id": "8",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "B",
-            "home_score": 0,
+            "home_score": 2,
             "home_scorers": [
-                "null"
+                "Rouzbeh Cheshmi,Ramin Rezaeian"
             ],
             "home_team_id": "6",
             "id": "17",
@@ -468,7 +468,7 @@
             "matchday": "6",
             "persian_date": "1400-09-04 13:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "ایران",
             "away_team_fa": "ولز",
@@ -479,16 +479,16 @@
         },
         {
             "_id": "629c9c8a5749c4077500eae5",
-            "away_score": 0,
+            "away_score": 3,
             "away_scorers": [
-                "null"
+                "Boulaye Dia,Famara Diedhiou,Bamba Dieng"
             ],
             "away_team_id": "3",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "A",
-            "home_score": 0,
+            "home_score": 1,
             "home_scorers": [
-                "null"
+                "Mohammed Muntari"
             ],
             "home_team_id": "1",
             "id": "18",
@@ -496,7 +496,7 @@
             "matchday": "6",
             "persian_date": "1400-09-04 16:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "قطر",
             "away_team_fa": "سنگال",
@@ -507,16 +507,16 @@
         },
         {
             "_id": "629c9c8a5749c4077500eae6",
-            "away_score": 0,
+            "away_score": 1,
             "away_scorers": [
                 "null"
             ],
             "away_team_id": "2",
             "finished": "FALSE",
             "group": "A",
-            "home_score": 0,
+            "home_score": 1,
             "home_scorers": [
-                "null"
+                
             ],
             "home_team_id": "4",
             "id": "19",
@@ -524,11 +524,11 @@
             "matchday": "6",
             "persian_date": "1400-09-04 19:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "h2",
             "type": "group",
             "home_team_fa": "هلند",
             "away_team_fa": "اکوادور",
-            "home_team_en": "Nederlands",
+            "home_team_en": "Netherlands",
             "away_team_en": "Ecuador",
             "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/125px-Flag_of_the_Netherlands.svg.png",
             "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/125px-Flag_of_Ecuador.svg.png"
@@ -1004,7 +1004,7 @@
             "type": "group",
             "home_team_fa": "هلند",
             "away_team_fa": "قطر",
-            "home_team_en": "Nederlands",
+            "home_team_en": "Netherlands",
             "away_team_en": "Qatar",
             "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/125px-Flag_of_the_Netherlands.svg.png",
             "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/125px-Flag_of_Qatar.svg.png"
