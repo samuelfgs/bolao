@@ -108,7 +108,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
       {
         path: "rodada",
         type: "private",
-        initFunc: ($props, $state) => 0
+        initFunc: ($props, $state) => 1
       }
     ],
 
@@ -167,7 +167,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
             })() ? (
               <IconIcon
                 className={classNames(projectcss.all, sty.svg__m35J6)}
-                onClick={(...args) => {
+                onClick={async (...args) => {
                   const $steps = {};
                   $steps["temp name"] = true
                     ? (({ variable, value }) => {
@@ -181,6 +181,12 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                         }
                       ])
                     : undefined;
+                  if (
+                    typeof $steps["temp name"] === "object" &&
+                    typeof $steps["temp name"].then === "function"
+                  ) {
+                    $steps["temp name"] = await $steps["temp name"];
+                  }
                 }}
                 role={"img"}
               />
@@ -221,7 +227,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
             })() ? (
               <Icon2Icon
                 className={classNames(projectcss.all, sty.svg__wdOyv)}
-                onClick={(...args) => {
+                onClick={async (...args) => {
                   const $steps = {};
                   $steps["temp name"] = true
                     ? (({ variable, value }) => {
@@ -235,6 +241,12 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                         }
                       ])
                     : undefined;
+                  if (
+                    typeof $steps["temp name"] === "object" &&
+                    typeof $steps["temp name"].then === "function"
+                  ) {
+                    $steps["temp name"] = await $steps["temp name"];
+                  }
                 }}
                 role={"img"}
               />

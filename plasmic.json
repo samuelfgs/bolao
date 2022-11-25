@@ -302,7 +302,7 @@
         {
           "id": "QR3ZAtgl3z",
           "name": "Fetcher",
-          "componentImportPath": "@plasmicapp/data-sources"
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         },
         {
           "id": "7dFnQyHCpn",

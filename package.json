@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@plasmicapp/cli": "^0.1.187",
-    "@plasmicapp/host": "^1.0.82",
+    "@plasmicapp/host": "^1.0.85",
     "@plasmicapp/query": "^0.1.55",
     "@plasmicapp/react-web": "^0.2.121",
     "@plasmicpkgs/antd": "^0.0.100",

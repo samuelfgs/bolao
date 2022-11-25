@@ -567,10 +567,18 @@
     "@plasmicapp/query" "0.1.55"
     isomorphic-unfetch "^3.1.0"
 
-"@plasmicapp/host@1.0.82", "@plasmicapp/host@^1.0.82":
+"@plasmicapp/host@1.0.82":
   version "1.0.82"
   resolved "https://registry.yarnpkg.com/@plasmicapp/host/-/host-1.0.82.tgz#bedc0ae9dac434cbe10974773ee4a9c04456a827"
   integrity sha512-u/KBCV5v2jKQze5Zb8GR4HahwR29mr7sOhy5DLA9ZLpdFap94ZPsy0YSqmVSGNpJjAy4yVJ2jWCPdtaJr+YwWg==
+  dependencies:
+    "@plasmicapp/query" "^0.1.55"
+    window-or-global "^1.0.1"
+
+"@plasmicapp/host@^1.0.85":
+  version "1.0.85"
+  resolved "https://registry.yarnpkg.com/@plasmicapp/host/-/host-1.0.85.tgz#a4d70fc7ee1eb1401212313d8c40c824c4daa6e4"
+  integrity sha512-lT4gG59EgESYr0Y3DUqYB9ttVlclCI/uCa74DG5p/PJdXD/hsTWYlnw8IOtBKicsEiqt3FykxvAq5j1SmX3+wQ==
   dependencies:
     "@plasmicapp/query" "^0.1.55"
     window-or-global "^1.0.1"
