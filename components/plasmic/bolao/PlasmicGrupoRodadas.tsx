@@ -425,7 +425,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
                               const date2 = new Date(
                                 `${currentMatch.local_date} +3`
                               );
-                              const date = new Date(Date.now() - 10*60000);
+                              const date = new Date(Date.now());
                               return date < date2;
                             })()}
                             matchId={(() => {
