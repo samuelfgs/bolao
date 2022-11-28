@@ -71,6 +71,7 @@ function Partidas() {
       console.log("dale23", matchs, error);
       const match = matchs?.data.find((match: any) => match._id === _match.match_id) 
       const matchDate = new Date(`${match.local_date} +3`)
+      return true;
       const currDate = new Date(Date.now());
       return currDate <= matchDate;
     });
