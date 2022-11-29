@@ -108,7 +108,7 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
       {
         path: "rodada",
         type: "private",
-        initFunc: ($props, $state) => 1
+        initFunc: ($props, $state) => 2
       }
     ],
 
