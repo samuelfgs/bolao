@@ -3,15 +3,21 @@
 import * as React from "react";
 import { PlasmicScore, DefaultScoreProps } from "./plasmic/bolao/PlasmicScore";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
-import { state, ViewResults } from "../state-management/app";
+import { AdminResults, state, ViewResults } from "../state-management/app";
 import { useSnapshot } from "valtio";
+import { useRouter } from "next/router";
 export interface ScoreProps extends DefaultScoreProps {}
 
 function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
   const viewCtx = React.useContext(ViewResults);
+  const adminCtx = React.useContext(AdminResults);
   const matches = useSnapshot(state.matches);
+  const router = useRouter();
+  const isAdmin = router.pathname === "/admin";
   if (viewCtx) {
-    const match = viewCtx.find(match => match.match_id === props.matchId)!;
+    const match = viewCtx.find(
+      (match) => ( match.match_id === props.matchId && match.away_score !== null && match.home_score !== null)
+    )!;
     return <PlasmicScore 
       root={{ ref }}
       {...props}
@@ -21,18 +27,39 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
       isOpen={false}
     />
   }
+  if (adminCtx) {
+    const match = adminCtx.matches.find(match => match.match_id === props.matchId)!;
+    if (!match) return <></>;
+    return <PlasmicScore 
+      root={{ ref }}
+      {...props}
+      homeScore={`${match ? (match.home_score ?? "") : ""}`}
+      homeScoreInput={{ 
+        value: match.home_score,
+        onChange: (e) => e && adminCtx.onChange(props.matchId!, +e.target.value, +match.away_score!)
+      }}
+      awayScore={`${match ? (match.away_score ?? "") : ""}`}
+      awayScoreInput={{ 
+        value: match.away_score,
+        onChange: (e) => e && adminCtx.onChange(props.matchId!, +match.home_score!, +e.target.value)
+      }}
+      hide={props.isOpen && state.logged_user_id !== 8 && !isAdmin ? true : false}
+      isOpen={isAdmin}
+    />
+  }
 
 
   if (!state.matches.find(match => match.match_id === props.matchId)) {
     state.matches.push({ match_id: props.matchId! });
   }
   const match = state.matches.find(match => match.match_id === props.matchId)!;
-  return <PlasmicScore 
+  return <PlasmicScore
     root={{ ref }} 
     {...props}
     homeScoreInput={{
       value: match.home_score,
-      onChange: (e) => match.home_score = +e.target.value
+      onChange: (e) => match.home_score = +e.target.value,
+      type: "number"
     }}
     awayScoreInput={{
       value: match.away_score,

@@ -48,4 +48,8 @@ subscribe(state, () => {
   localStorage.setItem(globalStateKey, JSON.stringify(state));
 });
 
-export const ViewResults = React.createContext<Match[] | undefined>(undefined)
+export const ViewResults = React.createContext<Match[] | undefined>(undefined);
+export const AdminResults = React.createContext<{
+  matches: Match[],
+  onChange: (match_id: string, home_score: number, away_score: number) => void
+} | undefined>(undefined)

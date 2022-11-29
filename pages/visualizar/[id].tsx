@@ -45,7 +45,7 @@ function Classificacao() {
     })
   });
 
-  console.log("dale22", top_scorer);
+  console.log("dale23", matches);
 
   return (
     <ph.PageParamsProvider

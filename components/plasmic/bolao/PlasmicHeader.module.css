@@ -86,3 +86,12 @@
   cursor: pointer;
   color: #ffffff;
 }
+.admin {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 800px;
+  cursor: pointer;
+  color: #ffffff;
+  display: block;
+}

@@ -45,16 +45,21 @@ function Ranking() {
             }
           });
         }
+        setBetsByUser(bets);
       }
-      setBetsByUser(bets);
     })();
   }, [users]);
   
   React.useEffect(() => {
     if (Array.isArray(users) && Array.isArray(matchs?.data) && betsByUser) {
+      console.log("dale23", users, matchs?.data, betsByUser);
       const items = users.map((user) => {
         let three = 0, one = 0, jogos = 0;
-        matchs.data.filter((match: any) => match.time_elapsed !== "notstarted").forEach((match: any) => {
+        matchs.data.filter((match: any) => {
+          const matchDate = new Date(`${match.local_date} +3`);
+          const localDate = new Date(Date.now());
+          return matchDate < localDate;
+        }).forEach((match: any) => {
             jogos++;
             const bet = betsByUser[user.id]?.find(
                 (bet: any) => ( bet.match_id === match._id && bet.user_id === user.id && bet.away_score !== null && bet.home_score !== null)
@@ -78,9 +83,14 @@ function Ranking() {
             j: jogos,
             pos: 1
         }
-      }).sort((a, b) => ( a.pts !== b.pts ? b.pts - a.pts : a.user?.localeCompare(b.user)));
+      }).sort((a, b) => ( a.pts !== b.pts 
+          ? b.pts - a.pts 
+          : a.cravadas !== b.cravadas
+          ? b.cravadas - a.cravadas
+          : a.user?.localeCompare(b.user))
+      );
       for (let i = 1; i < items.length; i++) {
-        if (items[i-1].pts === items[i].pts) {
+        if (items[i-1].pts === items[i].pts && items[i-1].cravadas === items[i].cravadas) {
           items[i].pos = items[i-1].pos;
         } else {
           items[i].pos = i+1;

@@ -54,6 +54,8 @@ export const PlasmicRegulamento__ArgProps = new Array<ArgPropType>();
 export type PlasmicRegulamento__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
+  ul?: p.Flex<"ul">;
+  ol?: p.Flex<"ol">;
 };
 
 export interface DefaultRegulamentoProps {}
@@ -154,13 +156,130 @@ function PlasmicRegulamento__RenderFunc(props: {
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ fontWeight: 700 }}
                 >
-                  {"Pontuação da Fase de Grupos"}
+                  {"Pontuação:"}
                 </span>
-                <React.Fragment>
-                  {
-                    "\n\n    - 3 Pontos para quem acertar o vencedor e o placar do jogo.\n\n    - 1 Ponto para quem acertar o vencedor."
-                  }
-                </React.Fragment>
+                <React.Fragment>{"\n"}</React.Fragment>
+                {
+                  <p.Stack
+                    as={"ul"}
+                    data-plasmic-name={"ul"}
+                    data-plasmic-override={overrides.ul}
+                    hasGap={true}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.ul,
+                      sty.ul
+                    )}
+                  >
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li__n0DLp
+                      )}
+                    >
+                      {
+                        "3 Pontos para quem acertar o vencedor e o placar do jogo."
+                      }
+                    </li>
+
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li__tqVbb
+                      )}
+                    >
+                      {"1 Pontos param que acertar apenas o vencedor"}
+                    </li>
+
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li__gNjX
+                      )}
+                    >
+                      {"5 Pontos para quem acertar o artilheiro."}
+                    </li>
+
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li__dmOes
+                      )}
+                    >
+                      {"5 Pontos para quem acertar o campeão."}
+                    </li>
+                  </p.Stack>
+                }
+                <React.Fragment>{"\n"}</React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ fontWeight: 700 }}
+                >
+                  {"Critério de desempate:"}
+                </span>
+                <React.Fragment>{"\n"}</React.Fragment>
+                {
+                  <p.Stack
+                    as={"ol"}
+                    data-plasmic-name={"ol"}
+                    data-plasmic-override={overrides.ol}
+                    hasGap={true}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.ol,
+                      sty.ol
+                    )}
+                  >
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li___24WRp
+                      )}
+                    >
+                      {"Número de cravadas"}
+                    </li>
+
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li__mjrDm
+                      )}
+                    >
+                      {"Palpite do campeão"}
+                    </li>
+
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li__p8Q8I
+                      )}
+                    >
+                      {"Palpite do artilheiro"}
+                    </li>
+                  </p.Stack>
+                }
+                <React.Fragment>{""}</React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ fontWeight: 700 }}
+                >
+                  {""}
+                </span>
+                <React.Fragment>{"\n"}</React.Fragment>
               </React.Fragment>
             </div>
           </p.Stack>
@@ -171,8 +290,10 @@ function PlasmicRegulamento__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header"],
-  header: ["header"]
+  root: ["root", "header", "ul", "ol"],
+  header: ["header"],
+  ul: ["ul"],
+  ol: ["ol"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -180,6 +301,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
+  ul: "ul";
+  ol: "ol";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -244,6 +367,8 @@ export const PlasmicRegulamento = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    ul: makeNodeComponent("ul"),
+    ol: makeNodeComponent("ol"),
 
     // Metadata about props expected for PlasmicRegulamento
     internalVariantProps: PlasmicRegulamento__VariantProps,

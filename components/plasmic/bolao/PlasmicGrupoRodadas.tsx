@@ -316,7 +316,13 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
 
                         {(() => {
                           try {
-                            return currentMatch.time_elapsed !== "notstarted";
+                            return (() => {
+                              const matchDate = new Date(
+                                `${currentMatch.local_date} +3`
+                              );
+                              const localDate = new Date(Date.now());
+                              return matchDate < localDate;
+                            })();
                           } catch (e) {
                             if (e instanceof TypeError) {
                               return true;

@@ -218,7 +218,6 @@ function PlasmicScore__RenderFunc(props: {
                         )
                       }
                     )}
-                    type={"number" as const}
                   />
                 ) : null}
 

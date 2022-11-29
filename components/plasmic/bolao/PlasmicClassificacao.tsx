@@ -552,15 +552,22 @@ function PlasmicClassificacao__RenderFunc(props: {
                                             .map((team, i) => {
                                               const matches =
                                                 $ctx.match.data.filter(
-                                                  match =>
-                                                    match.time_elapsed !==
-                                                      "notstarted" &&
-                                                    [
-                                                      match.home_team_id,
-                                                      match.away_team_id
-                                                    ].includes(team.team_id)
+                                                  match => {
+                                                    const matchDate = new Date(
+                                                      `${match.local_date} +3`
+                                                    );
+                                                    const localDate = new Date(
+                                                      Date.now()
+                                                    );
+                                                    return (
+                                                      matchDate < localDate &&
+                                                      [
+                                                        match.home_team_id,
+                                                        match.away_team_id
+                                                      ].includes(team.team_id)
+                                                    );
+                                                  }
                                                 );
-
                                               let wins = 0,
                                                 losses = 0;
                                               let gp = 0,

@@ -58,6 +58,7 @@ export type PlasmicHeader__OverridesType = {
   root?: p.Flex<typeof NavigationBar>;
   text?: p.Flex<"div">;
   sair?: p.Flex<"a"> & Partial<LinkProps>;
+  admin?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultHeaderProps {
@@ -133,7 +134,7 @@ function PlasmicHeader__RenderFunc(props: {
           src={"https://static1.plasmic.app/close.svg" as const}
         />
       }
-      forceOpenMenu={false}
+      forceOpenMenu={true}
       itemsGap={8 as const}
       menuItems={
         <React.Fragment>
@@ -218,6 +219,23 @@ function PlasmicHeader__RenderFunc(props: {
               {"Sair"}
             </p.PlasmicLink>
           ) : null}
+          {true ? (
+            <p.PlasmicLink
+              data-plasmic-name={"admin"}
+              data-plasmic-override={overrides.admin}
+              className={classNames(
+                projectcss.all,
+                projectcss.a,
+                projectcss.__wab_text,
+                sty.admin
+              )}
+              component={Link}
+              href={"/admin" as const}
+              platform={"nextjs"}
+            >
+              {"Admin"}
+            </p.PlasmicLink>
+          ) : null}
         </React.Fragment>
       }
       openButton={
@@ -239,9 +257,10 @@ function PlasmicHeader__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text", "sair"],
+  root: ["root", "text", "sair", "admin"],
   text: ["text"],
-  sair: ["sair"]
+  sair: ["sair"],
+  admin: ["admin"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -250,6 +269,7 @@ type NodeDefaultElementType = {
   root: typeof NavigationBar;
   text: "div";
   sair: "a";
+  admin: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -315,6 +335,7 @@ export const PlasmicHeader = Object.assign(
     // Helper components rendering sub-elements
     text: makeNodeComponent("text"),
     sair: makeNodeComponent("sair"),
+    admin: makeNodeComponent("admin"),
 
     // Metadata about props expected for PlasmicHeader
     internalVariantProps: PlasmicHeader__VariantProps,

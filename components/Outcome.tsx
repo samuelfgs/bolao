@@ -28,15 +28,14 @@ function Outcome_(props: OutcomeProps, ref: HTMLElementRefOf<"div">) {
   const viewCtx = React.useContext(ViewResults);
   const snap = useSnapshot(state);
   const match = viewCtx
-    ? viewCtx.find(match => match.match_id === props.matchId)
-    : state.matches.find(match => match.match_id === props.matchId);
+    ? viewCtx.find(match => match.match_id === props.matchId && match.away_score !== null && match.home_score !== null)
+    : state.matches.find(match => match.match_id === props.matchId && match.away_score !== null && match.home_score !== null);
   let result: "zero" | "one" | "three" = "zero";
   if (match && match.away_score !== null && match.home_score !== null) {
     const betDiff = (match.away_score ?? 0) - (match.home_score ?? 0);
     const betAway = match.away_score ?? 0;
     const matchDiff = +(props.awayScore ?? 0) - +(props.homeScore ?? 0);
     const matchAway = +(props.awayScore ?? 0);
-    console.log("dale", betDiff, betAway, matchDiff, matchAway);
     if (betDiff === matchDiff && betAway === matchAway) {
       result = "three";
     } else if (betDiff * matchDiff > 0 || (betDiff === 0 && matchDiff === 0)) {
