@@ -108,13 +108,13 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
       {
         path: "rodada",
         type: "private",
-        initFunc: ($props, $state) => 2
+        initFunc: ($props, $state, $ctx) => 2
       }
     ],
 
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
 
   return (
     <p.Stack

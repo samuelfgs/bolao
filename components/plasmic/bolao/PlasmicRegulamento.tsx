@@ -192,7 +192,7 @@ function PlasmicRegulamento__RenderFunc(props: {
                         sty.li__tqVbb
                       )}
                     >
-                      {"1 Pontos param que acertar apenas o vencedor"}
+                      {"1 Pontos para quem acertar apenas o vencedor"}
                     </li>
 
                     <li

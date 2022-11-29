@@ -112,13 +112,13 @@ function PlasmicOutcome__RenderFunc(props: {
       {
         path: "result",
         type: "private",
-        initFunc: ($props, $state) => $props.result
+        initFunc: ($props, $state, $ctx) => $props.result
       }
     ],
 
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
 
   return (
     true ? (

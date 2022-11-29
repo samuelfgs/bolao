@@ -122,19 +122,19 @@ function PlasmicScore__RenderFunc(props: {
       {
         path: "isOpen",
         type: "private",
-        initFunc: ($props, $state) => $props.isOpen
+        initFunc: ($props, $state, $ctx) => $props.isOpen
       },
 
       {
         path: "hide",
         type: "private",
-        initFunc: ($props, $state) => $props.hide
+        initFunc: ($props, $state, $ctx) => $props.hide
       }
     ],
 
-    [$props]
+    [$props, $ctx]
   );
-  const $state = p.useDollarState(stateSpecs, $props);
+  const $state = p.useDollarState(stateSpecs, $props, $ctx);
 
   return (
     true ? (
