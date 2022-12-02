@@ -57,12 +57,12 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
     root={{ ref }} 
     {...props}
     homeScoreInput={{
-      value: match.home_score,
+      value: match?.home_score,
       onChange: (e) => match.home_score = +e.target.value,
       type: "number"
     }}
     awayScoreInput={{
-      value: match.away_score,
+      value: match?.away_score,
       onChange: (e) => match.away_score = +e.target.value,
       type: "number"
     }}
