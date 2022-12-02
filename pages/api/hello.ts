@@ -17,21 +17,21 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const body = JSON.parse(req.body);
-  if (body.endpoint === "match") {
-    const outcome = await supabase.from("outcome").select("*");
-    if (outcome.data) {
-      outcome.data.forEach(res => {
-        const m = match.data.find(m => m._id === res.match_id)!;
-        m.home_score = res.home_score;
-        m.away_score = res.away_score;
-      })
-    }
-    res.status(200).json(match);
-    return ;
-  } else if (body.endpoint === "standings") {
-    res.status(200).json(standings);
-    return ;
-  }
+  // if (body.endpoint === "match") {
+  //   const outcome = await supabase.from("outcome").select("*");
+  //   if (outcome.data) {
+  //     outcome.data.forEach(res => {
+  //       const m = match.data.find(m => m._id === res.match_id)!;
+  //       m.home_score = res.home_score;
+  //       m.away_score = res.away_score;
+  //     })
+  //   }
+  //   res.status(200).json(match);
+  //   return ;
+  // } else if (body.endpoint === "standings") {
+  //   res.status(200).json(standings);
+  //   return ;
+  // }
   const data = await (await fetch("http://api.cup2022.ir/api/v1/" + body.endpoint, {
     headers: {
       Authorization: `Bearer ${process.env.WC_API_TOKEN}`

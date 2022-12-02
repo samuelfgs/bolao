@@ -52,7 +52,7 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
   if (!state.matches.find(match => match.match_id === props.matchId)) {
     state.matches.push({ match_id: props.matchId! });
   }
-  const match = state.matches.find(match => match.match_id === props.matchId)!;
+  const match = state.matches.find(match => match.match_id === props.matchId && match.away_score !== null && match.home_score !== null)!;
   return <PlasmicScore
     root={{ ref }} 
     {...props}
