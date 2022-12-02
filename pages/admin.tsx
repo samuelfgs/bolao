@@ -3,7 +3,6 @@
 import * as React from "react";
 import * as ph from "@plasmicapp/host";
 
-import { PlasmicPalpites } from "../components/plasmic/bolao/PlasmicPalpites";
 import { useRouter } from "next/router";
 import { usePlasmicQueryData } from "@plasmicapp/query";
 import "@plasmicpkgs/antd/dist/antd.css"
@@ -11,6 +10,7 @@ import { Supabase } from "../components/supabase";
 import { AdminResults, Match } from "../state-management/app";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PlasmicPalpitesComp from "../components/plasmic/bolao/PlasmicPalpitesComp";
 
 function Classificacao() {
   const router = useRouter();
@@ -67,7 +67,7 @@ function Classificacao() {
         matches,
         onChange
       }}>
-        <PlasmicPalpites
+        <PlasmicPalpitesComp
           isView={true} 
           save={{
             onClick: onSave
