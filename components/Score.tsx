@@ -48,11 +48,11 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
     />
   }
 
-
-  if (!state.matches.find(match => match.match_id === props.matchId)) {
-    state.matches.push({ match_id: props.matchId! });
+  if (!state.matches.find(match => match.match_id === props.matchId && match.away_score !== null && match.home_score !== null)) {
+    state.matches.push({ match_id: props.matchId!, away_score: 0, home_score: 0 });
   }
   const match = state.matches.find(match => match.match_id === props.matchId && match.away_score !== null && match.home_score !== null)!;
+  console.log("dale25", match, props.matchId);
   return <PlasmicScore
     root={{ ref }} 
     {...props}
