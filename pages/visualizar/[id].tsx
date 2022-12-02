@@ -36,18 +36,6 @@ function Classificacao() {
     })
   });
 
-  const { data: top_scorer } = usePlasmicQueryData(id && `top_scorer/${id}`, async() => {
-    return await Supabase.select("top_scorer", {
-      filter: {
-        column: "user_id",
-        operator: "eq",
-        value: id
-      }
-    })
-  });
-
-  console.log("dale23", matches);
-
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
@@ -57,7 +45,8 @@ function Classificacao() {
         <PlasmicPalpitesComp
           isView={true} 
           player={user?.[0]?.name} 
-          artilheiro2={top_scorer?.length > 0 && top_scorer.slice(-1)[0].player != "" ? top_scorer.slice(-1)[0].player : "Nao escolheu"}
+          artilheiro2={user?.length > 0 && user[0].top_scorer != "" ? user[0].top_scorer : "Nao escolheu"}
+          campeao2={user?.length > 0 && user[0].champion != null ? user[0].champion : "Nao escolheu"}
           save={{
             render: () => <></>
           }}

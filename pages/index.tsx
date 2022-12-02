@@ -91,6 +91,7 @@ function Partidas() {
     }
   }
 
+  console.log("dale", matchs);
   return (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
@@ -103,13 +104,21 @@ function Partidas() {
             onClick: onSave
           }}
           campeao={{
-            children: matchs?.data.filter((match: any) => match.type === "R16" && match.home_team_en !== "--" && match.away_team_en !== "--").map((match: any) => 
+            children: [
+              {
+                home_team_en: "Brazil"
+              },
+              ...(matchs?.data ?? []).filter((match: any) => match.type === "R16" && match.home_team_en !== "--" && match.away_team_en !== "--"),
+              {
+                home_team_en: "Portugal",
+                away_team_en: "South Korea"
+              }
+            ].flatMap((match) => [
+              match.home_team_en, ...(match.away_team_en ? [match.away_team_en] : [])
+            ]).map((team: any) => 
               <>
-                <Select.Option value={match.home_team_en}>
-                  {match.home_team_en}
-                </Select.Option>
-                <Select.Option value={match.away_team_en}>
-                  {match.away_team_en}
+                <Select.Option value={team}>
+                  {team}
                 </Select.Option>
               </>
             ),

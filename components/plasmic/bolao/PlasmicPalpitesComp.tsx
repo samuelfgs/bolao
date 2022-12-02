@@ -68,6 +68,7 @@ export type PlasmicPalpitesComp__ArgsType = {
   player?: React.ReactNode;
   artilheiro2?: React.ReactNode;
   fases?: any;
+  campeao2?: React.ReactNode;
 };
 
 type ArgPropType = keyof PlasmicPalpitesComp__ArgsType;
@@ -76,7 +77,8 @@ export const PlasmicPalpitesComp__ArgProps = new Array<ArgPropType>(
   "isView",
   "player",
   "artilheiro2",
-  "fases"
+  "fases",
+  "campeao2"
 );
 
 export type PlasmicPalpitesComp__OverridesType = {
@@ -95,6 +97,7 @@ export interface DefaultPalpitesCompProps {
   player?: React.ReactNode;
   artilheiro2?: React.ReactNode;
   fases?: any;
+  campeao2?: React.ReactNode;
   className?: string;
 }
 
@@ -247,6 +250,39 @@ function PlasmicPalpitesComp__RenderFunc(props: {
             {p.renderPlasmicSlot({
               defaultContents: "Nao escolheu",
               value: args.artilheiro2
+            })}
+          </div>
+        </p.Stack>
+      ) : null}
+      {(() => {
+        try {
+          return $props.isView;
+        } catch (e) {
+          if (e instanceof TypeError) {
+            return true;
+          }
+          throw e;
+        }
+      })() ? (
+        <p.Stack
+          as={"div"}
+          hasGap={true}
+          className={classNames(projectcss.all, sty.freeBox__fex0O)}
+        >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__d1W7A
+            )}
+          >
+            {"Palpite do Campeão:"}
+          </div>
+
+          <div className={classNames(projectcss.all, sty.freeBox__dOs4G)}>
+            {p.renderPlasmicSlot({
+              defaultContents: "Nao escolheu",
+              value: args.campeao2
             })}
           </div>
         </p.Stack>
