@@ -50,7 +50,6 @@ export default async function handler(
     }
       
     const { data, error } = await query;
-    console.log("dale", data, error)
     if (error) {
       res.status(500).send(error)
     } else {
@@ -66,8 +65,7 @@ export default async function handler(
     }
   } else if (req.method === "PUT") {
     const body = JSON.parse(req.body);
-    console.log(body);
-    const { data, error } = await supabase.from(table).upsert(body).select();
+    const { data, error } = await supabase.from(table).upsert(body, { onConflict: "id"}).select();
     if (error) {
       res.status(500).send(error);
     } else {

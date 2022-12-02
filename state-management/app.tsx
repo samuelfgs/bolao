@@ -17,7 +17,8 @@ export interface TopScorer {
 export interface AppState {
   logged_user_id?: number;
   matches: Match[];
-  top_scorer?: TopScorer;
+  top_scorer?: string;
+  champion?: string;
 }
 
 export const mkInitialState = () => ({

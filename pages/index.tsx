@@ -11,8 +11,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GlobalContextsProvider from "../components/plasmic/bolao/PlasmicGlobalContextsProvider";
 import { useSnapshot } from "valtio";
-import PlasmicPalpites from "../components/plasmic/bolao/PlasmicPalpites";
 import { usePlasmicQueryData } from "@plasmicapp/query"
+import PlasmicPalpitesComp from "../components/plasmic/bolao/PlasmicPalpitesComp";
+import Select from "../components/Select";
 
 function Partidas() {
   const { data: matchs, error } = usePlasmicQueryData("match", async (): Promise<any> => {
@@ -33,29 +34,26 @@ function Partidas() {
   const snap = useSnapshot(state);
   React.useEffect(() => {
     (async () => {
-      state.matches = await Supabase.select("bets", {
+      state.matches = await Supabase.select("bets2", {
         filter: [{
           column: "user_id",
           operator: "eq",
           value: state.logged_user_id
         }]
       });
-      const top_scorer = await Supabase.select("top_scorer", {
+      const user = await Supabase.select("users", {
         filter: [{
-          column: "user_id",
+          column: "id",
           operator: "eq",
           value: state.logged_user_id
         }]
       }) as any[];
-      if (top_scorer.length > 0) {
-        state.top_scorer = {
-          id: top_scorer.slice(-1)[0].id,
-          player: top_scorer.slice(-1)[0].player
-        }
+      if (user.length > 0) {
+        state.top_scorer = user[0].top_scorer;
+        state.champion = user[0].champion;
       } else {
-        state.top_scorer = {
-          player: ""
-        }
+        state.top_scorer = "";
+        state.champion = "";
       }
     })();
   }, []);
@@ -68,36 +66,29 @@ function Partidas() {
       away_score: match.away_score
     }));
     const canSaveRow = formattedRows.filter(_match => {
-      console.log("dale23", matchs, error);
       const match = matchs?.data.find((match: any) => match._id === _match.match_id) 
       const matchDate = new Date(`${match.local_date} +3`)
-      return true;
       const currDate = new Date(Date.now());
       return currDate <= matchDate;
     });
 
-    const rowsToInsert = canSaveRow.filter(match => match.id === undefined);
-    const rowsToUpsert = canSaveRow.filter(match => match.id !== undefined);
-    const data = await Supabase.upsert("bets", rowsToUpsert);
-    const data2 = await Supabase.insert("bets", rowsToInsert);
-    const data3 = await Supabase.upsert("top_scorer", {
-      user_id: state.logged_user_id,
-      player: state.top_scorer!.player,
-      ...(state.top_scorer!.id ? { id: state.top_scorer!.id } : {})
+    const data = await Supabase.upsert("bets2", canSaveRow);
+    const data2 = await Supabase.upsert("users", {
+      id: state.logged_user_id,
+      champion: state.champion
     })
-    if (Array.isArray(data) && Array.isArray(data2) && Array.isArray(data3)) {
+    if (Array.isArray(data) && Array.isArray(data2)) {
       toast.success("Resultados salvos com sucesso!", {
         position: "top-right",
         autoClose: 2000
       });
     } else {
+      console.log(data, data2)
       toast.error("Aconteceu algum erro! Tente novamente.", {
         position: "top-right",
         autoClose: 2000
       });
     }
-
-    
   }
 
   return (
@@ -107,15 +98,30 @@ function Partidas() {
         query={useRouter()?.query}
       >
         <ToastContainer />
-        <PlasmicPalpites
+        <PlasmicPalpitesComp
           save={{
             onClick: onSave
           }}
-          artilheiro={{
-            value: snap.top_scorer?.player,
-            onChange: (e) => state.top_scorer!.player = e.target.value,
-            isDisabled: true
-          }}
+          campeao={{
+            children: matchs?.data.filter((match: any) => match.type === "R16" && match.home_team_en !== "--" && match.away_team_en !== "--").map((match: any) => 
+              <>
+                <Select.Option value={match.home_team_en}>
+                  {match.home_team_en}
+                </Select.Option>
+                <Select.Option value={match.away_team_en}>
+                  {match.away_team_en}
+                </Select.Option>
+              </>
+            ),
+            value: snap.champion,
+            onChange: (val) => {
+              if (val) {
+                state.champion = val;
+              }
+            }
+          }
+        }
+          artilheiro2={snap.top_scorer ?? ""}
         />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>

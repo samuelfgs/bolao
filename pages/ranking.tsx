@@ -37,7 +37,7 @@ function Ranking() {
       const bets: Record<string, any> = {};
       if (Array.isArray(users)) {
         for (const user of users) {
-          bets[user.id] = await Supabase.select("bets", {
+          bets[user.id] = await Supabase.select("bets2", {
             filter: {
               column: "user_id",
               operator: "eq",
@@ -62,7 +62,7 @@ function Ranking() {
         }).forEach((match: any) => {
             jogos++;
             const bet = betsByUser[user.id]?.find(
-                (bet: any) => ( bet.match_id === match._id && bet.user_id === user.id && bet.away_score !== null && bet.home_score !== null)
+                (bet: any) => ( bet.match_id === match._id )
             );
             if (bet && bet.away_score !== null && bet.home_score !== null) {
                 const diffReal = match.away_score - match.home_score;

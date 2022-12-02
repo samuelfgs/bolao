@@ -169,6 +169,8 @@ function PlasmicTextInput__RenderFunc(props: {
   );
   const $state = p.useDollarState(stateSpecs, $props, $ctx);
 
+  const [$queries, setDollarQueries] = React.useState({});
+
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {
       isTextInput: false

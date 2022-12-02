@@ -102,6 +102,8 @@ function PlasmicSignup__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const [$queries, setDollarQueries] = React.useState({});
+
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantsmE8VsUsoIpq2E()
   });

@@ -16,7 +16,7 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
   const isAdmin = router.pathname === "/admin";
   if (viewCtx) {
     const match = viewCtx.find(
-      (match) => ( match.match_id === props.matchId && match.away_score !== null && match.home_score !== null)
+      (match) => ( match.match_id === props.matchId )
     )!;
     return <PlasmicScore 
       root={{ ref }}
@@ -48,11 +48,7 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
     />
   }
 
-  if (!state.matches.find(match => match.match_id === props.matchId && match.away_score !== null && match.home_score !== null)) {
-    state.matches.push({ match_id: props.matchId!, away_score: 0, home_score: 0 });
-  }
-  const match = state.matches.find(match => match.match_id === props.matchId && match.away_score !== null && match.home_score !== null)!;
-  console.log("dale25", match, props.matchId);
+  const match = state.matches.find(match => match.match_id === props.matchId)!;
   return <PlasmicScore
     root={{ ref }} 
     {...props}

@@ -11,12 +11,13 @@ import { usePlasmicQueryData } from "@plasmicapp/query";
 import "@plasmicpkgs/antd/dist/antd.css"
 import { Supabase } from "../../components/supabase";
 import { ViewResults } from "../../state-management/app";
+import PlasmicPalpitesComp from "../../components/plasmic/bolao/PlasmicPalpitesComp";
 function Classificacao() {
   const router = useRouter();
   const id = router.query.id;
 
   const { data: matches } = usePlasmicQueryData(id && `view/${id}`, async() => {
-    return await Supabase.select("bets", {
+    return await Supabase.select("bets2", {
       filter: {
         column: "user_id",
         operator: "eq",
@@ -53,7 +54,7 @@ function Classificacao() {
       query={useRouter()?.query}
     >
       <ViewResults.Provider value={matches}>
-        <PlasmicPalpites
+        <PlasmicPalpitesComp
           isView={true} 
           player={user?.[0]?.name} 
           artilheiro2={top_scorer?.length > 0 && top_scorer.slice(-1)[0].player != "" ? top_scorer.slice(-1)[0].player : "Nao escolheu"}

@@ -93,6 +93,8 @@ function PlasmicClassificacao__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -544,8 +546,10 @@ function PlasmicClassificacao__RenderFunc(props: {
                                           const compareTeams = (a, b) => {
                                             if (a.pts != b.pts) {
                                               return b.pts - a.pts;
-                                            } else {
+                                            } else if (a.sg != b.sg) {
                                               return b.sg - a.sg;
+                                            } else {
+                                              return b.gp - a.gp;
                                             }
                                           };
                                           return currentGroup.teams

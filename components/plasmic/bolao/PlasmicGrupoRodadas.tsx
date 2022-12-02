@@ -116,6 +116,8 @@ function PlasmicGrupoRodadas__RenderFunc(props: {
   );
   const $state = p.useDollarState(stateSpecs, $props, $ctx);
 
+  const [$queries, setDollarQueries] = React.useState({});
+
   return (
     <p.Stack
       as={"div"}

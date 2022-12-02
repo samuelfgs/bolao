@@ -11,11 +11,13 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const matchs = data.data;
-  const ret = await Supabase.insert("outcome", matchs.map(match => ({
+  const inserted = await Supabase.select("outcome");
+  const missingRows = matchs.filter(match => !inserted.find((ins: any) => ins.match_id === match._id)).map(match => ({
     match_id: match._id,
     home_score: match.home_score,
-    away_score: match.away_score
-  })));
+    away_score: match.away_score,
+  }));
+  const ret = await Supabase.insert("outcome", missingRows);
   console.log("dale", ret);
   res.status(200).json({ ret });
 }
