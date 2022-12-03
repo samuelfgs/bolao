@@ -540,7 +540,38 @@ function PlasmicPalpitesComp__RenderFunc(props: {
                                   className={classNames(
                                     "__wab_instance",
                                     sty.outcome__aliO
-                                  )}
+                                  )}  
+awayScore={(() => {
+                              try {
+                                return currentMatch.away_score;
+                              } catch (e) {
+                                if (e instanceof TypeError) {
+                                  return "1";
+                                }
+                                throw e;
+                              }
+                            })()}
+                            homeScore={(() => {
+                              try {
+                                return currentMatch.home_score;
+                              } catch (e) {
+                                if (e instanceof TypeError) {
+                                  return "3";
+                                }
+                                throw e;
+                              }
+                            })()}
+                            matchId={(() => {
+                              try {
+                                return currentMatch._id;
+                              } catch (e) {
+                                if (e instanceof TypeError) {
+                                  return undefined;
+                                }
+                                throw e;
+                              }
+                            })()}
+
                                 />
                               ) : null}
 
