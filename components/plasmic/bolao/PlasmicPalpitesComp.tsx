@@ -254,16 +254,7 @@ function PlasmicPalpitesComp__RenderFunc(props: {
           </div>
         </p.Stack>
       ) : null}
-      {(() => {
-        try {
-          return $props.isView;
-        } catch (e) {
-          if (e instanceof TypeError) {
-            return true;
-          }
-          throw e;
-        }
-      })() ? (
+      {true ? (
         <p.Stack
           as={"div"}
           hasGap={true}
@@ -287,16 +278,7 @@ function PlasmicPalpitesComp__RenderFunc(props: {
           </div>
         </p.Stack>
       ) : null}
-      {(() => {
-        try {
-          return !$props.isView;
-        } catch (e) {
-          if (e instanceof TypeError) {
-            return true;
-          }
-          throw e;
-        }
-      })() ? (
+      {false ? (
         <div className={classNames(projectcss.all, sty.freeBox__cBaaz)}>
           <div
             className={classNames(

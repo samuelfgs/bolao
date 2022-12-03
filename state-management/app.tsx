@@ -33,6 +33,7 @@ export const initializePersistentData = (): AppState => {
     const state = JSON.parse(persistentData) as AppState;
     state.matches = [];
     state.top_scorer = undefined;
+    state.champion = undefined;
     return state;
   } else {
     return {

@@ -90,8 +90,8 @@ function Partidas() {
       });
     }
   }
+  console.log("dale", snap.top_scorer, snap.champion);
 
-  console.log("dale", matchs);
   return (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
@@ -103,26 +103,7 @@ function Partidas() {
           save={{
             onClick: onSave
           }}
-          campeao={{
-            children: [
-              ...(matchs?.data ?? []).filter((match: any) => match.type === "R16" && match.home_team_en !== "--" && match.away_team_en !== "--"),
-            ].flatMap((match) => [
-              match.home_team_en, ...(match.away_team_en ? [match.away_team_en] : [])
-            ]).map((team: any) => 
-              <>
-                <Select.Option value={team}>
-                  {team}
-                </Select.Option>
-              </>
-            ),
-            value: snap.champion,
-            onChange: (val) => {
-              if (val) {
-                state.champion = val;
-              }
-            }
-          }
-        }
+          campeao2={snap.champion ?? ""}
           artilheiro2={snap.top_scorer ?? ""}
         />
       </ph.PageParamsProvider>

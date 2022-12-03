@@ -35,9 +35,7 @@ export class Supabase {
       ...(order ? { order } : {}),
       ...(filter ? { filter } : {})
     }
-    console.log("dale2", table, params);
     const data = await fetch(`/api/supabase/${table}/?${qs.stringify(params2)}`);
-    console.log("dale", data);
     return await data.json();
   }
 
