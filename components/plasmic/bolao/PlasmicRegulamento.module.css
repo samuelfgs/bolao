@@ -102,23 +102,32 @@
 .li__dmOes {
   padding-bottom: 0px;
 }
-.ol {
+.ol__u8Yug {
   flex-direction: column;
   display: flex;
 }
-.ol > :global(.__wab_flex-container) {
+.ol__u8Yug > :global(.__wab_flex-container) {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
   margin-top: calc(0px - 10px);
   height: calc(100% + 10px);
 }
-.ol > :global(.__wab_flex-container) > *,
-.ol > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
-.ol > :global(.__wab_flex-container) > picture > img,
-.ol > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+.ol__u8Yug > :global(.__wab_flex-container) > *,
+.ol__u8Yug > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.ol__u8Yug > :global(.__wab_flex-container) > picture > img,
+.ol__u8Yug
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
   margin-top: 10px;
 }
 .li___24WRp {
   padding-top: 15px;
+}
+.ol__np4Fm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
 }

@@ -55,7 +55,6 @@ export type PlasmicRegulamento__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
   ul?: p.Flex<"ul">;
-  ol?: p.Flex<"ol">;
 };
 
 export interface DefaultRegulamentoProps {}
@@ -220,7 +219,11 @@ function PlasmicRegulamento__RenderFunc(props: {
                     </li>
                   </p.Stack>
                 }
-                <React.Fragment>{"\n"}</React.Fragment>
+                <React.Fragment>
+                  {
+                    "\n * Para o mata-mata valerá o resultado ao fim da prorrogação. Independente de quem ganhe o pênalti, valerá o empate como resultado do jogo.\n\n"
+                  }
+                </React.Fragment>
                 <span
                   className={"plasmic_default__all plasmic_default__span"}
                   style={{ fontWeight: 700 }}
@@ -231,13 +234,11 @@ function PlasmicRegulamento__RenderFunc(props: {
                 {
                   <p.Stack
                     as={"ol"}
-                    data-plasmic-name={"ol"}
-                    data-plasmic-override={overrides.ol}
                     hasGap={true}
                     className={classNames(
                       projectcss.all,
                       projectcss.ol,
-                      sty.ol
+                      sty.ol__u8Yug
                     )}
                   >
                     <li
@@ -274,6 +275,34 @@ function PlasmicRegulamento__RenderFunc(props: {
                     </li>
                   </p.Stack>
                 }
+                <React.Fragment>{"\n"}</React.Fragment>
+                <span
+                  className={"plasmic_default__all plasmic_default__span"}
+                  style={{ fontWeight: 700 }}
+                >
+                  {"Premiação:"}
+                </span>
+                <React.Fragment>{"\n"}</React.Fragment>
+                {
+                  <ol
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.ol,
+                      sty.ol__np4Fm
+                    )}
+                  >
+                    <li
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.li,
+                        projectcss.__wab_text,
+                        sty.li__zXqA4
+                      )}
+                    >
+                      {"R$ 360,00"}
+                    </li>
+                  </ol>
+                }
                 <React.Fragment>{""}</React.Fragment>
                 <span
                   className={"plasmic_default__all plasmic_default__span"}
@@ -292,10 +321,9 @@ function PlasmicRegulamento__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "ul", "ol"],
+  root: ["root", "header", "ul"],
   header: ["header"],
-  ul: ["ul"],
-  ol: ["ol"]
+  ul: ["ul"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -304,7 +332,6 @@ type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
   ul: "ul";
-  ol: "ol";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -370,7 +397,6 @@ export const PlasmicRegulamento = Object.assign(
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
     ul: makeNodeComponent("ul"),
-    ol: makeNodeComponent("ol"),
 
     // Metadata about props expected for PlasmicRegulamento
     internalVariantProps: PlasmicRegulamento__VariantProps,
