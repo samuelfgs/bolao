@@ -221,7 +221,7 @@ function PlasmicRegulamento__RenderFunc(props: {
                 }
                 <React.Fragment>
                   {
-                    "\n * Para o mata-mata valerá o resultado ao fim da prorrogação. Independente de quem ganhe o pênalti, valerá o empate como resultado do jogo.\n\n"
+                    "\n * Para o mata-mata valerá o resultado ao fim da prorrogação. Independente de quem ganhe o pênalti, o empate será considerado como o resultado do jogo.\n\n"
                   }
                 </React.Fragment>
                 <span
