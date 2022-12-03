@@ -105,14 +105,7 @@ function Partidas() {
           }}
           campeao={{
             children: [
-              {
-                home_team_en: "Brazil"
-              },
               ...(matchs?.data ?? []).filter((match: any) => match.type === "R16" && match.home_team_en !== "--" && match.away_team_en !== "--"),
-              {
-                home_team_en: "Portugal",
-                away_team_en: "South Korea"
-              }
             ].flatMap((match) => [
               match.home_team_en, ...(match.away_team_en ? [match.away_team_en] : [])
             ]).map((team: any) => 
