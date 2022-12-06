@@ -1293,14 +1293,14 @@
             "_id": "629c9c8a5749c4077500eb02",
             "away_score": 3,
             "away_scorers": [
-                "null"
+                "Xherdan Shaqiri,Breel Embolo,Remo Freuler"
             ],
             "away_team_id": "31",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "G",
             "home_score": 2,
             "home_scorers": [
-                "null"
+                "Aleksandar Mitrović,Dušan Vlahović"
             ],
             "home_team_id": "26",
             "id": "47",
@@ -1308,7 +1308,7 @@
             "matchday": "13",
             "persian_date": "1400-09-11 22:30",
             "stadium_id": "1",
-            "time_elapsed": "h2",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "صربستان",
             "away_team_fa": "سوئیس",
@@ -1319,12 +1319,12 @@
         },
         {
             "_id": "629c9c8a5749c4077500eb03",
-            "away_score": 0,
+            "away_score": 1,
             "away_scorers": [
-                "null"
+                "Vincent Aboubakar"
             ],
             "away_team_id": "32",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "G",
             "home_score": 0,
             "home_scorers": [
@@ -1336,7 +1336,7 @@
             "matchday": "13",
             "persian_date": "1400-09-11 22:30",
             "stadium_id": "1",
-            "time_elapsed": "h2",
+            "time_elapsed": "finished",
             "type": "group",
             "home_team_fa": "برزیل",
             "away_team_fa": "کامرون",
@@ -1347,16 +1347,16 @@
         },
         {
             "_id": "638923be0eab2168b945af31",
-            "away_score": 0,
+            "away_score": 3,
             "away_scorers": [
-                "null"
+                "Memphis Depay,Daley Blind,Denzel Dumfries"
             ],
             "away_team_id": "4",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "R16",
-            "home_score": 0,
+            "home_score": 1,
             "home_scorers": [
-                "null"
+                "Haji Wright"
             ],
             "home_team_id": "7",
             "id": "49",
@@ -1364,7 +1364,7 @@
             "matchday": "14",
             "persian_date": "1400-09-12 18:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "finished",
             "type": "R16",
             "home_team_fa": "آمریکا",
             "away_team_fa": "هلند",
@@ -1375,16 +1375,16 @@
         },
         {
             "_id": "638923be0eab2168b945af32",
-            "away_score": 0,
+            "away_score": 2,
             "away_scorers": [
-                "null"
+                "Lionel Messi,Julián Álvarez"
             ],
             "away_team_id": "9",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "R16",
-            "home_score": 0,
+            "home_score": 1,
             "home_scorers": [
-                "null"
+                "Enzo Fernández"
             ],
             "home_team_id": "16",
             "id": "50",
@@ -1392,7 +1392,7 @@
             "matchday": "14",
             "persian_date": "1400-09-12 22:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "finished",
             "type": "R16",
             "home_team_fa": "استرالیا",
             "away_team_fa": "آرژانتین",
@@ -1403,16 +1403,16 @@
         },
         {
             "_id": "638923be0eab2168b945af33",
-            "away_score": 0,
+            "away_score": 3,
             "away_scorers": [
-                "null"
+                "Memphis Depay,Daley Blind,Denzel Dumfries"
             ],
             "away_team_id": "15",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "R16",
-            "home_score": 0,
+            "home_score": 1,
             "home_scorers": [
-                "null"
+                "Haji Wright"
             ],
             "home_team_id": "14",
             "id": "51",
@@ -1420,7 +1420,7 @@
             "matchday": "15",
             "persian_date": "1400-09-13 18:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "finished",
             "type": "R16",
             "home_team_fa": "لهستان",
             "away_team_fa": "فرانسه",
@@ -1431,12 +1431,12 @@
         },
         {
             "_id": "638923be0eab2168b945af34",
-            "away_score": 0,
+            "away_score": 3,
             "away_scorers": [
-                "null"
+                "J. Henderson,H. Kane,Bukayo Saka"
             ],
             "away_team_id": "5",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "R16",
             "home_score": 0,
             "home_scorers": [
@@ -1448,7 +1448,7 @@
             "matchday": "15",
             "persian_date": "1400-09-13 22:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "finished",
             "type": "R16",
             "home_team_fa": "سنگال",
             "away_team_fa": "انگلستان",
@@ -1459,16 +1459,16 @@
         },
         {
             "_id": "638923be0eab2168b945af35",
-            "away_score": 0,
+            "away_score": 1,
             "away_scorers": [
-                "null"
+                "I. Perišić,Penalties(1)"
             ],
             "away_team_id": "20",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "R16",
-            "home_score": 0,
+            "home_score": 2,
             "home_scorers": [
-                "null"
+                "Daizen Maeda,Penalties(3)"
             ],
             "home_team_id": "18",
             "id": "52",
@@ -1476,7 +1476,7 @@
             "matchday": "16",
             "persian_date": "1400-09-14 18:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "finished",
             "type": "R16",
             "home_team_fa": "کرواسی",
             "away_team_fa": "ژاپن",
@@ -1487,35 +1487,35 @@
         },
         {
             "_id": "638923be0eab2168b945af36",
-            "away_score": 0,
+            "away_score": 4,
             "away_scorers": [
-                "null"
+                "Vini Jr.,Neymar,Richarlison,Lucas Paquetá"
             ],
-            "away_team_id": "0",
-            "finished": "FALSE",
+            "away_team_id": "25",
+            "finished": "TRUE",
             "group": "R16",
-            "home_score": 0,
+            "home_score": 1,
             "home_scorers": [
-                "null"
+                "S.H. Paik"
             ],
-            "home_team_id": "0",
+            "home_team_id": "30",
             "id": "53",
             "local_date": "12/5/2022 22:00",
             "matchday": "16",
             "persian_date": "1400-09-14 22:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "finished",
             "type": "R16",
-            "home_team_fa": "--",
-            "away_team_fa": "--",
-            "home_team_en": "Brazil",
-            "away_team_en": "South Korea",
-            "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/125px-Flag_of_Brazil.svg.png",
-            "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/125px-Flag_of_South_Korea.svg.png"
+            "home_team_fa": "کره جنوبی",
+            "away_team_fa": "برزیل",
+            "home_team_en": "South Korea",
+            "away_team_en": "Brazil",
+            "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/125px-Flag_of_South_Korea.svg.png",
+            "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/125px-Flag_of_Brazil.svg.png"
         },
         {
             "_id": "638923be0eab2168b945af37",
-            "away_score": 17,
+            "away_score": 0,
             "away_scorers": [
                 "null"
             ],
@@ -1532,7 +1532,7 @@
             "matchday": "17",
             "persian_date": "1400-09-15 18:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "h2",
             "type": "R16",
             "home_team_fa": "اسپانیا",
             "away_team_fa": "مراکش",
@@ -1547,14 +1547,14 @@
             "away_scorers": [
                 "null"
             ],
-            "away_team_id": "0",
+            "away_team_id": "27",
             "finished": "FALSE",
             "group": "R16",
             "home_score": 0,
             "home_scorers": [
                 "null"
             ],
-            "home_team_id": "0",
+            "home_team_id": "31",
             "id": "55",
             "local_date": "12/6/2022 22:00",
             "matchday": "17",
@@ -1562,12 +1562,12 @@
             "stadium_id": "1",
             "time_elapsed": "notstarted",
             "type": "R16",
-            "home_team_fa": "--",
-            "away_team_fa": "--",
-            "home_team_en": "Portugal",
-            "away_team_en": "Switzerland",
-            "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/125px-Flag_of_Portugal.svg.png",
-            "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png"
+            "home_team_fa": "سوئیس",
+            "away_team_fa": "پرتغال",
+            "home_team_en": "Switzerland",
+            "away_team_en": "Portugal",
+            "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png",
+            "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/125px-Flag_of_Portugal.svg.png"
         },
         {
             "_id": "6389265e0eab2168b945af3a",
@@ -1575,14 +1575,14 @@
             "away_scorers": [
                 "null"
             ],
-            "away_team_id": "0",
+            "away_team_id": "18",
             "finished": "FALSE",
             "group": "QR",
             "home_score": 0,
             "home_scorers": [
                 "null"
             ],
-            "home_team_id": "0",
+            "home_team_id": "25",
             "id": "56",
             "local_date": "12/9/2022 18:00",
             "matchday": "18",
@@ -1590,12 +1590,12 @@
             "stadium_id": "1",
             "time_elapsed": "notstarted",
             "type": "QR",
-            "home_team_fa": "--",
-            "away_team_fa": "--",
-            "home_team_en": "--",
-            "away_team_en": "--",
-            "home_flag": "",
-            "away_flag": ""
+            "home_team_fa": "برزیل",
+            "away_team_fa": "کرواسی",
+            "home_team_en": "Brazil",
+            "away_team_en": "Croatia",
+            "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/125px-Flag_of_Brazil.svg.png",
+            "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/125px-Flag_of_Croatia.svg.png"
         },
         {
             "_id": "6389265e0eab2168b945af3b",
@@ -1603,14 +1603,14 @@
             "away_scorers": [
                 "null"
             ],
-            "away_team_id": "0",
+            "away_team_id": "9",
             "finished": "FALSE",
             "group": "QR",
             "home_score": 0,
             "home_scorers": [
                 "null"
             ],
-            "home_team_id": "0",
+            "home_team_id": "4",
             "id": "57",
             "local_date": "12/9/2022 22:00",
             "matchday": "18",
@@ -1618,12 +1618,12 @@
             "stadium_id": "1",
             "time_elapsed": "notstarted",
             "type": "QR",
-            "home_team_fa": "--",
-            "away_team_fa": "--",
-            "home_team_en": "--",
-            "away_team_en": "--",
-            "home_flag": "",
-            "away_flag": ""
+            "home_team_fa": "هلند",
+            "away_team_fa": "آرژانتین",
+            "home_team_en": "Netherlands",
+            "away_team_en": "Argentina",
+            "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/125px-Flag_of_the_Netherlands.svg.png",
+            "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/125px-Flag_of_Argentina.svg.png"
         },
         {
             "_id": "6389265e0eab2168b945af3c",
@@ -1659,14 +1659,14 @@
             "away_scorers": [
                 "null"
             ],
-            "away_team_id": "0",
+            "away_team_id": "5",
             "finished": "FALSE",
             "group": "QR",
             "home_score": 0,
             "home_scorers": [
                 "null"
             ],
-            "home_team_id": "0",
+            "home_team_id": "15",
             "id": "59",
             "local_date": "12/10/2022 22:00",
             "matchday": "19",
@@ -1674,12 +1674,12 @@
             "stadium_id": "1",
             "time_elapsed": "notstarted",
             "type": "QR",
-            "home_team_fa": "--",
-            "away_team_fa": "--",
-            "home_team_en": "--",
-            "away_team_en": "--",
-            "home_flag": "",
-            "away_flag": ""
+            "home_team_fa": "فرانسه",
+            "away_team_fa": "انگلستان",
+            "home_team_en": "France",
+            "away_team_en": "England",
+            "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/125px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png",
+            "away_flag": "https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/125px-Flag_of_England.svg.png"
         },
         {
             "_id": "6389265e0eab2168b945af3e",
