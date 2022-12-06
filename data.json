@@ -1564,10 +1564,10 @@
             "type": "R16",
             "home_team_fa": "سوئیس",
             "away_team_fa": "پرتغال",
-            "home_team_en": "Switzerland",
-            "away_team_en": "Portugal",
-            "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png",
-            "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/125px-Flag_of_Portugal.svg.png"
+            "away_team_en": "Switzerland",
+            "home_team_en": "Portugal",
+            "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/100px-Flag_of_Switzerland.svg.png",
+            "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/125px-Flag_of_Portugal.svg.png"
         },
         {
             "_id": "6389265e0eab2168b945af3a",
