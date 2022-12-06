@@ -49,21 +49,23 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
   }
 
   const match = state.matches.find(match => match.match_id === props.matchId)!;
+  const match2 = matches.find(match => match.match_id === props.matchId)!;
+  console.log("dale23", match);
   return <PlasmicScore
     root={{ ref }} 
     {...props}
     homeScoreInput={{
-      value: match?.home_score,
+      value: match2?.home_score,
       onChange: (e) => match.home_score = +e.target.value,
       type: "number"
     }}
     awayScoreInput={{
-      value: match?.away_score,
+      value: match2?.away_score,
       onChange: (e) => match.away_score = +e.target.value,
       type: "number"
     }}
-    homeScore={`${match?.away_score ?? ""}`}
-    awayScore={`${match?.away_score ?? ""}`}
+    homeScore={`${match2?.home_score ?? ""}`}
+    awayScore={`${match2?.away_score ?? ""}`}
   />;
 }
 

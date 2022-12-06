@@ -90,7 +90,7 @@ function Partidas() {
       });
     }
   }
-  console.log("dale", snap.top_scorer, snap.champion);
+  console.log("dale", snap.top_scorer, snap.champion, state.matches);
 
   return (
     <GlobalContextsProvider>
