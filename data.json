@@ -1515,12 +1515,12 @@
         },
         {
             "_id": "638923be0eab2168b945af37",
-            "away_score": 0,
+            "away_score": 1,
             "away_scorers": [
-                "null"
+                "Penalties"
             ],
             "away_team_id": "17",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "R16",
             "home_score": 0,
             "home_scorers": [
@@ -1532,7 +1532,7 @@
             "matchday": "17",
             "persian_date": "1400-09-15 18:30",
             "stadium_id": "1",
-            "time_elapsed": "h2",
+            "time_elapsed": "finished",
             "type": "R16",
             "home_team_fa": "اسپانیا",
             "away_team_fa": "مراکش",
@@ -1543,14 +1543,14 @@
         },
         {
             "_id": "638923be0eab2168b945af38",
-            "away_score": 0,
+            "away_score": 6,
             "away_scorers": [
                 "null"
             ],
             "away_team_id": "27",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "R16",
-            "home_score": 0,
+            "home_score": 1,
             "home_scorers": [
                 "null"
             ],
@@ -1560,7 +1560,7 @@
             "matchday": "17",
             "persian_date": "1400-09-15 22:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "finished",
             "type": "R16",
             "home_team_fa": "سوئیس",
             "away_team_fa": "پرتغال",
@@ -1631,14 +1631,14 @@
             "away_scorers": [
                 "null"
             ],
-            "away_team_id": "0",
+            "away_team_id": "27",
             "finished": "FALSE",
             "group": "QR",
             "home_score": 0,
             "home_scorers": [
                 "null"
             ],
-            "home_team_id": "0",
+            "home_team_id": "17",
             "id": "58",
             "local_date": "12/10/2022 18:00",
             "matchday": "19",
@@ -1646,12 +1646,12 @@
             "stadium_id": "1",
             "time_elapsed": "notstarted",
             "type": "QR",
-            "home_team_fa": "--",
-            "away_team_fa": "--",
-            "home_team_en": "--",
-            "away_team_en": "--",
-            "home_flag": "",
-            "away_flag": ""
+            "home_team_fa": "مراکش",
+            "away_team_fa": "پرتغال",
+            "home_team_en": "Morocco",
+            "away_team_en": "Portugal",
+            "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_Morocco.svg/125px-Flag_of_Morocco.svg.png",
+            "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/125px-Flag_of_Portugal.svg.png"
         },
         {
             "_id": "6389265e0eab2168b945af3d",
