@@ -278,7 +278,7 @@ function PlasmicPalpitesComp__RenderFunc(props: {
           </div>
         </p.Stack>
       ) : null}
-      {false ? (
+      {true ? (
         <div className={classNames(projectcss.all, sty.freeBox__cBaaz)}>
           <div
             className={classNames(
@@ -492,7 +492,16 @@ function PlasmicPalpitesComp__RenderFunc(props: {
                             projectcss.all,
                             sty.freeBox__mz4Pc
                           )}
-                          key={currentIndex}
+                          key={(() => {
+                            try {
+                              return currentMatch._id;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return undefined;
+                              }
+                              throw e;
+                            }
+                          })()}
                         >
                           {true ? (
                             <p.Stack
@@ -540,38 +549,7 @@ function PlasmicPalpitesComp__RenderFunc(props: {
                                   className={classNames(
                                     "__wab_instance",
                                     sty.outcome__aliO
-                                  )}  
-awayScore={(() => {
-                              try {
-                                return currentMatch.away_score;
-                              } catch (e) {
-                                if (e instanceof TypeError) {
-                                  return "1";
-                                }
-                                throw e;
-                              }
-                            })()}
-                            homeScore={(() => {
-                              try {
-                                return currentMatch.home_score;
-                              } catch (e) {
-                                if (e instanceof TypeError) {
-                                  return "3";
-                                }
-                                throw e;
-                              }
-                            })()}
-                            matchId={(() => {
-                              try {
-                                return currentMatch._id;
-                              } catch (e) {
-                                if (e instanceof TypeError) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()}
-
+                                  )}
                                 />
                               ) : null}
 
