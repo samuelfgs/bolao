@@ -35,12 +35,12 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
       {...props}
       homeScore={`${match ? (match.home_score ?? "") : ""}`}
       homeScoreInput={{ 
-        value: match.home_score,
+        value: `${match.home_score ?? ""}`,
         onChange: (e) => e && adminCtx.onChange(props.matchId!, +e.target.value, +match.away_score!)
       }}
       awayScore={`${match ? (match.away_score ?? "") : ""}`}
       awayScoreInput={{ 
-        value: match.away_score,
+        value: `${match.away_score ?? ""}`,
         onChange: (e) => e && adminCtx.onChange(props.matchId!, +match.home_score!, +e.target.value)
       }}
       hide={props.isOpen && state.logged_user_id !== 8 && !isAdmin ? true : false}
@@ -55,12 +55,12 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
     root={{ ref }} 
     {...props}
     homeScoreInput={{
-      value: match2?.home_score,
+      value: `${match2.home_score ?? ""}`,
       onChange: (e) => match.home_score = +e.target.value,
       type: "number"
     }}
     awayScoreInput={{
-      value: match2?.away_score,
+      value: `${match2.away_score ?? ""}`,
       onChange: (e) => match.away_score = +e.target.value,
       type: "number"
     }}
