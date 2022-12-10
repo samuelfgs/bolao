@@ -208,7 +208,7 @@
             "group": "D",
             "home_score": 4,
             "home_scorers": [
-                "Adrien Rabiot,Olivier Giroud,Kylian Mbappé"
+                "Adrien Rabiot,Olivier Giroud(2),Kylian Mbappé"
             ],
             "home_team_id": "15",
             "id": "8",
@@ -852,7 +852,7 @@
             "group": "G",
             "home_score": 1,
             "home_scorers": [
-                "null"
+                "Casemiro"
             ],
             "home_team_id": "25",
             "id": "31",
@@ -1405,14 +1405,14 @@
             "_id": "638923be0eab2168b945af33",
             "away_score": 3,
             "away_scorers": [
-                "Memphis Depay,Daley Blind,Denzel Dumfries"
+                "M. Depay,D. Blind,D. Dumfries"
             ],
             "away_team_id": "15",
             "finished": "TRUE",
             "group": "R16",
             "home_score": 1,
             "home_scorers": [
-                "Haji Wright"
+                "H. Wright"
             ],
             "home_team_id": "14",
             "id": "51",
@@ -1571,16 +1571,16 @@
         },
         {
             "_id": "6389265e0eab2168b945af3a",
-            "away_score": 0,
+            "away_score": 1,
             "away_scorers": [
-                "null"
+                "Bruno Petković,Penalties(4)"
             ],
             "away_team_id": "18",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "QR",
-            "home_score": 0,
+            "home_score": 1,
             "home_scorers": [
-                "null"
+                "Neymar,Penalties(2)"
             ],
             "home_team_id": "25",
             "id": "56",
@@ -1588,7 +1588,7 @@
             "matchday": "18",
             "persian_date": "1400-09-18 18:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "finished",
             "type": "QR",
             "home_team_fa": "برزیل",
             "away_team_fa": "کرواسی",
@@ -1599,16 +1599,16 @@
         },
         {
             "_id": "6389265e0eab2168b945af3b",
-            "away_score": 0,
+            "away_score": 2,
             "away_scorers": [
-                "null"
+                "N. Molina,L. Messi,Penalties(4)"
             ],
             "away_team_id": "9",
-            "finished": "FALSE",
+            "finished": "TRUE",
             "group": "QR",
-            "home_score": 0,
+            "home_score": 2,
             "home_scorers": [
-                "null"
+                "W. Weghorst(2),Penalties(3)"
             ],
             "home_team_id": "4",
             "id": "57",
@@ -1616,7 +1616,7 @@
             "matchday": "18",
             "persian_date": "1400-09-18 22:30",
             "stadium_id": "1",
-            "time_elapsed": "notstarted",
+            "time_elapsed": "finished",
             "type": "QR",
             "home_team_fa": "هلند",
             "away_team_fa": "آرژانتین",
@@ -1704,10 +1704,10 @@
             "type": "semi",
             "home_team_fa": "--",
             "away_team_fa": "--",
-            "home_team_en": "--",
-            "away_team_en": "--",
-            "home_flag": "",
-            "away_flag": ""
+            "home_team_en": "Argentina",
+            "home_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/125px-Flag_of_Argentina.svg.png",
+            "away_team_en": "Croatia",
+            "away_flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/125px-Flag_of_Croatia.svg.png"
         },
         {
             "_id": "6389265e0eab2168b945af3f",
