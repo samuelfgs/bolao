@@ -147,7 +147,7 @@ function PlasmicPalpitesComp__RenderFunc(props: {
       {
         path: "rodada",
         type: "private",
-        initFunc: ($props, $state, $ctx) => 3
+        initFunc: ($props, $state, $ctx) => 4
       }
     ],
 
