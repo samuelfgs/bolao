@@ -361,6 +361,62 @@ function PlasmicRanking__RenderFunc(props: {
                         dataIndex={"vencedor" as const}
                         title={"V" as const}
                       />
+
+                      <TableColumn
+                        className={classNames(
+                          "__wab_instance",
+                          sty.antdTableColumn2__an5MA
+                        )}
+                        columnTemplate={
+                          <ph.DataCtxReader>
+                            {$ctx => (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__aUlDh
+                                )}
+                              >
+                                <TableValue
+                                  className={classNames(
+                                    "__wab_instance",
+                                    sty.antdTableValue2___2CeC4
+                                  )}
+                                />
+                              </div>
+                            )}
+                          </ph.DataCtxReader>
+                        }
+                        dataIndex={"campeao" as const}
+                        title={"PC" as const}
+                      />
+
+                      <TableColumn
+                        className={classNames(
+                          "__wab_instance",
+                          sty.antdTableColumn2__bHMn
+                        )}
+                        columnTemplate={
+                          <ph.DataCtxReader>
+                            {$ctx => (
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__h3Dph
+                                )}
+                              >
+                                <TableValue
+                                  className={classNames(
+                                    "__wab_instance",
+                                    sty.antdTableValue2__zMpxm
+                                  )}
+                                />
+                              </div>
+                            )}
+                          </ph.DataCtxReader>
+                        }
+                        dataIndex={"artilheiro" as const}
+                        title={"PA" as const}
+                      />
                     </React.Fragment>
                   }
                   items={[

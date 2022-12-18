@@ -90,8 +90,18 @@ function Partidas() {
       });
     }
   }
-  console.log("dale", snap.top_scorer, snap.champion, state.matches);
-
+  let artilheiro: string = snap.top_scorer ?? "Nao escolheu";
+  let campeao = snap.champion ?? "Nao escolheu";  
+  if (campeao === "Argentina") {
+    campeao += " (5 pontos)"
+  } else {
+    campeao += " (0 pontos)"
+  }
+  if (artilheiro.toLowerCase().includes("messi")) {
+    artilheiro += " (5 pontos)";
+  } else {
+    artilheiro += " (0 pontos)";
+  }
   return (
     <GlobalContextsProvider>
       <ph.PageParamsProvider
@@ -103,8 +113,8 @@ function Partidas() {
           save={{
             onClick: onSave
           }}
-          campeao2={snap.champion ?? ""}
-          artilheiro2={snap.top_scorer ?? ""}
+          campeao2={campeao}
+          artilheiro2={artilheiro}
         />
       </ph.PageParamsProvider>
     </GlobalContextsProvider>

@@ -52,7 +52,6 @@ function Ranking() {
   
   React.useEffect(() => {
     if (Array.isArray(users) && Array.isArray(matchs?.data) && betsByUser) {
-      console.log("dale23", users, matchs?.data, betsByUser);
       const items = users.map((user) => {
         let three = 0, one = 0, jogos = 0;
         matchs.data.filter((match: any) => {
@@ -74,14 +73,18 @@ function Ranking() {
                 }
             }
         });
+        const campeao = user.champion === "Argentina" ? 1 : 0;
+        const artilheiro = user.top_scorer?.toLowerCase()?.includes("messi") ? 1 : 0;
         return {
             user: user.name,
-            pts: three * 3 + one,
+            pts: three * 3 + one + (campeao + artilheiro) * 5,
             cravadas: three,
             vencedor: one,
             id: user.id,
             j: jogos,
-            pos: 1
+            pos: 1,
+            campeao,
+            artilheiro
         }
       }).sort((a, b) => ( a.pts !== b.pts 
           ? b.pts - a.pts 

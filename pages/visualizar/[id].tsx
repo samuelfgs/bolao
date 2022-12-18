@@ -36,6 +36,18 @@ function Classificacao() {
     })
   });
 
+  let artilheiro: string = user?.length > 0 && user[0].top_scorer != "" ? user[0].top_scorer : "Nao escolheu";
+  let campeao = user?.length > 0 && user[0].champion != null ? user[0].champion : "Nao escolheu";  
+  if (campeao === "Argentina") {
+    campeao += " (5 pontos)"
+  } else {
+    campeao += " (0 pontos)"
+  }
+  if (artilheiro.toLowerCase().includes("messi")) {
+    artilheiro += " (5 pontos)";
+  } else {
+    artilheiro += " (0 pontos)";
+  }
   return (
     <ph.PageParamsProvider
       params={useRouter()?.query}
@@ -45,8 +57,8 @@ function Classificacao() {
         <PlasmicPalpitesComp
           isView={true} 
           player={user?.[0]?.name} 
-          artilheiro2={user?.length > 0 && user[0].top_scorer != "" ? user[0].top_scorer : "Nao escolheu"}
-          campeao2={user?.length > 0 && user[0].champion != null ? user[0].champion : "Nao escolheu"}
+          artilheiro2={artilheiro}
+          campeao2={campeao}
           save={{
             render: () => <></>
           }}

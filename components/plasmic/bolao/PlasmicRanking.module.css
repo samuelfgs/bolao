@@ -190,6 +190,46 @@
   max-width: 100%;
   object-fit: cover;
 }
+.antdTableColumn2__an5MA:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.freeBox__aUlDh {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 0;
+}
+.antdTableValue2___2CeC4:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.antdTableColumn2__bHMn:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.freeBox__h3Dph {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  padding: 0;
+}
+.antdTableValue2__zMpxm:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
 .img {
   position: relative;
   object-fit: cover;

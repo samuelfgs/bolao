@@ -23,7 +23,7 @@ function Score_(props: ScoreProps, ref: HTMLElementRefOf<"div">) {
       {...props}
       homeScore={`${match ? (match.home_score ?? "") : ""}`}
       awayScore={`${match ? (match.away_score ?? "") : ""}`}
-      hide={props.isOpen && state.logged_user_id !== 8 ? true : false}
+      hide={false}
       isOpen={false}
     />
   }
