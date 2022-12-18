@@ -92,7 +92,7 @@ function Partidas() {
   }
   let artilheiro: string = snap.top_scorer ?? "Nao escolheu";
   let campeao = snap.champion ?? "Nao escolheu";  
-  if (campeao === "Argentinax") {
+  if (campeao === "Argentina") {
     campeao += " (5 pontos)"
   } else {
     campeao += " (0 pontos)"
