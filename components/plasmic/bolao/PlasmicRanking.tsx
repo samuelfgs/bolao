@@ -145,7 +145,16 @@ function PlasmicRanking__RenderFunc(props: {
             {"Ranking"}
           </div>
 
-          {true ? (
+          {(() => {
+            try {
+              return !$props.isLoading;
+            } catch (e) {
+              if (e instanceof TypeError) {
+                return true;
+              }
+              throw e;
+            }
+          })() ? (
             <div className={classNames(projectcss.all, sty.freeBox__nFas6)}>
               {true ? (
                 <TableWrapper
