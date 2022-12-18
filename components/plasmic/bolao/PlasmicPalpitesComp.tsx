@@ -147,7 +147,7 @@ function PlasmicPalpitesComp__RenderFunc(props: {
       {
         path: "rodada",
         type: "private",
-        initFunc: ($props, $state, $ctx) => 4
+        initFunc: ($props, $state, $ctx) => "4" as const
       }
     ],
 
@@ -828,10 +828,40 @@ function PlasmicPalpitesComp__RenderFunc(props: {
                                 }
                               })() ? (
                                 <Outcome
+                                  awayScore={(() => {
+                                    try {
+                                      return currentMatch.away_score;
+                                    } catch (e) {
+                                      if (e instanceof TypeError) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
                                   className={classNames(
                                     "__wab_instance",
                                     sty.outcome__jjDfL
                                   )}
+                                  homeScore={(() => {
+                                    try {
+                                      return currentMatch.home_score;
+                                    } catch (e) {
+                                      if (e instanceof TypeError) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                  matchId={(() => {
+                                    try {
+                                      return currentMatch._id;
+                                    } catch (e) {
+                                      if (e instanceof TypeError) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
                                 />
                               ) : null}
 
