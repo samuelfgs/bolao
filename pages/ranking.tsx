@@ -74,7 +74,7 @@ function Ranking() {
             }
         });
         const campeao = user.champion === "Argentina" ? 1 : 0;
-        const artilheiro = user.top_scorer?.toLowerCase()?.includes("messi") ? 1 : 0;
+        const artilheiro = user.top_scorer?.toLowerCase()?.includes("mba") ? 1 : 0;
         return {
             user: user.name,
             pts: three * 3 + one + (campeao + artilheiro) * 5,

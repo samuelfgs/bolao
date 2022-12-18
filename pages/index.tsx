@@ -97,7 +97,7 @@ function Partidas() {
   } else {
     campeao += " (0 pontos)"
   }
-  if (artilheiro.toLowerCase().includes("messi")) {
+  if (artilheiro.toLowerCase().includes("mba")) {
     artilheiro += " (5 pontos)";
   } else {
     artilheiro += " (0 pontos)";
