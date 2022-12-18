@@ -58,6 +58,8 @@
   width: 100%;
   height: auto;
   max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
   min-width: 0;
   padding: 8px;
 }
@@ -66,6 +68,7 @@
   object-fit: cover;
   position: relative;
   width: 390px;
+  display: flex;
 }
 .antdTableColumn2__o2SpI:global(.__wab_instance) {
   max-width: 100%;

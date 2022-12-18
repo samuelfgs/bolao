@@ -110,7 +110,7 @@ function Ranking() {
         query={useRouter()?.query}
       >
         <PlasmicRanking 
-          antdTable={{ items }}
+          antdTable={{ items, scroll: { x: true } }}
           isLoading={items.length === 0}
         />
       </ph.PageParamsProvider>

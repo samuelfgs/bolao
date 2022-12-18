@@ -147,16 +147,7 @@ function PlasmicRanking__RenderFunc(props: {
 
           {true ? (
             <div className={classNames(projectcss.all, sty.freeBox__nFas6)}>
-              {(() => {
-                try {
-                  return !$props.isLoading;
-                } catch (e) {
-                  if (e instanceof TypeError) {
-                    return true;
-                  }
-                  throw e;
-                }
-              })() ? (
+              {true ? (
                 <TableWrapper
                   data-plasmic-name={"antdTable"}
                   data-plasmic-override={overrides.antdTable}
