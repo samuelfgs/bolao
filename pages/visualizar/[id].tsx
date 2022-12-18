@@ -38,7 +38,7 @@ function Classificacao() {
 
   let artilheiro: string = user?.length > 0 && user[0].top_scorer != "" ? user[0].top_scorer : "Nao escolheu";
   let campeao = user?.length > 0 && user[0].champion != null ? user[0].champion : "Nao escolheu";  
-  if (campeao === "Argentina") {
+  if (campeao === "Argentinax") {
     campeao += " (5 pontos)"
   } else {
     campeao += " (0 pontos)"

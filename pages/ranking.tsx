@@ -73,7 +73,7 @@ function Ranking() {
                 }
             }
         });
-        const campeao = user.champion === "Argentina" ? 1 : 0;
+        const campeao = user.champion === "Argentinax" ? 1 : 0;
         const artilheiro = user.top_scorer?.toLowerCase()?.includes("mba") ? 1 : 0;
         return {
             user: user.name,
